@@ -4,6 +4,9 @@ import styled from 'styled-components'
 export const Header__Content = styled.nav`
   /* background: #00e2d1; */
   background: white;
+  /* position: fixed; */
+  /* top: 0; */
+  /* left: 0; */
   height: 4rem;
   width: 100vw;
   border-bottom: 1px solid ${({ theme }) => theme.border};

@@ -1,34 +1,65 @@
 import { css } from "styled-components"
 
-const FontWeight = {
-  200: "ExtraLight",
-  300: "Light",
-  400: "Regular",
-  500: "Medium",
-  600: "SemiBold",
-  700: "Bold",
-}
-
 const Oswald = {
   name: "Oswald",
-  types: FontWeight,
+  normal: {
+    200: "ExtraLight",
+    300: "Light",
+    400: "Regular",
+    500: "Medium",
+    600: "SemiBold",
+    700: "Bold",
+  },
 }
 
-const CreateFontFaces = (family, style = "normal") => {
+const DMSans = {
+  name: "DMSans",
+  normal: {
+    400: "Regular",
+    500: "Medium",
+    700: "Bold",
+  },
+  italic: {
+    400: "RegularItalic",
+    500: "MediumItalic",
+    700: "BoldItalic",
+  },
+}
+
+const CreateFontFaces = (family) => {
   let styles = ""
 
-  for (const [key, value] of Object.entries(family["types"])) {
-    const weight = key
-    const type = value
+  if (family["normal"] !== undefined) {
+    for (const [key, value] of Object.entries(family["normal"])) {
+      const weight = key
+      const type = value
 
-    styles += `
+      styles += `
       @font-face {
         font-family: '${family.name}';
-        src: url('/fonts/Oswald/Oswald-${type}.ttf');
+        src: url('/fonts/${family.name}/${family.name}-${type}.ttf');
         font-weight: ${weight};
-        font-style: ${style}; 
+        font-style: normal;
+        font-display: auto;
       }
     `
+    }
+  }
+  if (family["italic"] !== undefined) {
+    for (const [key, value] of Object.entries(family["italic"])) {
+      const weight = key
+      const type = value
+
+      styles += `
+      @font-face {
+        font-family: '${family.name}';
+        src: url('/fonts/${family.name}/${family.name}-${type}.ttf');
+        font-weight: ${weight};
+        font-style: italic;
+        font-display: auto;
+      }
+    `
+    }
   }
 
   return styles
@@ -36,8 +67,10 @@ const CreateFontFaces = (family, style = "normal") => {
 
 const OswaldNormal = CreateFontFaces(Oswald)
 
+const DMSansNormalItalic = CreateFontFaces(DMSans)
+
 const Fonts = css`
-  ${OswaldNormal}
+  ${OswaldNormal + DMSansNormalItalic}
 `
 
 export default Fonts

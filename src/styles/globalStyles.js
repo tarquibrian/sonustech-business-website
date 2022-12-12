@@ -20,6 +20,7 @@ export const GlobalStyle = createGlobalStyle`
     background-color: rgb(1, 39, 75);
     color: ${({ theme }) => theme.text};
     font-family: 'Oswald';
+    font-weight: 400;
     transition: all 0.50s linear;
     margin: 0;
     width: 100%;

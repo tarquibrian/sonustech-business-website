@@ -17,17 +17,16 @@ const Oswald = {
 const CreateFontFaces = (family, style = "normal") => {
   let styles = ""
 
-  for (const [key, value] of Object.entries(family["weights"])) {
-    const weight = value
+  for (const [key, value] of Object.entries(family["types"])) {
+    const weight = key
+    const type = value
 
     styles += `
       @font-face {
         font-family: '${family.name}';
-        src: url(${woff2}) format('woff2'),
-            url(${woff}) format('woff');
+        src: url('/fonts/Oswald/Oswald-${type}.ttf');
         font-weight: ${weight};
-        font-style: ${style};
-        font-display: auto;
+        font-style: ${style}; 
       }
     `
   }
@@ -35,12 +34,10 @@ const CreateFontFaces = (family, style = "normal") => {
   return styles
 }
 
+const OswaldNormal = CreateFontFaces(Oswald)
+
 const Fonts = css`
-  @font-face {
-    font-family: "Oswald";
-    src: url("/fonts/Oswald/OswaldRegularFont.woff") format("woff")
-      url("/fonts/Oswald/OswaldRegularFont.woff2") format("woff2");
-  }
+  ${OswaldNormal}
 `
 
 export default Fonts

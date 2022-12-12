@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react"
+import styled from "styled-components"
 
 const Hero__Section = styled.section`
   margin-top: 0;
@@ -16,7 +16,9 @@ const Hero__Content = styled.div`
 const Hero = () => {
   return (
     <Hero__Section>
-      <Hero__Content>HERO </Hero__Content>
+      <Hero__Content>
+        Whereas recognition of the inherent dignity{" "}
+      </Hero__Content>
     </Hero__Section>
   )
 }

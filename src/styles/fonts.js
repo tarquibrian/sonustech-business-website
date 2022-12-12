@@ -26,6 +26,28 @@ const DMSans = {
   },
 }
 
+const Raleway = {
+  name: "Raleway",
+  normal: {
+    200: "ExtraLight",
+    300: "Light",
+    400: "Regular",
+    500: "Medium",
+    600: "SemiBold",
+    700: "Bold",
+    800: "ExtraBold",
+  },
+  italic: {
+    200: "ExtraLightItalic",
+    300: "LightItalic",
+    400: "RegularItalic",
+    500: "MediumItalic",
+    600: "SemiBoldItalic",
+    700: "BoldItalic",
+    800: "ExtraBoldItalic",
+  },
+}
+
 const CreateFontFaces = (family) => {
   let styles = ""
 
@@ -66,11 +88,11 @@ const CreateFontFaces = (family) => {
 }
 
 const OswaldNormal = CreateFontFaces(Oswald)
-
 const DMSansNormalItalic = CreateFontFaces(DMSans)
+const RalewayNormalItalic = CreateFontFaces(Raleway)
 
 const Fonts = css`
-  ${OswaldNormal + DMSansNormalItalic}
+  ${OswaldNormal + DMSansNormalItalic + RalewayNormalItalic}
 `
 
 export default Fonts

@@ -14,6 +14,10 @@ export const GlobalStyle = createGlobalStyle`
   *:before,
   *:after {
     box-sizing: inherit;
+    list-style: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
   }
   body {
     /* background: ${({ theme }) => theme.body}; */

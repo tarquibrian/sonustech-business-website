@@ -42,5 +42,6 @@ export const GlobalStyle = createGlobalStyle`
     /* padding: 0 40px; */
     border-bottom: 1px solid #000;
     /* background: lightblue; */
+    /* padding: 0 1rem; */
   }
 `

@@ -7,11 +7,7 @@ const Hero__Section = styled.section`
 `
 
 const Hero__Content = styled.div`
-  padding: 2rem;
-  background-color: #f233;
-  min-height: 100%;
-  margin: 0 auto;
-  max-width: 1400px;
+  ${({ theme }) => theme.mixins.boxSection};
 `
 
 const Hero = () => {

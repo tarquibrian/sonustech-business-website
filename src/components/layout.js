@@ -2,7 +2,7 @@ import React from "react"
 import styled, { ThemeProvider } from "styled-components"
 import { useAppContext } from "../contexts/app.context"
 import { GlobalStyle } from "../styles/globalStyles"
-import { lightTheme, darkTheme } from "../styles/theme"
+import theme from "../styles/theme"
 import Footer from "./footer"
 import Header from "./header"
 import SEO from "./seo"
@@ -65,10 +65,11 @@ const Body = styled.div`
 `
 
 const Layout = ({ children }) => {
-  const { state } = useAppContext()
-  const { theme } = state
+  // const { state } = useAppContext()
+  // const { theme } = state
   return (
-    <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+    // <ThemeProvider theme={theme === "light" ? theme : theme}>
+    <ThemeProvider theme={theme}>
       <SEO title="SONUSTECH | Software Company" />
       <GlobalStyle />
       <LayoutPartition>
@@ -79,6 +80,7 @@ const Layout = ({ children }) => {
               <li>ITEM1</li>
               <li>ITEM1</li>
             </ul>
+            <span>Colors</span>
           </Side__Content>
         </Side>
         <Body>

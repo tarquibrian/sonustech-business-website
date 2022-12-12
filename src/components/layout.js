@@ -13,18 +13,30 @@ const LayoutPartition = styled.div`
   grid-template-columns: 80px auto;
   /* min-height: 100vh; */
   /* min-width: 100vw; */
+  @media screen and (max-width: 600px) {
+    grid-template-columns: none;
+  }
 `
 
 const Side = styled.div`
-  /* background-color: skyblue; */
+  background-color: skyblue;
   position: sticky;
   top: 0;
   left: 0;
-
   /* width: 100%; */
   /* height: 100vh; */
   border-right: 1px solid #000;
   z-index: 999;
+  position: relative;
+  @media screen and (max-width: 600px) {
+    position: fixed;
+    top: initial;
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+    border: initial;
+  }
 `
 
 const Body = styled.div`

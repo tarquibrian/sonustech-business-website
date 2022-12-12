@@ -1,6 +1,9 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from "styled-components"
+
+import Fonts from "./fonts"
 
 export const GlobalStyle = createGlobalStyle`
+  ${Fonts}
   html {
     box-sizing: border-box;
     width: 100%;
@@ -12,12 +15,11 @@ export const GlobalStyle = createGlobalStyle`
   *:after {
     box-sizing: inherit;
   }
-
   body {
     /* background: ${({ theme }) => theme.body}; */
     background-color: rgb(1, 39, 75);
     color: ${({ theme }) => theme.text};
-    font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;
+    font-family: 'Oswald', sans-serif;
     transition: all 0.50s linear;
     margin: 0;
     width: 100%;

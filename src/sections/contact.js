@@ -1,8 +1,8 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from "react"
+import styled from "styled-components"
 
 const Contact__Section = styled.section`
-  background-color: white;
+  /* background-color: white; */
   min-height: 20em;
 `
 

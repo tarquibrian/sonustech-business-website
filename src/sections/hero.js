@@ -2,15 +2,16 @@ import React from "react"
 import styled from "styled-components"
 
 const Hero__Section = styled.section`
-  margin-top: 0;
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
   min-height: 100vh;
-  background-color: #fff;
+  /* background-color: #fff; */
 `
 
 const Hero__Content = styled.div`
   padding: 2rem;
+  background-color: white;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 1400px;
 `
 
 const Hero = () => {

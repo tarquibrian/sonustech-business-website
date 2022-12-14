@@ -1,17 +1,17 @@
-import { createContext, useContext, useReducer } from 'react'
-import AppReducer, { initialState } from './app.reducer'
+import { createContext, useContext, useReducer } from "react"
+import AppReducer, { initialState } from "./app.reducer"
 
 const AppContext = createContext(initialState)
 
 export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState)
 
-  const toggleTheme = (theme) => {
-    const newTheme = state.theme
+  const toggleTheme = (currentTheme) => {
+    const newTheme = state.currentTheme
     dispatch({
-      type: 'TOGGLE THEME',
+      type: "TOGGLE THEME",
       payload: {
-        theme: theme,
+        currentTheme,
       },
     })
   }

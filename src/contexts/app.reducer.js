@@ -1,17 +1,17 @@
 export const initialState = {
-  theme: 'light',
+  currentTheme: "light",
   top: false,
 }
 
 const AppReducer = (state, action) => {
   const { type, payload } = action
-  console.log('payload', payload)
+  console.log("payload", payload)
   switch (type) {
-    case 'TOGGLE THEME':
-      const toggleTheme = state.theme === 'light' ? 'dark' : 'light'
+    case "TOGGLE THEME":
+      const toggleTheme = state.currentTheme === "light" ? "dark" : "light"
       return {
         ...state,
-        theme: toggleTheme,
+        currentTheme: toggleTheme,
       }
     default: {
       throw new Error(`Unsupported action type: ${type}`)

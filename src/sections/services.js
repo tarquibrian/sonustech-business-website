@@ -4,7 +4,7 @@ import styled from "styled-components"
 const Services__Section = styled.section``
 
 const Services__Content = styled.div`
-  ${({ theme }) => theme.mixins.boxSection};
+  /* ${({ theme }) => theme.mixins.boxSection}; */
 `
 
 const Services = () => {

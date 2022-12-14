@@ -7,7 +7,7 @@ const Hero__Section = styled.section`
 `
 
 const Hero__Content = styled.div`
-  ${({ theme }) => theme.mixins.boxSection};
+  /* ${({ theme }) => theme.mixins.boxSection}; */
 `
 
 const Hero = () => {

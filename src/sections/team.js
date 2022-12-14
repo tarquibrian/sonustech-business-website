@@ -4,7 +4,7 @@ import styled from "styled-components"
 const Team__Section = styled.section``
 
 const Team__Content = styled.div`
-  ${({ theme }) => theme.mixins.boxSection};
+  /* ${({ theme }) => theme.mixins.boxSection}; */
 `
 
 const Team = () => {

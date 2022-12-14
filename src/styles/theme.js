@@ -1,19 +1,19 @@
 import mixins from "./mixins"
-// export const theme = {
-//   body: "#fff",
-//   text: "#000",
-//   border: "#000",
-//   background: "#363537",
-// }
+export const lightTheme = {
+  body: "#fff",
+  text: "#000",
+  border: "#000",
+  background: "#363537",
+}
 
-// export const darkTheme = {
-//   body: "#363537",
-//   text: "#FAFAFA",
-//   border: "#6B8096",
-//   background: "#999",
-// }
+export const darkTheme = {
+  body: "#363537",
+  text: "#FAFAFA",
+  border: "#6B8096",
+  background: "#999",
+}
 
-const theme = {
+export const base = {
   bp: {
     mobileS: `max-width: 330px`,
     mobileM: `max-width: 400px`,
@@ -28,5 +28,3 @@ const theme = {
 
   mixins,
 }
-
-export default theme

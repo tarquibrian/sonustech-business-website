@@ -4,7 +4,7 @@ import styled from "styled-components"
 const Feaures__Section = styled.section``
 
 const Features__Content = styled.div`
-  ${({ theme }) => theme.mixins.boxSection};
+  /* ${({ theme }) => theme.mixins.boxSection}; */
 `
 
 const Feaures = () => {

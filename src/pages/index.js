@@ -1,11 +1,11 @@
-import Layout from '../components/layout'
-import React from 'react'
-import { useAppContext } from '../contexts/app.context'
-import Hero from '../sections/hero'
-import Contact from '../sections/contact'
-import Team from '../sections/team'
-import Services from '../sections/services'
-import Features from '../sections/features'
+import Layout from "../components/layout"
+import React from "react"
+import { useAppContext } from "../contexts/app.context"
+import Hero from "../sections/hero"
+import Contact from "../sections/contact"
+import Team from "../sections/team"
+import Services from "../sections/services"
+import Features from "../sections/features"
 
 const Index = () => {
   const { state, toggleTheme } = useAppContext()

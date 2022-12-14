@@ -8,7 +8,7 @@ const Contact__Section = styled.section`
 
 const Contact__Content = styled.div`
   /* padding: 2rem; */
-  ${({ theme }) => theme.mixins.boxSection};
+  /* ${({ theme }) => theme.mixins.boxSection}; */
 `
 
 const Contact = () => {

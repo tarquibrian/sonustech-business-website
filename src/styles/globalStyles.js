@@ -20,9 +20,9 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
   body {
-    /* background: ${({ theme }) => theme.body}; */
+    background: ${({ theme }) => theme.colors.body};
     /* background-color: rgb(1, 39, 75); */
-    color: ${({ theme }) => theme.text};
+    color: ${({ theme }) => theme.colors.text};
     font-family: 'DMSans', 'Raleway', 'Oswald', sans-serif;
     transition: all 0.50s linear;
     margin: 0;

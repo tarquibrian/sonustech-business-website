@@ -2,13 +2,18 @@ import React from "react"
 import styled, { ThemeProvider } from "styled-components"
 import { useAppContext } from "../contexts/app.context"
 import { GlobalStyle } from "../styles/globalStyles"
-import theme from "../styles/theme"
+import { base, lightTheme, darkTheme } from "../styles/theme"
 import Footer from "./footer"
 import Header from "./header"
 import SEO from "./seo"
 
 import logo from "../assets/images/logo.png"
 import Image from "next/image"
+
+const themesMap = {
+  light: lightTheme,
+  dark: darkTheme,
+}
 
 const LayoutPartition = styled.div`
   position: relative;
@@ -65,8 +70,12 @@ const Body = styled.div`
 `
 
 const Layout = ({ children }) => {
-  // const { state } = useAppContext()
-  // const { theme } = state
+  const { state } = useAppContext()
+  // const { currentTheme } = state
+  // console.log(state)
+  const theme = { ...base, colors: themesMap[state.currentTheme] }
+  // console.log(theme)
+
   return (
     // <ThemeProvider theme={theme === "light" ? theme : theme}>
     <ThemeProvider theme={theme}>

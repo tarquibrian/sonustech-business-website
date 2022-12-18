@@ -4,6 +4,7 @@ import React from "react"
 import styled from "styled-components"
 
 import imgMenu from "../assets/images/menu.png"
+import MenuIcon from "./icons/menu"
 
 export const Header__Content = styled.nav`
   position: absolute;
@@ -98,7 +99,8 @@ const Header = () => {
         </Container>
       </Header__Content>
       <Menu>
-        <Image src={imgMenu} alt="menu icon" height={50} width={50} />
+        {/* <Image src={imgMenu} alt="menu icon" height={50} width={50} /> */}
+        <MenuIcon />
       </Menu>
     </>
   )

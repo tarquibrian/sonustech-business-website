@@ -51,12 +51,24 @@ const Content__Title = styled.span`
 
 const Menu = styled.div`
   display: none;
+  background-color: red;
+
+  svg {
+    height: 100%;
+    width: 100%;
+  }
+
   @media screen and (max-width: 800px) {
     position: fixed;
     top: 0;
     right: 0;
-    display: inline-block;
-    margin: 1rem;
+    display: block;
+    margin: 30px;
+    width: 60px;
+    height: 60px;
+    &:hover {
+      cursor: pointer;
+    }
   }
 `
 
@@ -88,10 +100,10 @@ const Header = () => {
     <>
       <Header__Content>
         <Container>
-          {menu.map((item) => {
+          {menu.map((item, i) => {
             const { name, href } = item
             return (
-              <Link href={href}>
+              <Link href={href} key={i}>
                 <Content__Title>{name}</Content__Title>
               </Link>
             )

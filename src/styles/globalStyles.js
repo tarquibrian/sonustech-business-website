@@ -44,4 +44,10 @@ export const GlobalStyle = createGlobalStyle`
     /* background: lightblue; */
     /* padding: 0 1rem; */
   }
+  a {
+    display: inline-block;
+    text-decoration: none;
+    text-decoration-skip-ink: auto;
+    color: inherit;
+  }
 `

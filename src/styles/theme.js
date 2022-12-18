@@ -1,6 +1,6 @@
 import mixins from "./mixins"
 export const lightTheme = {
-  body: "#fff",
+  body: "rgba(213, 214, 219, .5)",
   text: "#000",
   border: "#000",
   background: "#363537",

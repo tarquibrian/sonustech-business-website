@@ -4,6 +4,7 @@ import React from "react"
 import styled from "styled-components"
 
 import imgMenu from "../assets/images/menu.png"
+import Arrow from "./icons/arrow"
 import MenuIcon from "./icons/menu"
 
 export const Header__Content = styled.nav`
@@ -43,9 +44,31 @@ const Content__Title = styled.span`
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
+  transition: 0.2s ease;
+  span {
+    background-color: #000;
+    color: #fff;
+    display: grid;
+    place-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    padding: .2rem;
+    svg {
+      width: 100%;
+      height: 100%;
+      margin-left: 1px;
+      /* fill: #fff; */
+    }
+  }
   &:hover {
     background: rgba(255, 255, 255, 0.5);
+    gap: 0.5rem;
     cursor: pointer;
+    span {
+      background-color: rgba(0, 0, 0, 0.7);
+    }
   }
 `
 
@@ -104,7 +127,14 @@ const Header = () => {
             const { name, href } = item
             return (
               <Link href={href} key={i}>
-                <Content__Title>{name}</Content__Title>
+                <Content__Title>
+                  {name === "Contact" ? (
+                    <span>
+                      <Arrow />
+                    </span>
+                  ) : null}
+                  {name}
+                </Content__Title>
               </Link>
             )
           })}

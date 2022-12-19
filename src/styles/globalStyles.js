@@ -39,7 +39,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0 auto;
     /* max-width: 1000px; */
     /* padding: 0 40px; */
-    border-bottom: 1px solid #000;
+    border-bottom: 1px solid ${({ theme }) => theme.colors.border};
     /* background: lightblue; */
     /* padding: 0 1rem; */
   }

@@ -34,14 +34,8 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   section {
-    /* border-radius: 1.5rem; */
-    /* margin: 8rem 0; */
     margin: 0 auto;
-    /* max-width: 1000px; */
-    /* padding: 0 40px; */
     border-bottom: 1px solid ${({ theme }) => theme.colors.border};
-    /* background: lightblue; */
-    /* padding: 0 1rem; */
   }
   a {
     display: inline-block;

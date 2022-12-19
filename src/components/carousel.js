@@ -36,7 +36,7 @@ const Container__Column = styled.div`
 
 const Card = styled.div`
   width: 100%;
-  border: 1px solid #000;
+  border: 1px solid ${({ theme }) => theme.colors?.border};
   border-bottom: none;
   border-right: none;
   height: 450px;
@@ -55,7 +55,7 @@ const Card = styled.div`
     /* background-color: lightgreen; */
   }
   &:hover {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: ${({ theme }) => theme.colors?.hoverBackground};
   }
 `
 

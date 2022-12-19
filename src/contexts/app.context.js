@@ -7,7 +7,6 @@ export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(AppReducer, initialState)
 
   const toggleTheme = (currentTheme) => {
-    const newTheme = state.currentTheme
     dispatch({
       type: "TOGGLE THEME",
       payload: {
@@ -16,8 +15,18 @@ export const AppProvider = ({ children }) => {
     })
   }
 
+  const setTheme = (newTheme) => {
+    console.log({ newTheme })
+    dispatch({
+      type: "SET THEME",
+      payload: {
+        newTheme,
+      },
+    })
+  }
+
   return (
-    <AppContext.Provider value={{ state, toggleTheme }}>
+    <AppContext.Provider value={{ state, toggleTheme, setTheme }}>
       {children}
     </AppContext.Provider>
   )

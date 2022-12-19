@@ -2,7 +2,7 @@ import React from "react"
 import styled, { ThemeProvider } from "styled-components"
 import { useAppContext } from "../contexts/app.context"
 import { GlobalStyle } from "../styles/globalStyles"
-import { base, lightTheme, darkTheme } from "../styles/theme"
+import { base, lightTheme, darkTheme, redTheme } from "../styles/theme"
 import Footer from "./footer"
 import Header from "./header"
 import SEO from "./seo"
@@ -11,8 +11,9 @@ import logo from "../assets/images/logo.png"
 import Image from "next/image"
 
 const themesMap = {
-  light: lightTheme,
-  dark: darkTheme,
+  lighter: lightTheme,
+  darker: darkTheme,
+  reddish: redTheme,
 }
 
 const LayoutPartition = styled.div`
@@ -28,7 +29,7 @@ const LayoutPartition = styled.div`
 
 const Side = styled.div`
   /* position: fixed; */
-  border-right: 1px solid #000;
+  border-right: 1px solid ${({ theme }) => theme.colors?.border};
   z-index: 999;
   position: relative;
   /* background: linear-gradient(
@@ -70,12 +71,14 @@ const Body = styled.div`
 `
 
 const Layout = ({ children }) => {
-  const { state } = useAppContext()
+  const { state, setTheme } = useAppContext()
   // const { currentTheme } = state
   // console.log(state)
   const theme = { ...base, colors: themesMap[state.currentTheme] }
   // console.log(theme)
-
+  // const setNewTheme = () => {
+  //   setTheme
+  // }
   return (
     // <ThemeProvider theme={theme === "light" ? theme : theme}>
     <ThemeProvider theme={theme}>
@@ -89,6 +92,11 @@ const Layout = ({ children }) => {
               <li>ITEM1</li>
               <li>ITEM1</li>
             </ul>
+            <div>
+              <button onClick={() => setTheme("lighter")}>Lighter</button>
+              <button onClick={() => setTheme("reddish")}>Reddish</button>
+              <button onClick={() => setTheme("darker")}>Darker</button>
+            </div>
             <span>Colors</span>
           </Side__Content>
         </Side>

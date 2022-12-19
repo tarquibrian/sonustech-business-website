@@ -1,5 +1,5 @@
 export const initialState = {
-  currentTheme: "light",
+  currentTheme: "lighter",
   top: false,
 }
 
@@ -12,6 +12,12 @@ const AppReducer = (state, action) => {
       return {
         ...state,
         currentTheme: toggleTheme,
+      }
+    case "SET THEME":
+      console.log(payload.newTheme)
+      return {
+        ...state,
+        currentTheme: payload.newTheme,
       }
     default: {
       throw new Error(`Unsupported action type: ${type}`)

@@ -13,17 +13,44 @@ const Hero__Section = styled.section`
   min-height: 90vh;
   overflow: hidden;
 
-  background: linear-gradient(
-    45deg,
-    #eff2ef 30%,
-    rgba(205, 217, 255, 1) 70%,
-    #eff2ef 100%
-  );
-  background-image: radial-gradient(
+  /* background-image: radial-gradient(
     circle farthest-corner at 10% 20%,
     rgba(255, 209, 67, 1) 0%,
     rgba(255, 1, 83, 1) 90%
-  );
+  ); */
+  /* background-image: radial-gradient(
+    circle farthest-corner at 1.3% 2.8%,
+    rgba(239, 249, 249, 1) 0%,
+    rgba(182, 199, 226, 1) 100.2%
+  ); */
+  /* background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(215, 223, 252, 1) 0%,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(215, 223, 252, 1) 84%
+  ); */
+  background-image: ${({ theme }) => theme.colors?.heroBackground};
+  /* background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(90, 92, 106, 1) 0%,
+    rgba(32, 45, 58, 1) 81.3%
+  ); */
+  /* background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(69, 86, 102, 1) 0%,
+    rgba(34, 34, 34, 1) 90%
+  ); */
+  /* background-image: radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(255, 246, 236, 1) 39.5%,
+    rgba(100, 46, 122, 0.23) 100.2%
+  ); */
+  /* background-image: linear-gradient(
+    109.6deg,
+    rgba(245, 239, 249, 1) 30.1%,
+    rgba(207, 211, 236, 1) 100.2%
+  ); */
+  /* color:white; */
 `
 
 const Hero__Content = styled.div`
@@ -58,25 +85,25 @@ const Content__Title = styled.div`
   }
   .btn {
     /* background-color: #000; */
-    color: white;
+    color: ${({ theme }) => theme.colors?.background};
     display: flex;
     align-items: center;
     gap: 1rem;
     /* width: fit-content; */
     a {
       padding: 1rem 1rem 1rem 1.5rem;
-      background-color: #000;
+      background-color: ${({ theme }) => theme.colors?.foreground};
       span {
         display: flex;
         align-items: center;
         justify-content: center;
         line-height: 1;
         gap: 0.1rem;
-        transition: .3s cubic-bezier(0.075, 0.82, 0.165, 1);
+        transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
       }
       &:hover {
         span {
-          gap: .5rem;
+          gap: 0.8rem;
         }
       }
     }
@@ -87,7 +114,7 @@ const Content__Title = styled.div`
       height: 1px;
       top: 0;
       left: 0;
-      background-color: black;
+      background-color: ${({ theme }) => theme.colors?.border};
       transition: 0.3s ease;
     }
     &:hover {

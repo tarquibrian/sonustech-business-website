@@ -15,7 +15,7 @@ export const Header__Content = styled.nav`
   left: 0;
   height: 5rem;
   width: 100%;
-  border-bottom: 1px solid ${({ theme }) => theme.border};
+  border-bottom: 1px solid ${({ theme }) => theme.colors?.border};
   @media screen and (max-width: 800px) {
     display: none;
   }
@@ -38,7 +38,7 @@ const Container = styled.div`
 `
 
 const Content__Title = styled.span`
-  border-right: 1px solid #000;
+  border-right: 1px solid ${({ theme }) => theme.colors?.border};
   height: 100%;
   width: 100%;
   display: flex;
@@ -51,8 +51,8 @@ const Content__Title = styled.span`
   text-decoration: ${({ isActive }) => (isActive ? "underline" : "inherit")};
 
   span {
-    background-color: #000;
-    color: #fff;
+    background-color: ${({ theme }) => theme.colors?.foreground};
+    color: ${({ theme }) => theme.colors?.background};
     display: grid;
     place-content: center;
     width: 50px;
@@ -67,11 +67,11 @@ const Content__Title = styled.span`
     }
   }
   &:hover {
-    background: rgba(255, 255, 255, 0.5);
+    background: ${({ theme }) => theme.colors?.hoverBackground};
     gap: 0.5rem;
     cursor: pointer;
     span {
-      background-color: rgba(0, 0, 0, 0.7);
+      /* background-color: ${({ theme }) => theme.colors?.hoverBackground}; */
     }
   }
 `

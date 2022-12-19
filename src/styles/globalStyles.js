@@ -24,7 +24,7 @@ export const GlobalStyle = createGlobalStyle`
     /* background-color: rgb(1, 39, 75); */
     color: ${({ theme }) => theme.colors.text};
     font-family: 'Chivo Mono', 'DMSans', 'Raleway', 'Oswald', sans-serif;
-    /* transition: all 0.50s ease; */
+    transition: all 0.50s ease;
     margin: 0;
     width: 100%;
     min-height: 100%;

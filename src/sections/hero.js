@@ -28,12 +28,13 @@ const Hero__Section = styled.section`
 
 const Hero__Content = styled.div`
   height: 100%;
-  width: 90%;
+  /* width: 90%; */
   margin: 0 auto;
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.2fr 1fr;
   gap: 2rem;
+  overflow: hidden;
   /* justify-content: center; */
   /* align-items: center; */
   /* justify-items: center; */
@@ -42,7 +43,8 @@ const Hero__Content = styled.div`
 const Content__Title = styled.div`
   display: grid;
   place-content: center;
-  justify-self: end;
+  justify-self: center;
+  gap: 2rem;
   min-width: 100px;
   max-width: 650px;
   h1 {
@@ -97,16 +99,17 @@ const Content__Title = styled.div`
 `
 
 const Content__Image = styled.div`
-  justify-self: start;
-  display: grid;
-  max-width: 700px; 
+  /* justify-self: start; */
+  /* display: grid; */
+  /* max-width: 700px;  */
   height: 100%;
-  img {
-    /* background: red; */
+  width: 100%;
+  overflow: hidden;
+  /* img {
     width: 100%;
     height: auto;
     object-fit: cover;
-  }
+  } */
   &::before {
     content: "";
   }
@@ -148,7 +151,7 @@ const Hero = () => {
           </div>
         </Content__Title>
         <Content__Image>
-          <Image
+          {/* <Image
             src={WebDev}
             alt="hero image"
             width={600}
@@ -156,8 +159,8 @@ const Hero = () => {
             // height={500}
             // placeholder="blur"
             priority
-          />
-          {/* <Carousel /> */}
+          /> */}
+          <Carousel />
         </Content__Image>
       </Hero__Content>
     </Hero__Section>

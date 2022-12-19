@@ -40,56 +40,110 @@ const Card = styled.div`
   border-bottom: none;
   border-right: none;
   height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
   img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: contain;
+    /* background-color: white; */
+  }
+  h1 {
+    /* background-color: lightgreen; */
+  }
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.4);
   }
 `
 
 const Carousel = () => {
   return (
     <Carousel__Container>
-      <Container__Column animationTime="15s">
+      <Container__Column animationTime="20s">
         <Card>
           <Image src={img1} alt="logo image carousel" />
+          <h1>SEO POSITION</h1>
         </Card>
         <Card>
           <Image src={img2} alt="logo image carousel" />
+          <h1>SEO POSITION</h1>
         </Card>
         <Card>
           <Image src={img3} alt="logo image carousel" />
+          <h1>SEO POSITION</h1>
         </Card>
         {/* REPEAT */}
         <Card>
           <Image src={img1} alt="logo image carousel" />
+          <h1>SEO POSITION</h1>
         </Card>
         <Card>
           <Image src={img2} alt="logo image carousel" />
+          <h1>SEO POSITION</h1>
         </Card>
         <Card>
           <Image src={img3} alt="logo image carousel" />
+          <h1>SEO POSITION</h1>
         </Card>
       </Container__Column>
-      <Container__Column animationTime="7s">
+      <Container__Column animationTime="12s">
         <Card>
-          <Image src={img4} alt="logo image carousel" />
+          <Image
+            src={img4}
+            width={500}
+            height="auto"
+            alt="logos image carousel"
+          />
+          <h1>CONSULTORING</h1>
         </Card>
         <Card>
-          <Image src={img5} alt="logo image carousel" />
+          <Image
+            src={img5}
+            width={500}
+            height="auto"
+            alt="logo idmage carousel"
+          />
+          <h1>CONSULTORING</h1>
         </Card>
         <Card>
-          <Image src={img6} alt="logo image carousel" />
+          <Image
+            src={img6}
+            width={500}
+            height="auto"
+            alt="logo idmage carousel"
+          />
+          <h1>CONSULTORING</h1>
         </Card>
         {/* REPEAT */}
         <Card>
-          <Image src={img4} alt="logo image carousel" />
+          <Image
+            src={img4}
+            width={500}
+            height="auto"
+            alt="logos image carousel"
+          />
+          <h1>CONSULTORING</h1>
         </Card>
         <Card>
-          <Image src={img5} alt="logo image carousel" />
+          <Image
+            src={img5}
+            width={500}
+            height="auto"
+            alt="logo idmage carousel"
+          />
+          <h1>CONSULTORING</h1>
         </Card>
         <Card>
-          <Image src={img6} alt="logo image carousel" />
+          <Image
+            src={img6}
+            width={500}
+            height="auto"
+            alt="logo idmage carousel"
+          />
+          <h1>CONSULTORING</h1>
         </Card>
       </Container__Column>
       {/* <Image src={img1} alt='card image' width={500} height='auto'/> */}

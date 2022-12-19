@@ -1,5 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/router"
 import React from "react"
 import styled from "styled-components"
 
@@ -15,7 +16,6 @@ export const Header__Content = styled.nav`
   height: 5rem;
   width: 100%;
   border-bottom: 1px solid ${({ theme }) => theme.border};
-  /* border: 1px solid #000; */
   @media screen and (max-width: 800px) {
     display: none;
   }
@@ -46,6 +46,10 @@ const Content__Title = styled.span`
   align-items: center;
   gap: 1rem;
   transition: 0.2s ease;
+
+  font-weight: ${({ isActive }) => (isActive ? "800" : "inherit")};
+  text-decoration: ${({ isActive }) => (isActive ? "underline" : "inherit")};
+
   span {
     background-color: #000;
     color: #fff;
@@ -54,7 +58,7 @@ const Content__Title = styled.span`
     width: 50px;
     height: 50px;
     border-radius: 100%;
-    padding: .2rem;
+    padding: 0.2rem;
     svg {
       width: 100%;
       height: 100%;
@@ -74,7 +78,7 @@ const Content__Title = styled.span`
 
 const Menu = styled.div`
   display: none;
-  background-color: red;
+  /* background-color: red; */
 
   svg {
     height: 100%;
@@ -119,6 +123,7 @@ const menu = [
 ]
 
 const Header = () => {
+  const { pathname } = useRouter()
   return (
     <>
       <Header__Content>
@@ -127,7 +132,7 @@ const Header = () => {
             const { name, href } = item
             return (
               <Link href={href} key={i}>
-                <Content__Title>
+                <Content__Title isActive={pathname === href ? true : null}>
                   {name === "Contact" ? (
                     <span>
                       <Arrow />

@@ -1,12 +1,13 @@
 "use client"
 import Image from "next/image"
-import React, { useState } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import styled from "styled-components"
 import gif from "../assets/images/development-lifecycle.gif"
 import { featuresData } from "../data/featuresData"
 import { AnimatePresence, motion } from "framer-motion"
 import ArrowListIcon from "../components/icons/arrowList"
 import PlanningIcon from "../components/icons/planing"
+import useOnScreen from "../hooks/usOnScreen"
 
 const Feaures__Section = styled.section`
   min-height: 600px;
@@ -103,9 +104,18 @@ const Description = styled.div`
 
 const Feaures = () => {
   const [expanded, setExpanded] = useState(false)
+  const ref = useRef()
 
+  const isVisible = useOnScreen(ref)
+  useEffect(() => {
+    if (isVisible) console.log("features is visible")
+  }, [isVisible])
   return (
-    <Feaures__Section>
+    <Feaures__Section
+      ref={ref}
+      id="features"
+      // onLoad={() => console.log("hola")}
+    >
       <Features__Header>
         <h1>CUSTOM SOFTWARE DEVELOPMENT LIFECYCLE</h1>
         <p>

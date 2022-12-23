@@ -1,14 +1,15 @@
 import Image from "next/image"
-import React from "react"
+import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
 import HeroIMG from "../assets/images/hero.jpg"
 import Carousel from "../components/carousel"
 import WebDev from "../assets/images/webdev.png"
 import Link from "next/link"
+import useOnScreen from "../hooks/usOnScreen"
 
 const Hero__Section = styled.section`
   padding: 5rem 0 0 0;
-  height: 90vh;
+  height: calc(100vh + 2px);
   width: 100%;
   min-height: 90vh;
   overflow: hidden;
@@ -143,8 +144,14 @@ const Content__Image = styled.div`
 `
 
 const Hero = () => {
+  const ref = useRef()
+
+  const isVisible = useOnScreen(ref)
+  useEffect(() => {
+    if (isVisible) console.log("hero is visible")
+  }, [isVisible])
   return (
-    <Hero__Section>
+    <Hero__Section id="hero" ref={ref}>
       <Hero__Content>
         <Content__Title>
           <h1>

@@ -11,7 +11,7 @@ export const lightTheme = {
   border: "rgba(0,0,0,1.0)",
   background: "rgba(255,255,255,1.0)",
   foreground: "rgba(0,0,0,1.0)",
-  hoverBackground: "rgba(255,255,255, .7)",
+  hoverBackground: "rgba(0,0,0, .2)",
 }
 
 export const darkTheme = {

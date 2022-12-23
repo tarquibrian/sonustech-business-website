@@ -69,10 +69,9 @@ const Side__Content = styled.div`
     flex-direction: column;
     gap: 1.4rem;
     width: 100%;
-    button {
-      /* border: 2px solid ${({ theme }) => theme.colors.border}; */
-      border: none;
-      background-color: ${({ theme }) => theme.colors.foreground};
+    a {
+      border: 1px solid ${({ theme }) => theme.colors.border};
+      background-color: ${({ theme }) => theme.colors.hoverBackground};
       margin: 0 auto;
       width: 40%;
       height: 12px;
@@ -139,12 +138,11 @@ const Layout = ({ children }) => {
           <Side__Content>
             <Image src={logo} alt="sonustech logo" width={50} />
             <div className="side-navigator">
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
-              <button></button>
+              <a href="#hero"></a>
+              <a href="#services"></a>
+              <a href="#features"></a>
+              <a href="#services"></a>
+              <a href="#services"></a>
             </div>
             <div className="side-colors">
               <span>Colors</span>

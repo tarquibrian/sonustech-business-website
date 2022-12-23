@@ -15,6 +15,7 @@ export const Header__Content = styled.nav`
   left: 0;
   height: 5rem;
   width: 100%;
+  z-index: 99999;
   border-bottom: 1px solid ${({ theme }) => theme.colors?.border};
   @media screen and (max-width: 800px) {
     display: none;

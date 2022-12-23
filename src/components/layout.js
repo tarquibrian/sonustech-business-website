@@ -125,13 +125,7 @@ const Body = styled.div`
 
 const Layout = ({ children }) => {
   const { state, setTheme } = useAppContext()
-  // const { currentTheme } = state
-  // console.log(state)
   const theme = { ...base, colors: themesMap[state.currentTheme] }
-  // console.log(theme)
-  // const setNewTheme = () => {
-  //   setTheme
-  // }
   return (
     // <ThemeProvider theme={theme === "light" ? theme : theme}>
 
@@ -172,20 +166,18 @@ const Layout = ({ children }) => {
         <Body>
           <Header />
 
-          <main id="main__content">
-            <motion.main
-              initial={{ x: 300, opacity: 0 }}
-              animate={{ x: 0, opacity: 1 }}
-              exit={{ x: 300, opacity: 0 }}
-              transition={{
-                type: "spring",
-                stiffness: 260,
-                damping: 20,
-              }}
-            >
-              {children}
-            </motion.main>
-          </main>
+          <motion.main
+            initial={{ x: 300, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: 300, opacity: 0 }}
+            transition={{
+              type: "spring",
+              stiffness: 260,
+              damping: 20,
+            }}
+          >
+            {children}
+          </motion.main>
 
           <Footer />
         </Body>

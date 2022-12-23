@@ -6,6 +6,7 @@ import { base, lightTheme, darkTheme, redTheme } from "../styles/theme"
 import Footer from "./footer"
 import Header from "./header"
 import SEO from "./seo"
+import { AnimatePresence, motion } from "framer-motion"
 
 import logo from "../assets/images/logo.png"
 import Image from "next/image"
@@ -133,6 +134,7 @@ const Layout = ({ children }) => {
   // }
   return (
     // <ThemeProvider theme={theme === "light" ? theme : theme}>
+
     <ThemeProvider theme={theme}>
       <SEO title="SONUSTECH | Software Company" />
       <GlobalStyle />
@@ -169,7 +171,22 @@ const Layout = ({ children }) => {
         </Side>
         <Body>
           <Header />
-          <main id="main__content">{children}</main>
+
+          <main id="main__content">
+            <motion.main
+              initial={{ x: 300, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              exit={{ x: 300, opacity: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 260,
+                damping: 20,
+              }}
+            >
+              {children}
+            </motion.main>
+          </main>
+
           <Footer />
         </Body>
       </LayoutPartition>

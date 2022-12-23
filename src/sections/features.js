@@ -17,7 +17,7 @@ const ContentGif = styled.div``
 const ContentFeatures = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  /* gap: 1rem; */
   transition: 0.3 ease;
 `
 
@@ -26,6 +26,8 @@ const Feature = styled.div`
   /* flex-direction: column; */
   gap: 1rem;
   overflow: hidden;
+  /* border-top: 1px solid #000; */
+  /* border-bottom: 1px solid #000; */
   transition: 0.3s ease;
 `
 
@@ -33,7 +35,6 @@ const Title = styled.header`
   display: flex;
   align-items: center;
   height: 60px;
-  border-bottom: 1px solid #000;
 `
 
 const Description = styled.div`
@@ -84,7 +85,7 @@ const Accordion = ({ i, expanded, setExpanded, title, description }) => {
           <h1>{title}</h1>
         </Title>
       </motion.header>
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         {isOpen && (
           <motion.section
             key="content"
@@ -93,7 +94,7 @@ const Accordion = ({ i, expanded, setExpanded, title, description }) => {
             exit="collapsed"
             variants={{
               open: { opacity: 1, height: "auto" },
-              collapsed: { opacity: 1, height: 0 },
+              collapsed: { opacity: 0, height: 0 },
             }}
             transition={{ duration: 0.8, ease: [0.04, 0.62, 0.23, 0.98] }}
           >

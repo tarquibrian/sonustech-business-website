@@ -1,6 +1,7 @@
 export const initialState = {
   currentTheme: "lighter",
   top: false,
+  currentNavigation: "hero",
 }
 
 const AppReducer = (state, action) => {
@@ -14,10 +15,14 @@ const AppReducer = (state, action) => {
         currentTheme: toggleTheme,
       }
     case "SET THEME":
-      console.log(payload.newTheme)
       return {
         ...state,
         currentTheme: payload.newTheme,
+      }
+    case "SET NAV":
+      return {
+        ...state,
+        currentNavigation: payload.newNav,
       }
     default: {
       throw new Error(`Unsupported action type: ${type}`)

@@ -125,8 +125,10 @@ const Body = styled.div`
 `
 
 const Layout = ({ children }) => {
-  const { state, setTheme } = useAppContext()
+  const { state, setTheme, setNavigation } = useAppContext()
   const theme = { ...base, colors: themesMap[state.currentTheme] }
+  const nav = state.currentNavigation
+  console.log({ nav })
   return (
     // <ThemeProvider theme={theme === "light" ? theme : theme}>
 
@@ -138,9 +140,9 @@ const Layout = ({ children }) => {
           <Side__Content>
             <Image src={logo} alt="sonustech logo" width={50} />
             <div className="side-navigator">
-              <a href="#hero"></a>
-              <a href="#services"></a>
-              <a href="#features"></a>
+              <a href="#hero" onClick={() => setNavigation("hero")}></a>
+              <a href="#services" onClick={() => setNavigation("services")}></a>
+              <a href="#features" onClick={() => setNavigation("features")}></a>
               <a href="#services"></a>
               <a href="#services"></a>
             </div>

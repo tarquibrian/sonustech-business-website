@@ -3,10 +3,9 @@ import { useEffect, useState } from "react"
 export default function useOnScreen(ref) {
   const [isIntersecting, setIntersecting] = useState(false)
 
-  const observer = new IntersectionObserver(([entry]) => {
-    console.log(entry)
+  const observer = new IntersectionObserver(([entry]) =>
     setIntersecting(entry.isIntersecting)
-  })
+  )
 
   useEffect(() => {
     observer.observe(ref.current)

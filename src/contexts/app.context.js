@@ -16,7 +16,6 @@ export const AppProvider = ({ children }) => {
   }
 
   const setTheme = (newTheme) => {
-    console.log({ newTheme })
     dispatch({
       type: "SET THEME",
       payload: {
@@ -25,8 +24,20 @@ export const AppProvider = ({ children }) => {
     })
   }
 
+  const setNavigation = (newNav) => {
+    console.log(newNav)
+    dispatch({
+      type: "SET NAV",
+      payload: {
+        newNav,
+      },
+    })
+  }
+
   return (
-    <AppContext.Provider value={{ state, toggleTheme, setTheme }}>
+    <AppContext.Provider
+      value={{ state, toggleTheme, setTheme, setNavigation }}
+    >
       {children}
     </AppContext.Provider>
   )

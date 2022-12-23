@@ -1,11 +1,7 @@
 import mixins from "./mixins"
 
 export const lightTheme = {
-  body: `radial-gradient(
-    circle farthest-corner at 10% 20%,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 239, 225, 1) 90%
-  )`,
+  body: `#fff`,
   heroBackground: `radial-gradient(
     circle farthest-corner at 10% 20%,
     rgba(255, 255, 255, 1) 0%,

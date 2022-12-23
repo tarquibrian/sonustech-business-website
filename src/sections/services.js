@@ -140,7 +140,7 @@ const Services = () => {
             const { title, description, image, id } = item
             if (id <= 3)
               return (
-                <Card>
+                <Card key={id}>
                   <HeadCard>
                     <h1>{title}</h1>
                   </HeadCard>
@@ -165,7 +165,7 @@ const Services = () => {
             const { title, description, image, id } = item
             if (id <= 3)
               return (
-                <Card>
+                <Card key={id}>
                   <HeadCard>
                     <h1>{title}</h1>
                   </HeadCard>

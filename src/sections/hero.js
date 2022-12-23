@@ -5,7 +5,6 @@ import HeroIMG from "../assets/images/hero.jpg"
 import Carousel from "../components/carousel"
 import WebDev from "../assets/images/webdev.png"
 import Link from "next/link"
-import useOnScreen from "../hooks/usOnScreen"
 import { useInView } from "framer-motion"
 
 const Hero__Section = styled.section`
@@ -152,7 +151,7 @@ const Hero = () => {
   })
 
   useEffect(() => {
-    if (isInView) console.log("herois visible")
+    if (isInView) console.log("hero is visible")
   }, [isInView])
   return (
     <Hero__Section id="hero" ref={ref}>

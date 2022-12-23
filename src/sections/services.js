@@ -2,7 +2,6 @@ import Image from "next/image"
 import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
 import { servicesData } from "../data/servicesData"
-import useOnScreen from "../hooks/usOnScreen"
 
 const Services__Section = styled.section`
   min-height: 400px;
@@ -135,10 +134,6 @@ const BodyCard = styled.div`
 const Services = () => {
   const ref = useRef()
 
-  const isVisible = useOnScreen(ref)
-  useEffect(() => {
-    if (isVisible) console.log("services is visible")
-  }, [isVisible])
   return (
     <Services__Section id="services" ref={ref}>
       <Services__Content>

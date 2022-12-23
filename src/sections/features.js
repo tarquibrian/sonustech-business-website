@@ -7,7 +7,6 @@ import { featuresData } from "../data/featuresData"
 import { AnimatePresence, motion } from "framer-motion"
 import ArrowListIcon from "../components/icons/arrowList"
 import PlanningIcon from "../components/icons/planing"
-import useOnScreen from "../hooks/usOnScreen"
 
 const Feaures__Section = styled.section`
   min-height: 600px;
@@ -106,10 +105,6 @@ const Feaures = () => {
   const [expanded, setExpanded] = useState(false)
   const ref = useRef()
 
-  const isVisible = useOnScreen(ref)
-  useEffect(() => {
-    if (isVisible) console.log("features is visible")
-  }, [isVisible])
   return (
     <Feaures__Section
       ref={ref}

@@ -20,7 +20,7 @@ const PlanningIcon = () => (
         id="MKTG-2887-Service-page"
         transform="translate(-240.000000, -1748.000000)"
         stroke="#323232"
-        stroke-width="1.5"
+        strokeWidth="1.5"
       >
         <g id="planning" transform="translate(241.000000, 1749.000000)">
           <path

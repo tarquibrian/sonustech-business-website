@@ -33,7 +33,7 @@ const Side = styled.div`
   /* position: fixed; */
   border-right: 1px solid ${({ theme }) => theme.colors?.border};
   width: 100%;
-  z-index: 999;
+  z-index: 9999;
   position: relative;
   /* background: linear-gradient(
     180deg,
@@ -62,6 +62,7 @@ const Side__Content = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  z-index: 9999;
 
   .side-navigator {
     display: flex;
@@ -120,6 +121,7 @@ const Body = styled.div`
   position: relative;
   width: 100%;
   min-height: 100vh;
+  z-index: 0;
   /* background-color: black; */
 `
 

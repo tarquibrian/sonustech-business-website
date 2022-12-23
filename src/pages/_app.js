@@ -3,11 +3,11 @@ import { AnimatePresence } from "framer-motion"
 
 function MyApp({ Component, pageProps }) {
   return (
-    <AppProvider>
-      <AnimatePresence mode="wait" initial={false}>
+    <AnimatePresence mode="wait" initial={false}>
+      <AppProvider>
         <Component {...pageProps} />
-      </AnimatePresence>
-    </AppProvider>
+      </AppProvider>
+    </AnimatePresence>
   )
 }
 

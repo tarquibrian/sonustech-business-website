@@ -37,10 +37,20 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0 auto;
     border-bottom: 1px solid ${({ theme }) => theme.colors.border};
   }
+  
   a {
     display: inline-block;
     text-decoration: none;
     text-decoration-skip-ink: auto;
     color: inherit;
+  }
+
+  button { 
+    border-style: none;
+  }
+
+  img[alt=""],
+  img:not([alt]) {
+    filter: blur(5px);
   }
 `

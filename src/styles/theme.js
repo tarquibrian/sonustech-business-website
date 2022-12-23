@@ -1,25 +1,33 @@
 import mixins from "./mixins"
+
 export const lightTheme = {
-  body: "rgba(255, 255, 255, 1)",
+  body: `radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 239, 225, 1) 90%
+  )`,
   heroBackground: `radial-gradient(
     circle farthest-corner at 10% 20%,
-    rgba(215, 223, 252, 1) 0%,
     rgba(255, 255, 255, 1) 0%,
-    rgba(215, 223, 252, 1) 84%
+    #ebedee 90%
   )`,
-  text: "#000",
-  border: "#000",
-  background: "#fff",
-  foreground: "#000",
+  text: "#272727",
+  border: "rgba(0,0,0,1.0)",
+  background: "rgba(255,255,255,1.0)",
+  foreground: "rgba(0,0,0,1.0)",
   hoverBackground: "rgba(255,255,255, .7)",
 }
 
 export const darkTheme = {
-  body: "#000",
-  text: "#FAFAFA",
-  border: "#ced4da",
-  background: "#000",
-  foreground: "#fff",
+  body: `radial-gradient(
+    circle farthest-corner at 10% 20%,
+    rgba(40, 42, 56, 1) 0%,
+    rgba(2, 15, 28, 1) 81.3%
+  )`,
+  text: "rgba(250,250,250,1.0)",
+  border: "#AB9144",
+  background: "rgba(0,0,0,1.0)",
+  foreground: "rgba(255,255,255,1.0)",
   hoverBackground: "rgba(0,0,0,.5)",
   heroBackground: `radial-gradient(
     circle farthest-corner at 10% 20%,
@@ -38,8 +46,8 @@ export const redTheme = {
     rgba(255, 209, 67, 1) 0%,
     rgba(255, 1, 83, 1) 90%
   )`,
-  background: "#fff",
-  foreground: "#000",
+  background: "rgba(255,255,255,1.0)",
+  foreground: "rgba(0,0,0,1.0)",
   hoverBackground: "rgba(255,255,255, .4)",
 }
 

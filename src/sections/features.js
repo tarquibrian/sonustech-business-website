@@ -5,6 +5,7 @@ import gif from "../assets/images/development-lifecycle.gif"
 import { featuresData } from "../data/featuresData"
 import { AnimatePresence, motion } from "framer-motion"
 import ArrowListIcon from "../components/icons/arrowList"
+import PlanningIcon from "../components/icons/planing"
 
 const Feaures__Section = styled.section`
   min-height: 600px;
@@ -78,10 +79,12 @@ const Title = styled.div`
   justify-content: space-between;
   height: 70px;
   width: 100%;
-  h1 {
+  .icon {
+    display: flex;
     width: 100%;
-    &:hover {
-      cursor: pointer;
+    align-items: center;
+    gap: 1rem;
+    h1 {
     }
   }
   span {
@@ -110,7 +113,6 @@ const Feaures = () => {
           a structured and methodical way.
         </p>
       </Features__Header>
-
       <Features__Content>
         <ContentGif>
           <h1>LIFECYCLE</h1>
@@ -118,7 +120,7 @@ const Feaures = () => {
         </ContentGif>
         <ContentFeatures>
           {featuresData.map((item) => {
-            const { id, title, description } = item
+            const { id, title, description, svg } = item
             return (
               <Accordion
                 i={id}
@@ -127,6 +129,7 @@ const Feaures = () => {
                 expanded={expanded}
                 setExpanded={setExpanded}
                 key={id}
+                svg={svg}
               />
             )
           })}
@@ -138,17 +141,19 @@ const Feaures = () => {
 
 export default Feaures
 
-const Accordion = ({ i, expanded, setExpanded, title, description }) => {
+const Accordion = ({ i, expanded, setExpanded, title, description, svg }) => {
   const isOpen = i === expanded
   return (
     <Feature>
       <motion.header
         initial={false}
-        // animate={{ backgroundColor: isOpen ? "#FF0088" : "#0055FF" }}
         onClick={() => setExpanded(isOpen ? false : i)}
       >
         <Title>
-          <h1>{title}</h1>
+          <div className="icon">
+            {svg}
+            <h1>{title}</h1>
+          </div>
           <motion.span animate={{ rotate: isOpen ? 180 : 0 }}>
             <ArrowListIcon />
           </motion.span>

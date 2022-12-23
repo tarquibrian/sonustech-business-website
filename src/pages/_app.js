@@ -1,9 +1,12 @@
-import { AppProvider } from '../contexts/app.context'
+import { AppProvider } from "../contexts/app.context"
+import { AnimatePresence } from "framer-motion"
 
 function MyApp({ Component, pageProps }) {
   return (
     <AppProvider>
-      <Component {...pageProps} />
+      <AnimatePresence mode="wait" initial={false}>
+        <Component {...pageProps} />
+      </AnimatePresence>
     </AppProvider>
   )
 }

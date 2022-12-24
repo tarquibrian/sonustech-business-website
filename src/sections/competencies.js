@@ -28,6 +28,7 @@ const Competencies = () => {
             return (
               <>
                 <h1>{title}</h1>
+                <span>{svg}</span>
                 <p>{description}</p>
               </>
             )

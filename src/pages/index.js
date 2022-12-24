@@ -6,6 +6,7 @@ import Contact from "../sections/contact"
 import Team from "../sections/team"
 import Services from "../sections/services"
 import Features from "../sections/features"
+import Competencies from "../sections/competencies"
 
 const Index = () => {
   const { state, toggleTheme } = useAppContext()
@@ -17,6 +18,7 @@ const Index = () => {
       <Hero />
       <Services />
       <Features />
+      <Competencies />
       <Team />
       <Contact />
     </Layout>

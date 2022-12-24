@@ -69,13 +69,17 @@ const Side__Content = styled.div`
     flex-direction: column;
     gap: 1.4rem;
     width: 100%;
+    .isActive {
+      background-color: ${({ theme }) => theme.colors?.navBackgroundActive};
+      transition: 0.4s ease-in-out;
+    }
     a {
-      border: 1px solid ${({ theme }) => theme.colors.border};
-      background-color: ${({ theme }) => theme.colors.hoverBackground};
+      background-color: ${({ theme }) => theme.colors?.navBackground};
+      transition: 0.4s ease-in-out;
       margin: 0 auto;
       width: 40%;
       height: 12px;
-      border-radius: 5px;
+      border-radius: 3px;
       &:hover {
         cursor: pointer;
       }
@@ -121,17 +125,13 @@ const Body = styled.div`
   width: 100%;
   min-height: 100vh;
   z-index: 0;
-  /* background-color: black; */
 `
 
 const Layout = ({ children }) => {
   const { state, setTheme, setNavigation } = useAppContext()
   const theme = { ...base, colors: themesMap[state.currentTheme] }
   const nav = state.currentNavigation
-  console.log({ nav })
   return (
-    // <ThemeProvider theme={theme === "light" ? theme : theme}>
-
     <ThemeProvider theme={theme}>
       <SEO title="SONUSTECH | Software Company" />
       <GlobalStyle />
@@ -140,9 +140,21 @@ const Layout = ({ children }) => {
           <Side__Content>
             <Image src={logo} alt="sonustech logo" width={50} />
             <div className="side-navigator">
-              <a href="#hero" onClick={() => setNavigation("hero")}></a>
-              <a href="#services" onClick={() => setNavigation("services")}></a>
-              <a href="#features" onClick={() => setNavigation("features")}></a>
+              <a
+                href="#hero"
+                className={`${nav === "hero" ? "isActive" : ""}`}
+                onClick={() => setNavigation("hero")}
+              ></a>
+              <a
+                href="#services"
+                className={`${nav === "services" ? "isActive" : ""}`}
+                onClick={() => setNavigation("services")}
+              ></a>
+              <a
+                href="#features"
+                className={`${nav === "features" ? "isActive" : ""}`}
+                onClick={() => setNavigation("features")}
+              ></a>
               <a href="#services"></a>
               <a href="#services"></a>
             </div>

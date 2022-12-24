@@ -10,7 +10,6 @@ const BuildingIcon = () => (
     <title>building</title>
     <g
       id="Page-1"
-      stroke="none"
       strokeWidth="1"
       fill="none"
       fillRule="evenodd"
@@ -19,7 +18,7 @@ const BuildingIcon = () => (
       <g
         id="MKTG-2887-Service-page"
         transform="translate(-233.000000, -1934.000000)"
-        stroke="#323232"
+        stroke="none"
         strokeWidth="1.5"
       >
         <g id="building" transform="translate(233.000000, 1935.500000)">

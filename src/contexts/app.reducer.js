@@ -6,7 +6,7 @@ export const initialState = {
 
 const AppReducer = (state, action) => {
   const { type, payload } = action
-  console.log("payload", payload)
+  // console.log("payload", payload)
   switch (type) {
     case "TOGGLE THEME":
       const toggleTheme = state.currentTheme === "light" ? "dark" : "light"

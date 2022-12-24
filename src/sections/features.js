@@ -4,9 +4,10 @@ import React, { useEffect, useRef, useState } from "react"
 import styled from "styled-components"
 import gif from "../assets/images/development-lifecycle.gif"
 import { featuresData } from "../data/featuresData"
-import { AnimatePresence, motion } from "framer-motion"
+import { AnimatePresence, motion, useInView } from "framer-motion"
 import ArrowListIcon from "../components/icons/arrowList"
 import PlanningIcon from "../components/icons/planing"
+import { useAppContext } from "../contexts/app.context"
 
 const Feaures__Section = styled.section`
   min-height: 600px;
@@ -81,18 +82,24 @@ const Title = styled.div`
   height: 70px;
   width: 100%;
   .icon {
-    display: flex;
+    display: grid;
+    grid-template-columns: 50px auto 50px;
     width: 100%;
     align-items: center;
     gap: 1rem;
-    h1 {
+    stroke: red;
+    g {
+      stroke: ${({ theme }) => theme.colors?.border};
     }
-  }
-  span {
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    margin-right: 1rem;
+    span {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      margin-right: 1rem;
+    }
+    &:hover {
+      cursor: pointer;
+    }
   }
 `
 
@@ -104,13 +111,15 @@ const Description = styled.div`
 const Feaures = () => {
   const [expanded, setExpanded] = useState(false)
   const ref = useRef()
+  const isVisible = useInView(ref, { margin: "-400px" })
+  const { setNavigation } = useAppContext()
+
+  useEffect(() => {
+    if (isVisible) setNavigation("features")
+  }, [isVisible])
 
   return (
-    <Feaures__Section
-      ref={ref}
-      id="features"
-      // onLoad={() => console.log("hola")}
-    >
+    <Feaures__Section ref={ref} id="features">
       <Features__Header>
         <h1>CUSTOM SOFTWARE DEVELOPMENT LIFECYCLE</h1>
         <p>
@@ -159,10 +168,10 @@ const Accordion = ({ i, expanded, setExpanded, title, description, svg }) => {
           <div className="icon">
             {svg}
             <h1>{title}</h1>
+            <motion.span animate={{ rotate: isOpen ? 180 : 0 }}>
+              <ArrowListIcon />
+            </motion.span>
           </div>
-          <motion.span animate={{ rotate: isOpen ? 180 : 0 }}>
-            <ArrowListIcon />
-          </motion.span>
         </Title>
       </motion.header>
       <AnimatePresence initial={false}>

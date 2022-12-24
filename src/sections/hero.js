@@ -6,10 +6,11 @@ import Carousel from "../components/carousel"
 import WebDev from "../assets/images/webdev.png"
 import Link from "next/link"
 import { useInView } from "framer-motion"
+import { useAppContext } from "../contexts/app.context"
 
 const Hero__Section = styled.section`
   padding: 5rem 0 0 0;
-  height: calc(100vh + 2px);
+  height: 100vh;
   width: 100%;
   min-height: 90vh;
   overflow: hidden;
@@ -145,13 +146,14 @@ const Content__Image = styled.div`
 
 const Hero = () => {
   const ref = useRef()
+  const { setNavigation } = useAppContext()
 
   const isInView = useInView(ref, {
-    margin: "-200px",
+    margin: "-500px",
   })
 
   useEffect(() => {
-    if (isInView) console.log("hero is visible")
+    if (isInView) setNavigation("hero")
   }, [isInView])
   return (
     <Hero__Section id="hero" ref={ref}>

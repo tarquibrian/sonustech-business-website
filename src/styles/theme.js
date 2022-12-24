@@ -12,6 +12,8 @@ export const lightTheme = {
   background: "rgba(255,255,255,1.0)",
   foreground: "rgba(0,0,0,1.0)",
   hoverBackground: "rgba(0,0,0, .2)",
+  navBackground: "rgba(0,0,0,0.4)",
+  navBackgroundActive: "rgba(0,0,0,1)",
 }
 
 export const darkTheme = {
@@ -21,7 +23,7 @@ export const darkTheme = {
     rgba(2, 15, 28, 1) 81.3%
   )`,
   text: "rgba(250,250,250,1.0)",
-  border: "#AB9144",
+  border: "rgba(171,145,68,1.0)",
   background: "rgba(0,0,0,1.0)",
   foreground: "rgba(255,255,255,1.0)",
   hoverBackground: "rgba(0,0,0,.5)",
@@ -30,6 +32,8 @@ export const darkTheme = {
     rgba(90, 92, 106, 1) 0%,
     rgba(32, 45, 58, 1) 81.3%
   )`,
+  navBackground: "rgba(171,145,68,.2)",
+  navBackgroundActive: "rgba(171,145,68,1.0)",
 }
 
 export const redTheme = {
@@ -45,6 +49,8 @@ export const redTheme = {
   background: "rgba(255,255,255,1.0)",
   foreground: "rgba(0,0,0,1.0)",
   hoverBackground: "rgba(255,255,255, .4)",
+  navBackground: "rgba(0,0,0,0.4)",
+  navBackgroundActive: "rgba(0,0,0,1)",
 }
 
 export const base = {

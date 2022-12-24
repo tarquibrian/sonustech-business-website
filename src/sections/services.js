@@ -1,6 +1,8 @@
+import { useInView } from "framer-motion"
 import Image from "next/image"
 import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
+import { useAppContext } from "../contexts/app.context"
 import { servicesData } from "../data/servicesData"
 
 const Services__Section = styled.section`
@@ -133,6 +135,12 @@ const BodyCard = styled.div`
 `
 const Services = () => {
   const ref = useRef()
+  const isVisible = useInView(ref, { margin: "-500px" })
+  const { setNavigation } = useAppContext()
+
+  useEffect(() => {
+    if (isVisible) setNavigation("services")
+  }, [isVisible])
 
   return (
     <Services__Section id="services" ref={ref}>

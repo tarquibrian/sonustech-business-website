@@ -38,6 +38,12 @@ export const competenciesData = {
         "Intellectsoft’s boutique format allows us to maintain a highly customized approach, build a long-term partnership, and remain focused on specific tasks at hand.",
       svg: <CareerIcon />,
     },
+    {
+      title: "Client-centricity",
+      description:
+        "Intellectsoft’s boutique format allows us to maintain a highly customized approach, build a long-term partnership, and remain focused on specific tasks at hand.",
+      svg: <CareerIcon />,
+    },
   ],
 }
 /*

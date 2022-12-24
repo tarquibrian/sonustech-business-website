@@ -1,9 +1,11 @@
 import { createGlobalStyle } from "styled-components"
 
 import Fonts from "./fonts"
+import variables from "./variables"
 
 export const GlobalStyle = createGlobalStyle`
   ${Fonts}
+  ${variables}
   html {
     box-sizing: border-box;
     width: 100%;
@@ -53,4 +55,128 @@ export const GlobalStyle = createGlobalStyle`
   img:not([alt]) {
     filter: blur(5px);
   }
+
+/* 
+html, body {
+  min-height: 100%;
+} */
+
+/* html {
+  -webkit-tap-highlight-color: transparent;
+  -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+} */
+
+
+/* img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+svg:not([fill]) {
+  fill: currentColor;
+}
+ 
+svg:not(:root) {
+  overflow: hidden;
+}
+
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+textarea {
+  overflow: auto;
+  resize: vertical;
+  resize: block;
+}
+
+button,
+[type="button"],
+[type="reset"],
+[type="submit"] {
+  -webkit-appearance: button;
+} */
+
+
+/* ::-moz-selection {
+  text-shadow: none;
+}
+
+::selection {
+  text-shadow: none;
+} */
+/* 
+::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+:-moz-focusring {
+  outline: 1px dotted ButtonText;
+}
+
+:-moz-ui-invalid {
+  box-shadow: none;
+} */
+ 
+/* ::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+::-webkit-input-placeholder {
+  color: inherit;
+  opacity: 1;
+}
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+} */
+
+
+/* a,
+area,
+button,
+input,
+label,
+select,
+summary,
+textarea,
+[tabindex] {
+  touch-action: manipulation;
+}
+ 
+[aria-busy="true"] {
+  cursor: progress;
+}
+
+[aria-controls] {
+  cursor: pointer;
+}
+
+[aria-disabled="true"],
+[disabled] {
+  cursor: not-allowed;
+}
+
+[aria-hidden="false"][hidden] {
+  display: initial;
+}
+
+[aria-hidden="false"][hidden]:not(:focus) {
+  clip: rect(0, 0, 0, 0);
+  position: absolute;
+}
+
+
+#root, #__next {
+  isolation: isolate;
+} */
 `

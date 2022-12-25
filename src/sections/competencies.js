@@ -1,7 +1,8 @@
-import React, { useRef } from "react"
+import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
 import { competenciesData } from "../data/competenciesData"
-import { motion } from "framer-motion"
+import { motion, useInView } from "framer-motion"
+import { useAppContext } from "../contexts/app.context"
 
 const Competencies__Section = styled.section`
   min-height: 500px;
@@ -9,12 +10,13 @@ const Competencies__Section = styled.section`
   margin: auto;
 `
 const Competencies__Content = styled.div`
-  margin: 5rem auto;
+  margin: auto;
+  padding: 5rem 0;
   width: 90%;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: repeat(2, auto);
-  gap: 2rem;
+  gap: 4.5rem;
 `
 const Content__Header = styled.header`
   width: 100%;
@@ -80,6 +82,13 @@ const Competencie__Card = styled(motion.div)`
 
 const Competencies = () => {
   const ref = useRef()
+  const isVisible = useInView(ref, { margin: "-200px" })
+  const { setNavigation } = useAppContext()
+  useEffect(() => {
+    if (isVisible) {
+      setNavigation("competencies")
+    }
+  }, [isVisible])
   return (
     <Competencies__Section id="competencies" ref={ref}>
       <Competencies__Content>
@@ -108,7 +117,7 @@ const Competencies = () => {
           {competenciesData.competencies.map((item, i) => {
             const { title, description, svg } = item
             return (
-              <Competencie__Card>
+              <Competencie__Card key={i}>
                 <div className="card-side">
                   <div className="icon">{svg}</div>
                 </div>

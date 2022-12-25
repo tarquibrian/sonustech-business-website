@@ -88,7 +88,7 @@ const Description = styled.div`
 const Feaures = () => {
   const [expanded, setExpanded] = useState(false)
   const ref = useRef()
-  const isVisible = useInView(ref, { margin: "-400px" })
+  const isVisible = useInView(ref, { margin: "-200px" })
   const { setNavigation } = useAppContext()
 
   useEffect(() => {

@@ -3,7 +3,7 @@ import CareerIcon from "../components/icons/competencies/career"
 export const competenciesData = {
   header: {
     title: "OUR COMPETENCIES",
-    subtitle: "WHY CHOOSE INTELLECTSOFT",
+    subtitle: "Why chose SONUSTECH?",
     description:
       "Using deep domain expertise of our software developers, we create impactful digital solutions that drive meaningful change with a strategic vision.",
   },

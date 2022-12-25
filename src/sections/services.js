@@ -135,7 +135,7 @@ const BodyCard = styled.div`
 `
 const Services = () => {
   const ref = useRef()
-  const isVisible = useInView(ref, { margin: "-500px" })
+  const isVisible = useInView(ref, { margin: "-200px" })
   const { setNavigation } = useAppContext()
 
   useEffect(() => {

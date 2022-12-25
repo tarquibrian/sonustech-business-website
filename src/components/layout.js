@@ -143,19 +143,23 @@ const Layout = ({ children }) => {
               <a
                 href="#hero"
                 className={`${nav === "hero" ? "isActive" : ""}`}
-                onClick={() => setNavigation("hero")}
+                // onClick={() => setNavigation("hero")}
               ></a>
               <a
                 href="#services"
                 className={`${nav === "services" ? "isActive" : ""}`}
-                onClick={() => setNavigation("services")}
+                // onClick={() => setNavigation("services")}
               ></a>
               <a
                 href="#features"
                 className={`${nav === "features" ? "isActive" : ""}`}
-                onClick={() => setNavigation("features")}
+                // onClick={() => setNavigation("features")}
               ></a>
-              <a href="#services"></a>
+              <a
+                href="#competencies"
+                className={`${nav === "competencies" ? "isActive" : ""}`}
+                // onClick={() => setNavigation("competencies")}
+              ></a>
               <a href="#services"></a>
             </div>
             <div className="side-colors">

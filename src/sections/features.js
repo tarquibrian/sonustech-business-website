@@ -16,17 +16,20 @@ const Feaures__Section = styled.section`
   /* padding: 4rem 0; */
 `
 const Features__Content = styled.div`
-  width: 90%;
-  margin: 5rem auto;
+  /* width: 90%; */
+  padding: 5rem 0;
+  margin: auto;
   height: 100%;
   display: grid;
   grid-template-rows: repeat(2, auto);
   gap: 3rem;
 `
 const Content__Header = styled.header`
-  display: grid;
-  justify-content: flex-end;
-  text-align: end;
+  /* display: grid; */
+  /* justify-content: flex-end; */
+  /* text-align: end; */
+  width: 90%;
+  margin: auto;
   h1 {
     font-size: var(--title);
     margin-bottom: 2rem;
@@ -41,9 +44,26 @@ const Content__Header = styled.header`
   }
 `
 
-const ContentGif = styled.div``
-
-const ContentFeatures = styled.div``
+const Content__Features = styled.div`
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) 1fr;
+  /* justify-content: center; */
+  /* align-items: center; */
+  .content__side {
+    background-color: lightcoral;
+    h1 {
+      font-size: var(--title-content);
+    }
+    img {
+      border: var(--border) solid ${({ theme }) => theme.colors?.border};
+      width: 80%;
+      height: auto;
+    }
+  }
+  .content__body {
+    background-color: blue;
+  }
+`
 
 const Feature = styled.div`
   overflow: hidden;
@@ -108,26 +128,30 @@ const Feaures = () => {
           </p>
         </Content__Header>
 
-        <ContentFeatures>
-          <ContentGif>
-            <h1>LIFECYCLE</h1>
-            <Image src={gif} alt="git lifecycle development" />
-          </ContentGif>
-          {featuresData.map((item) => {
-            const { id, title, description, svg } = item
-            return (
-              <Accordion
-                i={id}
-                title={title}
-                description={description}
-                expanded={expanded}
-                setExpanded={setExpanded}
-                key={id}
-                svg={svg}
-              />
-            )
-          })}
-        </ContentFeatures>
+        <Content__Features>
+          <div className="content__side">
+            <div className="side__gif">
+              <h1>LIFECYCLE</h1>
+              <Image src={gif} alt="git lifecycle development" />
+            </div>
+          </div>
+          <div className="content__body">
+            {featuresData.map((item) => {
+              const { id, title, description, svg } = item
+              return (
+                <Accordion
+                  i={id}
+                  title={title}
+                  description={description}
+                  expanded={expanded}
+                  setExpanded={setExpanded}
+                  key={id}
+                  svg={svg}
+                />
+              )
+            })}
+          </div>
+        </Content__Features>
       </Features__Content>
     </Feaures__Section>
   )

@@ -12,73 +12,50 @@ import { useAppContext } from "../contexts/app.context"
 const Feaures__Section = styled.section`
   min-height: 600px;
   width: 100%;
-  display: grid;
-  gap: 4rem;
-  padding: 4rem 0;
+  /* gap: 4rem; */
+  /* padding: 4rem 0; */
 `
-
-const Features__Header = styled.header`
-  margin: 0 auto;
-  max-width: 950px;
+const Features__Content = styled.div`
+  width: 90%;
+  margin: 5rem auto;
+  height: 100%;
   display: grid;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+  grid-template-rows: repeat(2, auto);
+  gap: 3rem;
+`
+const Content__Header = styled.header`
+  display: grid;
+  justify-content: flex-end;
+  text-align: end;
   h1 {
-    font-size: clamp(20px, 40px, 2.4vw);
+    font-size: var(--title);
+    margin-bottom: 2rem;
+  }
+  h2 {
+    font-size: var(--subtitle);
   }
   p {
-    font-size: clamp(10px, 18px, 3rem);
+    max-width: 750px;
+    font-size: var(--description);
+    /* background-color: red; */
   }
 `
 
-const Features__Content = styled.div`
-  display: grid;
-  grid-template-columns: repeat(10, 1fr);
-  gap: 2rem;
-  width: 100%;
-  height: 100%;
-  min-height: 200px;
-`
+const ContentGif = styled.div``
 
-const ContentGif = styled.div`
-  grid-column: 1/7;
-  justify-self: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: start;
-  gap: 2rem;
-  max-width: 500px;
-  height: 100%;
-  img {
-    margin: 0 auto;
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-  }
-`
-
-const ContentFeatures = styled.div`
-  grid-column: 7 / -1;
-  display: flex;
-  flex-direction: column;
-  /* gap: 1rem; */
-  transition: 0.3 ease;
-  /* max-width: 500px; */
-`
+const ContentFeatures = styled.div``
 
 const Feature = styled.div`
   overflow: hidden;
   transition: 0.3s ease;
   border-bottom: 1px solid ${({ theme }) => theme.colors.border};
-  width: 100%;
+  /* width: 100%; */
 `
 
 const Title = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  /* align-items: center; */
+  /* justify-content: space-between; */
   height: 70px;
   width: 100%;
   .icon {
@@ -95,7 +72,7 @@ const Title = styled.div`
       cursor: pointer;
       display: flex;
       align-items: center;
-      margin-right: 1rem;
+      /* margin-right: 2rem; */
     }
     &:hover {
       cursor: pointer;
@@ -120,20 +97,22 @@ const Feaures = () => {
 
   return (
     <Feaures__Section ref={ref} id="features">
-      <Features__Header>
-        <h1>CUSTOM SOFTWARE DEVELOPMENT LIFECYCLE</h1>
-        <p>
-          We employ best practice processes and development methodologies as a
-          foundation for rapid building of cutting-edge technology solutions in
-          a structured and methodical way.
-        </p>
-      </Features__Header>
       <Features__Content>
-        <ContentGif>
-          <h1>LIFECYCLE</h1>
-          <Image src={gif} alt="git lifecycle development" />
-        </ContentGif>
+        <Content__Header>
+          <h1>OUR EXPERTICES</h1>
+          <h2>CUSTOM SOFTWARE DEVELOPMENT LIFECYCLE</h2>
+          <p>
+            We employ best practice processes and development methodologies as a
+            foundation for rapid building of cutting-edge technology solutions
+            in a structured and methodical way.
+          </p>
+        </Content__Header>
+
         <ContentFeatures>
+          <ContentGif>
+            <h1>LIFECYCLE</h1>
+            <Image src={gif} alt="git lifecycle development" />
+          </ContentGif>
           {featuresData.map((item) => {
             const { id, title, description, svg } = item
             return (

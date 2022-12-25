@@ -1,24 +1,25 @@
 import React, { useRef } from "react"
 import styled from "styled-components"
 import { competenciesData } from "../data/competenciesData"
+import { motion } from "framer-motion"
 
 const Competencies__Section = styled.section`
   min-height: 500px;
   width: 100%;
+  margin: auto;
 `
 const Competencies__Content = styled.div`
-  margin: 0 auto;
-  /* width: 90%; */
+  margin: 5rem auto;
+  width: 90%;
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 400px auto;
+  grid-template-rows: repeat(2, auto);
+  gap: 2rem;
 `
 const Content__Header = styled.header`
-  /* height: 100%; */
-  /* min-height: 300px; */
-  width: 90%;
+  width: 100%;
   margin: auto;
-  /* margin: 3rem; */
+  /* background-color: red; */
 `
 
 const Title = styled.div`
@@ -30,8 +31,6 @@ const Title = styled.div`
 const Subtitle = styled.div`
   h2 {
     font-size: var(--subtitle);
-    /* margin-bottom: 1rem; */
-    /* font-size: 1rem; */
   }
 `
 const Description = styled.div`
@@ -39,40 +38,37 @@ const Description = styled.div`
   font-size: var(--description);
 `
 
-const Content__Competencies = styled.div`
+const Content__Competencies = styled(motion.div)`
+  width: 100%;
+  margin: auto;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 1fr 1fr;
-  /* gap: rem; */
-  svg {
-    height: 170px;
-    width: auto;
-    object-fit: contain;
-  }
-  /* background-color: lightblue; */
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* grid-template-rows: 1fr 1fr; */
+  /* align-items: center; */
+  /* justify-content: center; */
+  gap: 1rem;
+  background-color: lightblue;
 `
 
-const Competencie__Card = styled.div`
-  /* background-color: lightgray; */
-  max-height: 380px;
+const Competencie__Card = styled(motion.div)`
+  background-color: lightgray;
+  /* max-height: 380px; */
+  /* max-width: 400px; */
   position: relative;
   width: 100%;
   text-align: center;
-
-  h1 {
-    padding: 1rem;
-    border-bottom: 1px solid ${({ theme }) => theme.colors?.border};
-  }
-
-  .body {
-    height: 300px;
-    width: 100%;
+  header {
+    background-color: red;
     svg {
-      padding: 2rem 0;
-      width: 100%;
-      height: 100%;
+      height: 170px;
+      width: auto;
       object-fit: contain;
     }
+  }
+
+  h1 {
+    /* padding: 1rem; */
+    /* border-bottom: 1px solid ${({ theme }) => theme.colors?.border}; */
   }
 
   p {
@@ -98,13 +94,32 @@ const Competencies = () => {
             <p>{competenciesData.header.description}</p>
           </Description>
         </Content__Header>
-        <Content__Competencies>
+        <Content__Competencies
+          variants={{
+            hidden: { opacity: 0 },
+            show: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.5,
+              },
+            },
+          }}
+        >
           {competenciesData.competencies.map((item, i) => {
             const { title, description, svg } = item
             return (
-              <Competencie__Card key={i}>
-                <h1>{title}</h1>
-                <div className="body">{svg}</div>
+              <Competencie__Card
+                key={i}
+                variants={{
+                  hidden: { opacity: 0 },
+                  show: { opacity: 1 },
+                }}
+              >
+                <header>
+                  <span>{svg}</span>
+                  <h1>{title}</h1>
+                </header>
+                {/* <div className="body">{svg}</div> */}
                 {/* <p>{description}</p> */}
               </Competencie__Card>
             )

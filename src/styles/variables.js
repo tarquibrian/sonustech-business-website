@@ -16,9 +16,11 @@ const variables = css`
 
     --title: clamp(32px, 4vw, 72px);
     --subtitle: clamp(18px, 3vw, 32px);
+    --title-content: clamp(16px, 3vw, 20px);
     --description: clamp(12px, 2vw, 16px);
 
     --border-radius: 4px;
+    --border: 1px;
     --nav-height: 100px;
     --nav-scroll-height: 70px;
 

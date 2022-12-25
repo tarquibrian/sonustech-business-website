@@ -25,12 +25,13 @@ const Content__Header = styled.header`
 const Title = styled.div`
   h1 {
     font-size: var(--title);
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
   }
 `
 const Subtitle = styled.div`
   h2 {
     font-size: var(--subtitle);
+    margin-bottom: 0.8rem;
   }
 `
 const Description = styled.div`
@@ -42,39 +43,38 @@ const Content__Competencies = styled(motion.div)`
   width: 100%;
   margin: auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  /* grid-template-rows: 1fr 1fr; */
-  /* align-items: center; */
-  /* justify-content: center; */
-  gap: 1rem;
-  background-color: lightblue;
+  grid-template-columns: repeat(auto-fill, minmax(400px, auto));
+  gap: 4rem;
 `
 
 const Competencie__Card = styled(motion.div)`
-  background-color: lightgray;
-  /* max-height: 380px; */
-  /* max-width: 400px; */
-  position: relative;
-  width: 100%;
-  text-align: center;
-  header {
-    background-color: red;
-    svg {
-      height: 170px;
-      width: auto;
-      object-fit: contain;
+  display: grid;
+  grid-template-columns: 100px auto;
+  gap: 3rem;
+  .card-side {
+    .icon {
+      width: 100%;
+      height: 100px;
+      background-color: #fff;
+      border-radius: 100%;
+      border: var(--border) solid ${({ theme }) => theme.colors?.border};
+      overflow: hidden;
+      svg {
+        height: 100%;
+        width: 100%;
+      }
     }
   }
-
-  h1 {
-    /* padding: 1rem; */
-    /* border-bottom: 1px solid ${({ theme }) => theme.colors?.border}; */
-  }
-
-  p {
-    position: absolute;
-    top: 0;
-    left: 0;
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    h1 {
+      font-size: var(--title-content);
+    }
+    p {
+      font-size: var(--description);
+    }
   }
 `
 
@@ -108,19 +108,15 @@ const Competencies = () => {
           {competenciesData.competencies.map((item, i) => {
             const { title, description, svg } = item
             return (
-              <Competencie__Card
-                key={i}
-                variants={{
-                  hidden: { opacity: 0 },
-                  show: { opacity: 1 },
-                }}
-              >
-                <header>
-                  <span>{svg}</span>
+              <Competencie__Card>
+                <div className="card-side">
+                  <div className="icon">{svg}</div>
+                </div>
+                <div className="card-body">
                   <h1>{title}</h1>
-                </header>
+                  <p>{description}</p>
+                </div>
                 {/* <div className="body">{svg}</div> */}
-                {/* <p>{description}</p> */}
               </Competencie__Card>
             )
           })}

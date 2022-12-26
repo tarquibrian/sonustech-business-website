@@ -65,9 +65,7 @@ const Content__Features = styled.div`
       border: var(--border) solid ${({ theme }) => theme.colors?.border};
 
       img {
-        display: flex;
         width: 100%;
-        height: 490px;
         object-fit: contain;
       }
     }

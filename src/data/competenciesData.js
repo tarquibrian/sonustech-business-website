@@ -1,8 +1,13 @@
 import CareerIcon from "../components/icons/competencies/career"
+import StarIcon from "../components/icons/competencies/star"
 
 export const competenciesData = {
   header: {
-    title: "OUR COMPETENCIES",
+    title: {
+      preTitle: "OUR",
+      postTitle: "Competencies",
+      svg: <StarIcon />,
+    },
     subtitle: "Why chose SONUSTECH?",
     description:
       "Using deep domain expertise of our software developers, we create impactful digital solutions that drive meaningful change with a strategic vision.",

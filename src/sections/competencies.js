@@ -3,6 +3,7 @@ import styled from "styled-components"
 import { competenciesData } from "../data/competenciesData"
 import { motion, useInView } from "framer-motion"
 import { useAppContext } from "../contexts/app.context"
+import StarIcon from "../components/icons/competencies/star"
 
 const Competencies__Section = styled.section`
   min-height: 500px;
@@ -28,6 +29,36 @@ const Title = styled.div`
   h1 {
     font-size: var(--title);
     margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    span {
+      font-family: "Cormorant", sans-serif;
+      font-weight: bold;
+      font-style: italic;
+      border: 2px solid ${({ theme }) => theme.colors?.border};
+      /* border-radius: 20px; */
+      padding: 0.5rem 1.5rem 0.5rem 1rem;
+      background: linear-gradient(
+        135deg,
+        rgba(157, 145, 138, 1) 0%,
+        rgba(190, 180, 172, 1) 100%
+      );
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      width: fit-content;
+      position: relative;
+      transition: 0.2s ease;
+      svg {
+        width: 50px;
+        height: 50px;
+      }
+      &:hover {
+        box-shadow: 8px 8px ${({ theme }) => theme.colors?.border};
+        transform: translate(-8px, -8px);
+      }
+    }
   }
 `
 const Subtitle = styled.div`
@@ -94,7 +125,13 @@ const Competencies = () => {
       <Competencies__Content>
         <Content__Header>
           <Title>
-            <h1>{competenciesData.header.title}</h1>
+            <h1>
+              {competenciesData.header.title.preTitle}
+              <span>
+                <StarIcon />
+                {competenciesData.header.title.postTitle}
+              </span>
+            </h1>
           </Title>
           <Subtitle>
             <h2>{competenciesData.header.subtitle}</h2>

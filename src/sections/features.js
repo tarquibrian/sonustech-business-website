@@ -16,7 +16,7 @@ const Feaures__Section = styled.section`
   /* padding: 4rem 0; */
 `
 const Features__Content = styled.div`
-  /* width: 90%; */
+  width: 90%;
   padding: 5rem 0;
   margin: auto;
   height: 100%;
@@ -28,8 +28,8 @@ const Content__Header = styled.header`
   /* display: grid; */
   /* justify-content: flex-end; */
   /* text-align: end; */
-  width: 90%;
-  margin: auto;
+  /* width: 90%; */
+  /* margin: auto; */
   h1 {
     font-size: var(--title);
     margin-bottom: 2rem;
@@ -46,63 +46,75 @@ const Content__Header = styled.header`
 
 const Content__Features = styled.div`
   display: grid;
-  grid-template-columns: minmax(200px, 1fr) 1fr;
-  /* justify-content: center; */
-  /* align-items: center; */
-  .content__side {
-    background-color: lightcoral;
+  /* grid-template-columns: minmax(200px, 600px) 1fr; */
+  /* grid-template-columns: repeat(11, 1fr); */
+  grid-template-columns: 1fr 1fr 1fr;
+
+  .content__body-left {
+    /* grid-column: 1/7; */
+    /* grid-row: 1/-1; */
     h1 {
       font-size: var(--title-content);
     }
-    img {
+
+    .side__gif-body {
+      display: flex;
+      align-items: center;
+      background-color: white;
+      height: 100%;
       border: var(--border) solid ${({ theme }) => theme.colors?.border};
-      width: 80%;
-      height: auto;
+
+      img {
+        display: flex;
+        width: 100%;
+        height: 490px;
+        object-fit: contain;
+      }
     }
   }
-  .content__body {
-    background-color: blue;
+
+  .content__body-right {
+    /* grid-column: 7/-1; */
+    /* grid-row: 1/-1; */
+    /* background-color: red; */
+    height: 100%;
   }
 `
 
 const Feature = styled.div`
   overflow: hidden;
   transition: 0.3s ease;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+  border-bottom: var(--border) solid ${({ theme }) => theme.colors.border};
+
   /* width: 100%; */
 `
 
 const Title = styled.div`
-  display: flex;
-  /* align-items: center; */
-  /* justify-content: space-between; */
   height: 70px;
   width: 100%;
-  .icon {
-    display: grid;
-    grid-template-columns: 50px auto 50px;
-    width: 100%;
-    align-items: center;
-    gap: 1rem;
-    stroke: red;
-    g {
-      stroke: ${({ theme }) => theme.colors?.border};
-    }
-    span {
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      /* margin-right: 2rem; */
-    }
-    &:hover {
-      cursor: pointer;
-    }
+  display: grid;
+  grid-template-columns: 50px auto min-content;
+  width: 100%;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1rem;
+  h1 {
+    font-size: var(--title-content);
+  }
+  g {
+    stroke: ${({ theme }) => theme.colors?.border};
+  }
+  .title__icon-left,
+  .title__icon-right {
+    display: flex;
+  }
+  &:hover {
+    cursor: pointer;
   }
 `
 
 const Description = styled.div`
-  width: 90%;
-  padding-bottom: 2rem;
+  padding: 0 0 2rem 1rem;
 `
 
 const Feaures = () => {
@@ -129,13 +141,12 @@ const Feaures = () => {
         </Content__Header>
 
         <Content__Features>
-          <div className="content__side">
-            <div className="side__gif">
-              <h1>LIFECYCLE</h1>
-              <Image src={gif} alt="git lifecycle development" />
+          <div className="content__body-left">
+            <div className="side__gif-body">
+              <Image src={gif} width={500} alt="git lifecycle development" />
             </div>
           </div>
-          <div className="content__body">
+          <div className="content__body-right">
             {featuresData.map((item) => {
               const { id, title, description, svg } = item
               return (
@@ -168,13 +179,14 @@ const Accordion = ({ i, expanded, setExpanded, title, description, svg }) => {
         onClick={() => setExpanded(isOpen ? false : i)}
       >
         <Title>
-          <div className="icon">
-            {svg}
-            <h1>{title}</h1>
-            <motion.span animate={{ rotate: isOpen ? 180 : 0 }}>
-              <ArrowListIcon />
-            </motion.span>
-          </div>
+          <span className="title__icon-left">{svg}</span>
+          <h1>{title}</h1>
+          <motion.span
+            className="title__icon-right"
+            animate={{ rotate: isOpen ? 180 : 0 }}
+          >
+            <ArrowListIcon />
+          </motion.span>
         </Title>
       </motion.header>
       <AnimatePresence initial={false}>

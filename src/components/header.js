@@ -17,7 +17,7 @@ export const Header__Content = styled.nav`
   height: 5rem;
   width: 100%;
   z-index: 99999;
-  border-bottom: 1px solid ${({ theme }) => theme.colors?.border};
+  border-bottom: var(--border) solid ${({ theme }) => theme.colors?.border};
   @media screen and (max-width: 800px) {
     display: none;
   }
@@ -40,7 +40,7 @@ const Container = styled.div`
 `
 
 const Content__Title = styled.span`
-  border-right: 1px solid ${({ theme }) => theme.colors?.border};
+  border-right: var(--border) solid ${({ theme }) => theme.colors?.border};
   height: 100%;
   width: 100%;
   display: flex;

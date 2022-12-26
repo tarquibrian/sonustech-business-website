@@ -56,10 +56,10 @@ const Services__Content = styled.div`
     width: 100%;
     height: 100%;
     &:first-of-type {
-      border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+      border-bottom: var(--border) solid ${({ theme }) => theme.colors.border};
     }
     &:last-of-type {
-      border-top: 1px solid ${({ theme }) => theme.colors.border};
+      border-top: var(--border) solid ${({ theme }) => theme.colors.border};
     }
   }
 `
@@ -67,7 +67,7 @@ const Services__Content = styled.div`
 const Card = styled.div`
   width: 100%;
   height: 100%;
-  border-right: 1px solid ${({ theme }) => theme.colors.border};
+  border-right: var(--border) solid ${({ theme }) => theme.colors.border};
   display: flex;
   flex-direction: column;
   position: relative;
@@ -109,7 +109,6 @@ const Overlay = styled.div`
   transition: 0.3s ease;
 `
 const BodyCard = styled.div`
-  background-color: blueviolet;
   display: flex;
   width: 100%;
   min-height: 200px;

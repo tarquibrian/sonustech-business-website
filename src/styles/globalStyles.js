@@ -37,7 +37,7 @@ export const GlobalStyle = createGlobalStyle`
 
   section {
     margin: 0 auto;
-    border-bottom: 1px solid ${({ theme }) => theme.colors.border};
+    border-bottom: var(--border) solid ${({ theme }) => theme.colors.border};
   }
   
   a {

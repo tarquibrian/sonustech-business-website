@@ -31,7 +31,7 @@ const LayoutPartition = styled.div`
 
 const Side = styled.div`
   /* position: fixed; */
-  border-right: 1px solid ${({ theme }) => theme.colors?.border};
+  border-right: var(--border) solid ${({ theme }) => theme.colors?.border};
   width: 100%;
   z-index: 9999;
   position: relative;
@@ -98,7 +98,7 @@ const Side__Content = styled.div`
       button {
         width: 25px;
         height: 25px;
-        border: 1px solid ${({ theme }) => theme.colors?.border};
+        border: var(--border) solid ${({ theme }) => theme.colors?.border};
         border-radius: 2px;
         &:hover {
           cursor: pointer;

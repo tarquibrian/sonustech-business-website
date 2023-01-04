@@ -139,7 +139,6 @@ const Layout = ({ children }) => {
             <Image src={logo} alt="sonustech logo" width={50} />
             <div className="side-navigator">
               <a
-                // href="#hero"
                 className={`${nav === "hero" ? "isActive" : ""}`}
                 onClick={scrollTop}
               ></a>

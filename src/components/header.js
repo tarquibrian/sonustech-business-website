@@ -29,6 +29,7 @@ const Container = styled.div`
   justify-content: space-between;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   height: 5rem;
+  backdrop-filter: blur(15px);
   width: 100%;
   border-bottom: var(--border) solid ${({ theme }) => theme.colors?.border};
   transition: 0.3s ease-in;
@@ -48,7 +49,6 @@ const Container = styled.div`
       css`
         height: 3.5rem;
         transform: translateY(0px);
-        backdrop-filter: blur(15px);
       `};
 
     ${({ scrollDirection, scrollIsTop }) =>

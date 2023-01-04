@@ -22,7 +22,7 @@ const Hero__Content = styled.div`
   position: relative;
   height: 100%;
   display: grid;
-  grid-template-columns: 1.5fr auto;
+  grid-template-columns: repeat(5, 1fr);
   /* overflow: hidden; */
 `
 
@@ -31,88 +31,114 @@ const Content__Title = styled.div`
   /* display: flex; */
   /* align-items: center; */
   /* justify-content: center; */
+  grid-column: 1/4;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 5fr 0.6fr 1fr;
 
-  .content__card {
-    height: 100%;
-    display: grid;
-    grid-template-rows: 5fr 0.6fr 1fr;
-    .content__card-main {
-      background-color: red;
-      h1 {
-        font-size: clamp(1rem, 5vw, 5rem);
-        font-weight: 600;
-        /* line-height: 5rem; */
-        p {
-          font-size: 1.2rem;
-          line-height: 1.5;
-        }
+  border-right: var(--border) solid ${({ theme }) => theme.colors?.border};
+
+  .content__main {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    gap: 3rem;
+
+    /* align-items: ; */
+    /* justify-content: space-between; */
+    h1 {
+      font-family: "Oswald", sans-serif;
+      font-size: clamp(1rem, 5vw, 5rem);
+      font-weight: 600;
+      /* line-height: 5rem; */
+      p {
+        font-size: 1.2rem;
+        line-height: 1.5;
       }
-      .btn {
-        /* background-color: #000; */
-        color: ${({ theme }) => theme.colors?.background};
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        /* width: fit-content; */
-        a {
-          padding: 1rem 1rem 1rem 1.5rem;
-          background-color: ${({ theme }) => theme.colors?.foreground};
-          span {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            line-height: 1;
-            gap: 0.1rem;
-            transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
-          }
-          &:hover {
-            span {
-              gap: 0.8rem;
-            }
-          }
-        }
-        &::after {
-          content: "";
-          display: block;
-          width: 0px;
-          height: 1px;
-          top: 0;
-          left: 0;
-          background-color: ${({ theme }) => theme.colors?.border};
-          transition: 0.3s ease;
+    }
+    .btn {
+      /* background-color: #000; */
+      color: ${({ theme }) => theme.colors?.textInverse};
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      /* width: fit-content; */
+      a {
+        padding: 1rem 1rem 1rem 1.5rem;
+        background-color: ${({ theme }) => theme.colors?.foreground};
+        span {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          line-height: 1;
+          gap: 0.1rem;
+          transition: 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
         }
         &:hover {
-          &::after {
-            width: 70%;
+          span {
+            gap: 0.8rem;
           }
         }
       }
+      &::after {
+        content: "";
+        display: block;
+        width: 0px;
+        height: 1px;
+        top: 0;
+        left: 0;
+        background-color: ${({ theme }) => theme.colors?.border};
+        transition: 0.3s ease;
+      }
+      &:hover {
+        &::after {
+          width: 75%;
+        }
+      }
     }
-    .content__card-center {
-      background-color: lightblue;
-    }
-    .content__card-footer {
-      grid-column: 1/-1;
-      /* grid-row: 4/ 6; */
-      background-color: lightcoral;
-    }
-    /* min-width: 100px; */
-    /* max-width: 650px; */
   }
+  .content__center {
+    background-color: ${({ theme }) => theme.colors?.foreground};
+    color: ${({ theme }) => theme.colors?.textInverse};
+    font-size: var(--title-content);
+    /* font-family: "Oswald", sans-serif; */
+    font-weight: lighter;
+
+    ul {
+      display: flex;
+      height: 100%;
+      li {
+        width: 100%;
+        margin: auto;
+        text-align: center;
+        border-right: var(--border) solid ${({ theme }) => theme.colors?.border};
+        text-shadow: 0px 0px 4px #41ead4;
+        &:last-child {
+          border: initial;
+        }
+      }
+    }
+  }
+  .content__footer {
+    grid-column: 1/-1;
+    /* background-color: ${({ theme }) => theme.colors?.textInverse}; */
+    /* grid-row: 4/ 6; */
+  }
+  /* min-width: 100px; */
+  /* max-width: 650px; */
 `
 
 const Content__Image = styled.div`
-  /* justify-self: start; */
-  /* display: grid; */
-  /* max-width: 700px;  */
   height: 100%;
   width: 100%;
   overflow: hidden;
-  /* img {
+  grid-column: 4/6;
+  /* border-left: var(--border) solid ${({ theme }) => theme.colors?.border}; */
+  img {
     width: 100%;
-    height: auto;
     object-fit: cover;
-  } */
+  }
 `
 
 const Hero = () => {
@@ -130,47 +156,51 @@ const Hero = () => {
     <Hero__Section id="hero" ref={ref}>
       <Hero__Content>
         <Content__Title>
-          <div className="content__card">
-            <div className="content__card-main">
-              <h1>
-                Reshaping The <span>WORLD..</span>
-              </h1>
-              <p>
-                Partner with trained professionals to provide you with
-                high-level solutions. Always offering you guarantees, quality
-                and safety, all accompanied by innovation.
-              </p>
-              <div className="btn">
-                <Link href={`/contact`}>
-                  <span>
-                    Contact
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      strokeWidth="2"
-                      stroke="currentColor"
-                      fill="none"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
-                      <polyline points="9 6 15 12 9 18"></polyline>
-                    </svg>
-                  </span>
-                </Link>
-              </div>
+          <div className="content__main">
+            <h1>
+              Reshaping The <span>WORLD..</span>
+            </h1>
+            <p>
+              Partner with trained professionals to provide you with high-level
+              solutions. Always offering you guarantees, quality and safety, all
+              accompanied by innovation.
+            </p>
+            <div className="btn">
+              <Link href={`/contact`}>
+                <span>
+                  Contact
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    strokeWidth="2"
+                    stroke="currentColor"
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <polyline points="9 6 15 12 9 18"></polyline>
+                  </svg>
+                </span>
+              </Link>
             </div>
-            <div className="content__card-center"></div>
-            <div className="content__card-footer"></div>
           </div>
+          <div className="content__center">
+            <ul>
+              <li>DESIGN</li>
+              <li>SYSTEMS</li>
+              <li>SIMULATION</li>
+            </ul>
+          </div>
+          <div className="content__footer"></div>
         </Content__Title>
         <Content__Image>
           <Image
             src={hero_banner}
             alt="desktop hero img"
-            width={700}
+            width={800}
             // height={900}
           />
         </Content__Image>

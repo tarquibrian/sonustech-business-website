@@ -39,7 +39,8 @@ const Card = styled.div`
   border: 1px solid ${({ theme }) => theme.colors?.border};
   border-bottom: none;
   border-right: none;
-  height: 450px;
+  /* height: 350px; */
+  aspect-ratio: auto 1 / 1;
   display: flex;
   flex-direction: column;
   align-items: center;

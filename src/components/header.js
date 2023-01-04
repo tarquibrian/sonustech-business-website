@@ -2,22 +2,22 @@
 import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/router"
-import React from "react"
-import styled from "styled-components"
+import React, { useEffect, useState } from "react"
+import styled, { css } from "styled-components"
 
 import imgMenu from "../assets/images/menu.png"
+import useScrollDirection from "../hooks/useScrollDirection"
 import Arrow from "./icons/arrow"
 import MenuIcon from "./icons/menu"
 
 export const Header__Content = styled.nav`
-  position: absolute;
+  position: sticky;
   overflow: hidden;
   top: 0;
   left: 0;
-  height: 5rem;
-  width: 100%;
-  z-index: 99999;
-  border-bottom: var(--border) solid ${({ theme }) => theme.colors?.border};
+  min-height: 5rem;
+  z-index: 999;
+  transition: 0.3s ease-in;
   @media screen and (max-width: 800px) {
     display: none;
   }
@@ -28,6 +28,10 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-between;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  height: 5rem;
+  width: 100%;
+  border-bottom: var(--border) solid ${({ theme }) => theme.colors?.border};
+  transition: 0.3s ease-in;
   a {
     width: 100%;
     height: 100%;
@@ -36,6 +40,24 @@ const Container = styled.div`
         border: none;
       }
     }
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    ${({ scrollDirection, scrollIsTop }) =>
+      scrollDirection === "up" &&
+      !scrollIsTop &&
+      css`
+        height: 3.5rem;
+        transform: translateY(0px);
+        backdrop-filter: blur(15px);
+      `};
+
+    ${({ scrollDirection, scrollIsTop }) =>
+      scrollDirection === "down" &&
+      !scrollIsTop &&
+      css`
+        height: 5rem;
+        transform: translateY(-120%);
+      `};
   }
 `
 
@@ -126,10 +148,20 @@ const menu = [
 
 const Header = () => {
   const { pathname } = useRouter()
+  const scrollDirection = useScrollDirection("down")
+  const [scrollIsTop, setScrollIsTop] = useState(true)
+
+  const handleScroll = () => {
+    setScrollIsTop(window.pageYOffset < 100)
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll)
+  }, [scrollDirection])
   return (
     <>
       <Header__Content>
-        <Container>
+        <Container scrollDirection={scrollDirection} scrollIsTop={scrollIsTop}>
           {menu.map((item, i) => {
             const { name, href } = item
             return (

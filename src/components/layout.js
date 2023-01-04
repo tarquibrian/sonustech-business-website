@@ -23,23 +23,16 @@ const LayoutPartition = styled.div`
   grid-template-columns: 100px auto;
   min-height: 100vh;
   transition: 0.2s ease;
-  /* min-width: 100vw; */
   @media screen and (max-width: 600px) {
     grid-template-columns: none;
   }
 `
 
 const Side = styled.div`
-  /* position: fixed; */
   border-right: var(--border) solid ${({ theme }) => theme.colors?.border};
   width: 100%;
   z-index: 9999;
   position: relative;
-  /* background: linear-gradient(
-    180deg,
-    rgba(1, 43, 82, 1) 0%,
-    rgba(0, 3, 6, 1) 100%
-  ); */
   @media screen and (max-width: 600px) {
     position: fixed;
     top: initial;
@@ -131,6 +124,11 @@ const Layout = ({ children }) => {
   const { state, setTheme, setNavigation } = useAppContext()
   const theme = { ...base, colors: themesMap[state.currentTheme] }
   const nav = state.currentNavigation
+  const scrollTop = () => {
+    window.scrollTo({
+      top: 0,
+    })
+  }
   return (
     <ThemeProvider theme={theme}>
       <SEO title="SONUSTECH | Software Company" />
@@ -141,24 +139,21 @@ const Layout = ({ children }) => {
             <Image src={logo} alt="sonustech logo" width={50} />
             <div className="side-navigator">
               <a
-                href="#hero"
+                // href="#hero"
                 className={`${nav === "hero" ? "isActive" : ""}`}
-                // onClick={() => setNavigation("hero")}
+                onClick={scrollTop}
               ></a>
               <a
                 href="#services"
                 className={`${nav === "services" ? "isActive" : ""}`}
-                // onClick={() => setNavigation("services")}
               ></a>
               <a
                 href="#features"
                 className={`${nav === "features" ? "isActive" : ""}`}
-                // onClick={() => setNavigation("features")}
               ></a>
               <a
                 href="#competencies"
                 className={`${nav === "competencies" ? "isActive" : ""}`}
-                // onClick={() => setNavigation("competencies")}
               ></a>
               <a href="#services"></a>
             </div>

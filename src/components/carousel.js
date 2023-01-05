@@ -1,6 +1,6 @@
 import Image from "next/image"
 import React from "react"
-import styled from "styled-components"
+import styled, { isStyledComponent } from "styled-components"
 
 // import img1 from "../assets/images/hero.jpg"
 import logo from "../assets/images/logo.png"
@@ -14,6 +14,8 @@ import img6 from "../assets/images/web6.png"
 const Carousel__Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-columns: ${({ nColumns }) =>
+    nColumns ? `repeat(${nColumns}, 1fr)` : "none"};
 `
 
 const Container__Column = styled.div`
@@ -37,15 +39,22 @@ const Container__Column = styled.div`
 const Card = styled.div`
   width: 100%;
   border: 1px solid ${({ theme }) => theme.colors?.border};
-  border-bottom: none;
+  /* border-bottom: none; */
   border-right: none;
+  border-left: none;
   /* height: 350px; */
-  aspect-ratio: auto 1 / 1;
+
+  aspect-ratio: ${({ aspectRatio }) =>
+    aspectRatio ? `auto ${aspectRatio}` : "initial"};
+  /* aspect-ratio: auto 1 / 1; */
+
+  max-height: calc(100vh - 4.9rem);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  overflow: hidden;
   img {
     width: 100%;
     height: auto;
@@ -60,10 +69,31 @@ const Card = styled.div`
   }
 `
 
-const Carousel = () => {
+const Carousel = ({ columns, aspectRatio }) => {
+  console.log(aspectRatio)
   return (
-    <Carousel__Container>
-      <Container__Column animationTime="20s">
+    <Carousel__Container nColumns={columns.length}>
+      {columns.map((item) => {
+        const { animationTime, images } = item
+        console.log(animationTime)
+        return (
+          <Container__Column animationTime={animationTime}>
+            {images.map((path) => (
+              <Card aspectRatio={aspectRatio}>
+                <Image src={path} alt="logo image carousel" />
+                {/* <h1>SEO POSITION</h1> */}
+              </Card>
+            ))}
+            {images.map((path) => (
+              <Card>
+                <Image src={path} alt="logo image carousel" />
+                {/* <h1>SEO POSITION</h1> */}
+              </Card>
+            ))}
+          </Container__Column>
+        )
+      })}
+      {/* <Container__Column animationTime="20s">
         <Card>
           <Image src={img1} alt="logo image carousel" />
           <h1>SEO POSITION</h1>
@@ -76,7 +106,6 @@ const Carousel = () => {
           <Image src={img3} alt="logo image carousel" />
           <h1>SEO POSITION</h1>
         </Card>
-        {/* REPEAT */}
         <Card>
           <Image src={img1} alt="logo image carousel" />
           <h1>SEO POSITION</h1>
@@ -89,8 +118,9 @@ const Carousel = () => {
           <Image src={img3} alt="logo image carousel" />
           <h1>SEO POSITION</h1>
         </Card>
-      </Container__Column>
-      <Container__Column animationTime="12s">
+      </Container__Column> */}
+
+      {/* <Container__Column animationTime="12s">
         <Card>
           <Image
             src={img4}
@@ -118,7 +148,6 @@ const Carousel = () => {
           />
           <h1>CONSULTORING</h1>
         </Card>
-        {/* REPEAT */}
         <Card>
           <Image
             src={img4}
@@ -146,7 +175,7 @@ const Carousel = () => {
           />
           <h1>CONSULTORING</h1>
         </Card>
-      </Container__Column>
+      </Container__Column> */}
       {/* <Image src={img1} alt='card image' width={500} height='auto'/> */}
       {/* <Image src={img1} alt='card image' width={500} height='auto'/> */}
     </Carousel__Container>

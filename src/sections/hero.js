@@ -9,6 +9,12 @@ import { useInView } from "framer-motion"
 import { useAppContext } from "../contexts/app.context"
 import desktop from "../assets/images/desktop.png"
 import hero_banner from "../assets/images/hero-banner.jpg"
+import img1 from "../assets/images/web1.png"
+import img2 from "../assets/images/web2.png"
+import img3 from "../assets/images/web3.png"
+import img4 from "../assets/images/web4.png"
+import img5 from "../assets/images/web5.png"
+import img6 from "../assets/images/web6.png"
 
 const Hero__Section = styled.section`
   height: calc(100vh - 4.9rem);
@@ -197,11 +203,20 @@ const Hero = () => {
           <div className="content__footer"></div>
         </Content__Title>
         <Content__Image>
-          <Image
+          {/* <Image
             src={hero_banner}
             alt="desktop hero img"
             width={800}
-            // height={900}
+            height={"auto"}
+          /> */}
+          <Carousel
+            columns={[
+              {
+                animationTime: "40s",
+                images: [hero_banner, hero_banner],
+              },
+            ]}
+            // aspectRatio={"1/1"}
           />
         </Content__Image>
       </Hero__Content>

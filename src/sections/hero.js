@@ -9,12 +9,7 @@ import { useInView } from "framer-motion"
 import { useAppContext } from "../contexts/app.context"
 import desktop from "../assets/images/desktop.png"
 import hero_banner from "../assets/images/hero-banner.jpg"
-import img1 from "../assets/images/web1.png"
-import img2 from "../assets/images/web2.png"
-import img3 from "../assets/images/web3.png"
-import img4 from "../assets/images/web4.png"
-import img5 from "../assets/images/web5.png"
-import img6 from "../assets/images/web6.png"
+import hero_banner2 from "../assets/images/hero-banner2.jpg"
 
 const Hero__Section = styled.section`
   height: calc(100vh - 4.9rem);
@@ -32,7 +27,7 @@ const Hero__Content = styled.div`
   /* overflow: hidden; */
 `
 
-const Content__Title = styled.div`
+const Content__Main = styled.div`
   position: relative;
   /* display: flex; */
   /* align-items: center; */
@@ -161,7 +156,7 @@ const Hero = () => {
   return (
     <Hero__Section id="hero" ref={ref}>
       <Hero__Content>
-        <Content__Title>
+        <Content__Main>
           <div className="content__main">
             <h1>
               Reshaping The <span>WORLD..</span>
@@ -201,7 +196,7 @@ const Hero = () => {
             </ul>
           </div>
           <div className="content__footer"></div>
-        </Content__Title>
+        </Content__Main>
         <Content__Image>
           {/* <Image
             src={hero_banner}
@@ -213,9 +208,10 @@ const Hero = () => {
             columns={[
               {
                 animationTime: "40s",
-                images: [hero_banner, hero_banner],
+                images: [hero_banner, hero_banner2],
               },
             ]}
+
             // aspectRatio={"1/1"}
           />
         </Content__Image>

@@ -76,7 +76,8 @@ const Content__Title = styled.span`
 
   span {
     background-color: ${({ theme }) => theme.colors?.foreground};
-    color: ${({ theme }) => theme.colors?.background};
+    color: ${({ theme }) => theme.colors?.textInverse};
+
     display: grid;
     place-content: center;
     width: 50px;
@@ -85,6 +86,7 @@ const Content__Title = styled.span`
     padding: 0.2rem;
     svg {
       width: 100%;
+
       height: 100%;
       margin-left: 1px;
       /* fill: #fff; */
@@ -95,14 +97,15 @@ const Content__Title = styled.span`
     gap: 0.5rem;
     cursor: pointer;
     span {
-      /* background-color: ${({ theme }) => theme.colors?.hoverBackground}; */
+      svg {
+        filter: drop-shadow(0px 0px 4px #41ead4);
+      }
     }
   }
 `
 
 const Menu = styled.div`
   display: none;
-  /* background-color: red; */
 
   svg {
     height: 100%;

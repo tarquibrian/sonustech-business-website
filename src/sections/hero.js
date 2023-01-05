@@ -79,6 +79,10 @@ const Content__Main = styled.div`
         &:hover {
           span {
             gap: 0.8rem;
+            text-shadow: 0px 0px 4px #41ead4;
+            svg {
+              filter: drop-shadow(0px 0px 4px #41ead4);
+            }
           }
         }
       }
@@ -110,6 +114,7 @@ const Content__Main = styled.div`
       display: flex;
       height: 100%;
       li {
+        /* height: 100%; */
         width: 100%;
         margin: auto;
         text-align: center;

@@ -16,6 +16,7 @@ const Index = () => {
       {/* <button onClick={toggleTheme}>change theme</button> */}
       {/* Index {theme} */}
       <Hero />
+
       <Services />
       <Features />
       <Competencies />

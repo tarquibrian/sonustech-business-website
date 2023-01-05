@@ -18,24 +18,18 @@ const Services__Content = styled.div`
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(20, 1fr);
+  grid-template-columns: repeat(5, 1fr);
+  /* grid-template-rows: repeat(20, 1fr); */
   justify-content: center;
   align-items: center;
 
-  .content-top {
-    grid-row: 1/9;
-  }
-  .title {
-    grid-row: 9/13;
-  }
-  .content-bottom {
-    grid-row: 13/-1;
-  }
-
-  .title {
+  .content__information {
+    grid-column: 1/3;
     text-align: center;
     font-size: 2vw;
+    height: 100%;
+    border-right: var(--border) solid ${({ theme }) => theme.colors.border};
+
     h1 {
       /* line-height: 5rem; */
     }
@@ -47,19 +41,23 @@ const Services__Content = styled.div`
     }
   }
 
-  .content-top,
-  .content-bottom {
+  .content__body {
+    grid-column: 3/-1;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr 1fr;
     align-items: center;
     /* overflow: hidden; */
     width: 100%;
     height: 100%;
+
     &:first-of-type {
-      border-bottom: var(--border) solid ${({ theme }) => theme.colors.border};
+      /* border-bottom: var(--border) solid ${({ theme }) =>
+        theme.colors.border}; */
     }
     &:last-of-type {
-      border-top: var(--border) solid ${({ theme }) => theme.colors.border};
+      /* border-top: var(--border) solid ${({ theme }) =>
+        theme.colors.border}; */
     }
   }
 `
@@ -67,15 +65,15 @@ const Services__Content = styled.div`
 const Card = styled.div`
   width: 100%;
   height: 100%;
-  border-right: var(--border) solid ${({ theme }) => theme.colors.border};
+  border-right: 2px solid ${({ theme }) => theme.colors?.borderLigth};
+  border-bottom: ${({ element, theme }) =>
+    element <= 3 ? `var(--border) solid ${theme.colors?.borderLigth}` : "none"};
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  /* gap: 1rem; */
-
   &:last-of-type {
-    border-style: none;
+    /* border-style: none; */
   }
   transition: 0.3s ease;
 `
@@ -144,32 +142,32 @@ const Services = () => {
   return (
     <Services__Section id="services" ref={ref}>
       <Services__Content>
-        <div className="content-top">
-          {servicesData.map((item) => {
-            const { title, description, image, id } = item
-            if (id <= 3)
-              return (
-                <Card key={id}>
-                  <HeadCard>
-                    <h1>{title}</h1>
-                  </HeadCard>
-                  <BodyCard>
-                    <Image src={image} alt={title} />
-                    <Overlay>
-                      <p>{description}</p>
-                      <button>
-                        View More <span>{">"}</span>
-                      </button>
-                    </Overlay>
-                  </BodyCard>
-                </Card>
-              )
-          })}
-        </div>
-        <div className="title">
+        <div className="content__information">
           <h1>OUR SERVICES</h1>
         </div>
-        <div className="content-bottom">
+        <div className="content__body">
+          {servicesData.map((item) => {
+            const { title, description, image, id } = item
+            return (
+              <Card key={id} element={id}>
+                <HeadCard>
+                  <h1>{title}</h1>
+                </HeadCard>
+                <BodyCard>
+                  <Image src={image} alt={title} />
+                  <Overlay>
+                    <p>{description}</p>
+                    <button>
+                      View More <span>{">"}</span>
+                    </button>
+                  </Overlay>
+                </BodyCard>
+              </Card>
+            )
+          })}
+        </div>
+
+        {/* <div className="content-bottom">
           {servicesData.map((item) => {
             const { title, description, image, id } = item
             if (id <= 3)
@@ -187,7 +185,7 @@ const Services = () => {
                 </Card>
               )
           })}
-        </div>
+        </div> */}
       </Services__Content>
     </Services__Section>
   )

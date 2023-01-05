@@ -5,6 +5,7 @@ export const lightTheme = {
   text: "rgba(39,39,39,1.0)",
   textInverse: "#41ead4",
   border: "rgba(65,57,46,1.0)",
+  borderLigth: "rgba(65,57,46,0.5)",
   background: "rgba(255,255,255,1.0)",
   foreground: "rgba(39,39,39,1.0)",
   hoverBackground: "rgba(0,0,0, .2)",

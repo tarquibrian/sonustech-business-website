@@ -32,6 +32,9 @@ const Services__Content = styled.div`
       gap: 1rem;
       h1 {
         font-size: var(--title);
+        font-family: "Cormorant";
+        font-style: italic;
+        font-weight: 400;
       }
       h2 {
         font-size: var(--subtitle);
@@ -134,7 +137,7 @@ const Services = () => {
       <Services__Content>
         <div className="content__information">
           <div className="content__information-card">
-            <h1>OUR SERVICES</h1>
+            <h1>Our Services</h1>
             <h2>Who we are?</h2>
             <p>
               We are a digital transformation consultancy and software

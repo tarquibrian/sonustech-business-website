@@ -28,6 +28,8 @@ const Services__Content = styled.div`
     .content__information-card {
       position: sticky;
       top: 5rem;
+      display: grid;
+      gap: 1rem;
       h1 {
         font-size: var(--title);
       }
@@ -66,7 +68,11 @@ const Card = styled.div`
   transition: 0.3s ease;
 `
 const HeadCard = styled.header`
-  padding: 2rem;
+  padding: 1rem 1rem;
+  /* color: ${({ theme }) => theme.colors.textLight}; */
+  /* background-color: ${({ theme }) => theme.colors.foreground}; */
+  font-size: var(--title-card);
+  /* font-size: 14px; */
 `
 
 const Overlay = styled.div`

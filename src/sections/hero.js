@@ -152,7 +152,7 @@ const Hero = () => {
   const { setNavigation } = useAppContext()
 
   const isInView = useInView(ref, {
-    margin: "-200px",
+    margin: "-400px",
   })
 
   useEffect(() => {

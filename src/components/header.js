@@ -1,5 +1,3 @@
-"use client"
-import Image from "next/image"
 import Link from "next/link"
 import { useRouter } from "next/router"
 import React, { useEffect, useState } from "react"
@@ -36,6 +34,7 @@ const Container = styled.div`
   a {
     width: 100%;
     height: 100%;
+
     &:last-of-type {
       span {
         border: none;
@@ -70,26 +69,23 @@ const Content__Title = styled.span`
   align-items: center;
   gap: 1rem;
   transition: 0.2s ease;
-
   font-weight: ${({ isActive }) => (isActive ? "800" : "inherit")};
   text-decoration: ${({ isActive }) => (isActive ? "underline" : "inherit")};
 
   span {
     background-color: ${({ theme }) => theme.colors?.foreground};
     color: ${({ theme }) => theme.colors?.textInverse};
-
     display: grid;
     place-content: center;
     width: 50px;
     height: 50px;
     border-radius: 100%;
     padding: 0.2rem;
+
     svg {
       width: 100%;
-
       height: 100%;
       margin-left: 1px;
-      /* fill: #fff; */
     }
   }
   &:hover {

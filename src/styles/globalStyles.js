@@ -8,7 +8,6 @@ export const GlobalStyle = createGlobalStyle`
   ${variables}
   html {
     box-sizing: border-box;
-    width: 100%;
     scroll-behavior: smooth;
   }
 
@@ -23,11 +22,9 @@ export const GlobalStyle = createGlobalStyle`
   }
   body {
     background: ${({ theme }) => theme.colors.body};
-    /* background-color: rgb(1, 39, 75); */
     color: ${({ theme }) => theme.colors.text};
     font-family: 'Chivo Mono', 'DMSans', 'Raleway', 'Oswald', sans-serif;
     /* transition: all 0.50s ease; */
-    margin: 0;
     width: 100%;
     min-height: 100%;
     /* -moz-osx-font-smoothing: grayscale; */

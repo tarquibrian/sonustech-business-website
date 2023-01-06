@@ -6,43 +6,56 @@ import { useAppContext } from "../contexts/app.context"
 import { servicesData } from "../data/servicesData"
 
 const Services__Section = styled.section`
-  min-height: 400px;
+  min-height: 900px;
   max-height: 100vh;
   height: 100vh;
-  overflow: hidden;
   width: 100%;
 `
 
 const Services__Content = styled.div`
-  /* gap: 2rem; */
   height: 100%;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  /* grid-template-rows: repeat(20, 1fr); */
-  justify-content: center;
-  align-items: center;
+  grid-template-columns: 2fr 3fr;
+  /* overflow: hidden; */
 
   .content__information {
-    grid-column: 1/3;
-    text-align: center;
-    font-size: 2vw;
+    /* grid-column: 1/3; */
+    /* text-align: center; */
+    /* display: flex; */
+    align-items: center;
+    /* justify-content: flex-start; */
+    width: 100%;
     height: 100%;
     border-right: var(--border) solid ${({ theme }) => theme.colors.border};
+    padding: 10% 5%;
+    /* gap: 1rem; */
+
+    .content__information-card {
+      position: sticky;
+      top: 5rem;
+      /* bottom: 5rem; */
+    }
 
     h1 {
-      /* line-height: 5rem; */
+      font-size: var(--title);
     }
-    &::before {
+    h2 {
+      font-size: var(--subtitle);
+    }
+    p {
+      line-height: 1.5rem;
+    }
+    /* &::before {
       content: "▲";
     }
     &::after {
       content: "▼";
-    }
+    } */
   }
 
   .content__body {
-    grid-column: 3/-1;
+    /* grid-column: 3/-1; */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 1fr;
@@ -132,7 +145,7 @@ const BodyCard = styled.div`
 `
 const Services = () => {
   const ref = useRef()
-  const isVisible = useInView(ref, { margin: "-200px" })
+  const isVisible = useInView(ref, { margin: "-300px" })
   const { setNavigation } = useAppContext()
 
   useEffect(() => {
@@ -143,7 +156,18 @@ const Services = () => {
     <Services__Section id="services" ref={ref}>
       <Services__Content>
         <div className="content__information">
-          <h1>OUR SERVICES</h1>
+          <div className="content__information-card">
+            <h1>OUR SERVICES</h1>
+            <h2>Who we are?</h2>
+            <p>
+              We are a digital transformation consultancy and software
+              development company that provides cutting edge engineering
+              solutions, helping Fortune 500 companies and enterprise clients
+              untangle complex issues that always emerge during their digital
+              evolution journey. Since 2007 we have been a visionary and a
+              reliable software engineering partner for world-class brands.
+            </p>
+          </div>
         </div>
         <div className="content__body">
           {servicesData.map((item) => {

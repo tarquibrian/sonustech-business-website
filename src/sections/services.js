@@ -17,61 +17,36 @@ const Services__Content = styled.div`
   width: 100%;
   display: grid;
   grid-template-columns: 2fr 3fr;
-  /* overflow: hidden; */
 
   .content__information {
-    /* grid-column: 1/3; */
-    /* text-align: center; */
-    /* display: flex; */
     align-items: center;
-    /* justify-content: flex-start; */
     width: 100%;
     height: 100%;
     border-right: var(--border) solid ${({ theme }) => theme.colors.border};
     padding: 10% 5%;
-    /* gap: 1rem; */
 
     .content__information-card {
       position: sticky;
       top: 5rem;
-      /* bottom: 5rem; */
+      h1 {
+        font-size: var(--title);
+      }
+      h2 {
+        font-size: var(--subtitle);
+      }
+      p {
+        line-height: 1.5rem;
+      }
     }
-
-    h1 {
-      font-size: var(--title);
-    }
-    h2 {
-      font-size: var(--subtitle);
-    }
-    p {
-      line-height: 1.5rem;
-    }
-    /* &::before {
-      content: "▲";
-    }
-    &::after {
-      content: "▼";
-    } */
   }
 
   .content__body {
-    /* grid-column: 3/-1; */
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr 1fr;
     align-items: center;
-    /* overflow: hidden; */
     width: 100%;
     height: 100%;
-
-    &:first-of-type {
-      /* border-bottom: var(--border) solid ${({ theme }) =>
-        theme.colors.border}; */
-    }
-    &:last-of-type {
-      /* border-top: var(--border) solid ${({ theme }) =>
-        theme.colors.border}; */
-    }
   }
 `
 

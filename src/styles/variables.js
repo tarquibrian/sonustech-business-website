@@ -17,7 +17,7 @@ const variables = css`
     --title: clamp(32px, 4vw, 72px);
     --subtitle: clamp(18px, 3vw, 32px);
     --title-content: clamp(16px, 3vw, 20px);
-    --title-card: clamp(12px, 1vw, 16px);
+    --title-card: clamp(12px, 1.3vw, 14px);
     --description: clamp(12px, 2vw, 16px);
 
     --border-radius: 4px;

@@ -7,13 +7,13 @@ import { servicesData } from "../data/servicesData"
 
 const Services__Section = styled.section`
   min-height: 900px;
-  max-height: 100vh;
-  height: 100vh;
+  /* max-height: 100vh; */
   width: 100%;
 `
 
 const Services__Content = styled.div`
   height: 100%;
+  min-height: 100vh;
   width: 100%;
   display: grid;
   grid-template-columns: 2fr 3fr;
@@ -40,7 +40,7 @@ const Services__Content = styled.div`
         font-size: var(--subtitle);
       }
       p {
-        line-height: 1.5rem;
+        font-size: var(--description);
       }
     }
   }
@@ -48,10 +48,27 @@ const Services__Content = styled.div`
   .content__body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: 1fr 1fr;
     align-items: center;
     width: 100%;
     height: 100%;
+  }
+  @media screen and (max-width: 1400px) {
+    .content__body {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media screen and (max-width: 1080px) {
+    grid-template-columns: 1fr;
+    .content__information {
+      border-bottom: var(--border) solid ${({ theme }) => theme.colors.border};
+      border-right: none;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .content__body {
+      grid-template-columns: 1fr;
+    }
   }
 `
 
@@ -66,12 +83,27 @@ const Card = styled.div`
   position: relative;
   overflow: hidden;
   transition: 0.3s ease;
+  @media screen and (max-width: 1080px) {
+    border-bottom: ${({ element, theme }) =>
+      element <= 4
+        ? `var(--border) solid ${theme.colors?.borderLigth}`
+        : "none"};
+  }
+  @media screen and (max-width: 480px) {
+    border-right: none;
+    border-bottom: ${({ element, theme }) =>
+      element <= 5
+        ? `var(--border) solid ${theme.colors?.borderLigth}`
+        : "none"};
+  }
 `
 const HeadCard = styled.header`
-  padding: 2rem;
-  /* color: ${({ theme }) => theme.colors.textLight}; */
-  /* background-color: ${({ theme }) => theme.colors.foreground}; */
+  padding: 0 2rem;
   font-size: var(--title-card);
+  min-height: 70px;
+  display: grid;
+  align-items: center;
+  justify-content: start;
 `
 
 const Overlay = styled.div`
@@ -94,6 +126,9 @@ const Overlay = styled.div`
     &:hover {
       gap: 0.7rem;
     }
+  }
+  P {
+    font-size: var(--description);
   }
 
   transform: translateX(110%);

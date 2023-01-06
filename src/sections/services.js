@@ -62,17 +62,13 @@ const Card = styled.div`
   flex-direction: column;
   position: relative;
   overflow: hidden;
-  &:last-of-type {
-    /* border-style: none; */
-  }
   transition: 0.3s ease;
 `
 const HeadCard = styled.header`
-  padding: 1rem 1rem;
+  padding: 2rem;
   /* color: ${({ theme }) => theme.colors.textLight}; */
   /* background-color: ${({ theme }) => theme.colors.foreground}; */
   font-size: var(--title-card);
-  /* font-size: 14px; */
 `
 
 const Overlay = styled.div`

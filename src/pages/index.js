@@ -7,6 +7,7 @@ import Team from "../sections/team"
 import Services from "../sections/services"
 import Features from "../sections/features"
 import Competencies from "../sections/competencies"
+import Divider from "../components/divider"
 
 const Index = () => {
   const { state, toggleTheme } = useAppContext()
@@ -16,7 +17,6 @@ const Index = () => {
       {/* <button onClick={toggleTheme}>change theme</button> */}
       {/* Index {theme} */}
       <Hero />
-
       <Services />
       <Features />
       <Competencies />

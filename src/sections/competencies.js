@@ -8,7 +8,9 @@ import StarIcon from "../components/icons/competencies/star"
 const Competencies__Section = styled.section`
   min-height: 500px;
   width: 100%;
-  margin: auto;
+  margin: 100px 0;
+  background-color: ${({ theme }) => theme.colors?.body};
+  /* border-radius: 30px; */
 `
 const Competencies__Content = styled.div`
   margin: auto;

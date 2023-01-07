@@ -118,6 +118,9 @@ const Body = styled.div`
   width: 100%;
   min-height: 100vh;
   z-index: 0;
+  main {
+    background-color: ${({ theme }) => theme.colors?.foreground};
+  }
 `
 
 const Layout = ({ children }) => {

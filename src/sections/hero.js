@@ -16,7 +16,8 @@ const Hero__Section = styled.section`
   width: 100%;
   min-height: 90vh;
   overflow: hidden;
-  background-image: ${({ theme }) => theme.colors?.heroBackground};
+  background: ${({ theme }) => theme.colors?.foreground};
+  margin-bottom: 50px;
 `
 
 const Hero__Content = styled.div`
@@ -24,7 +25,10 @@ const Hero__Content = styled.div`
   height: 100%;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  /* overflow: hidden; */
+  /* border-bottom-left-radius: 30px; */
+  /* border-bottom-right-radius: 30px; */
+  background: ${({ theme }) => theme.colors?.body};
+  overflow: hidden;
 `
 
 const Content__Main = styled.div`

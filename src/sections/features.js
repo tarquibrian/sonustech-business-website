@@ -10,8 +10,11 @@ import PlanningIcon from "../components/icons/planing"
 import { useAppContext } from "../contexts/app.context"
 
 const Feaures__Section = styled.section`
+  margin: 50px 0;
   min-height: 600px;
   width: 100%;
+  background-color: ${({ theme }) => theme.colors?.body};
+  /* border-radius: 30px; */
   /* gap: 4rem; */
   /* padding: 4rem 0; */
 `

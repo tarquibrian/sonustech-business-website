@@ -7,7 +7,6 @@ import { servicesData } from "../data/servicesData"
 
 const Services__Section = styled.section`
   min-height: 900px;
-  /* max-height: 100vh; */
   width: 100%;
 `
 
@@ -46,15 +45,25 @@ const Services__Content = styled.div`
   }
 
   .content__body {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: center;
-    width: 100%;
     height: 100%;
+    display: grid;
+    /* grid-template-rows: 10rem auto; */
+    .content__body-header {
+      border-bottom: var(--border) solid ${({ theme }) => theme.colors.border};
+      /* height: 3.5rem; */
+    }
+    .content__body-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 1fr 1fr;
+      width: 100%;
+      height: 100%;
+    }
   }
   @media screen and (max-width: 1400px) {
-    .content__body {
+    .content__body-list {
       grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
     }
   }
   @media screen and (max-width: 1080px) {
@@ -66,7 +75,7 @@ const Services__Content = styled.div`
   }
 
   @media screen and (max-width: 480px) {
-    .content__body {
+    .content__body-list {
       grid-template-columns: 1fr;
     }
   }
@@ -75,9 +84,9 @@ const Services__Content = styled.div`
 const Card = styled.div`
   width: 100%;
   height: 100%;
-  border-right: 2px solid ${({ theme }) => theme.colors?.borderLigth};
+  border-right: 1px solid ${({ theme }) => theme.colors?.borderLigth};
   border-bottom: ${({ element, theme }) =>
-    element <= 3 ? `var(--border) solid ${theme.colors?.borderLigth}` : "none"};
+    element <= 3 ? `var(--border) solid ${theme.colors?.border}` : "none"};
   display: flex;
   flex-direction: column;
   position: relative;
@@ -100,10 +109,11 @@ const Card = styled.div`
 const HeadCard = styled.header`
   padding: 0 2rem;
   font-size: var(--title-card);
-  min-height: 70px;
+  min-height: 50px;
   display: grid;
   align-items: center;
   justify-content: start;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.border};
 `
 
 const Overlay = styled.div`
@@ -137,7 +147,7 @@ const Overlay = styled.div`
 const BodyCard = styled.div`
   display: flex;
   width: 100%;
-  min-height: 200px;
+  /* min-height: 200px; */
   height: 100%;
   border-radius: 10px;
   position: relative;
@@ -185,25 +195,30 @@ const Services = () => {
           </div>
         </div>
         <div className="content__body">
-          {servicesData.map((item) => {
-            const { title, description, image, id } = item
-            return (
-              <Card key={id} element={id}>
-                <HeadCard>
-                  <h1>{title}</h1>
-                </HeadCard>
-                <BodyCard>
-                  <Image src={image} alt={title} />
-                  <Overlay>
-                    <p>{description}</p>
-                    <button>
-                      View More <span>{">"}</span>
-                    </button>
-                  </Overlay>
-                </BodyCard>
-              </Card>
-            )
-          })}
+          {/* <div className="content__body-header">
+            <h1>Services</h1>
+          </div> */}
+          <div className="content__body-list">
+            {servicesData.map((item) => {
+              const { title, description, image, id } = item
+              return (
+                <Card key={id} element={id}>
+                  <HeadCard>
+                    <h1>{title}</h1>
+                  </HeadCard>
+                  <BodyCard>
+                    <Image src={image} alt={title} />
+                    <Overlay>
+                      <p>{description}</p>
+                      <button>
+                        View More <span>{">"}</span>
+                      </button>
+                    </Overlay>
+                  </BodyCard>
+                </Card>
+              )
+            })}
+          </div>
         </div>
 
         {/* <div className="content-bottom">

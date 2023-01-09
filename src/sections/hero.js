@@ -17,7 +17,7 @@ const Hero__Section = styled.section`
   min-height: 90vh;
   overflow: hidden;
   background: ${({ theme }) => theme.colors?.foreground};
-  margin-bottom: 50px;
+  margin-top: initial;
 `
 
 const Hero__Content = styled.div`
@@ -54,17 +54,21 @@ const Content__Main = styled.div`
     /* justify-content: space-between; */
     h1 {
       font-family: "Oswald", sans-serif;
-      font-size: clamp(1rem, 5vw, 5rem);
+      font-size: clamp(4rem, 8vw, 9rem);
       font-weight: 600;
-      /* line-height: 5rem; */
-      p {
-        font-size: 1.2rem;
-        line-height: 1.5;
+      line-height: 100%;
+      span {
+        font-family: "Cormorant", sans-serif;
+        font-size: var(--title);
       }
+    }
+    p {
+      font-size: 1.2rem;
+      line-height: 1.5;
     }
     .btn {
       /* background-color: #000; */
-      color: ${({ theme }) => theme.colors?.textInverse};
+      color: ${({ theme }) => theme.colors?.textNeon};
       display: flex;
       align-items: center;
       gap: 1rem;
@@ -109,7 +113,7 @@ const Content__Main = styled.div`
   }
   .content__center {
     background-color: ${({ theme }) => theme.colors?.foreground};
-    color: ${({ theme }) => theme.colors?.textInverse};
+    color: ${({ theme }) => theme.colors?.textNeon};
     font-size: var(--title-content);
     /* font-family: "Oswald", sans-serif; */
     font-weight: lighter;
@@ -168,13 +172,17 @@ const Hero = () => {
         <Content__Main>
           <div className="content__main">
             <h1>
-              Reshaping The <span>WORLD..</span>
+              <span>_We are</span>
+              <br />
+              Collective
+              <br />
+              Engineers
             </h1>
-            <p>
+            {/* <p>
               Partner with trained professionals to provide you with high-level
               solutions. Always offering you guarantees, quality and safety, all
               accompanied by innovation.
-            </p>
+            </p> */}
             <div className="btn">
               <Link href={`/contact`}>
                 <span>

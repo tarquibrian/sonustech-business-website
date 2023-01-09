@@ -27,6 +27,7 @@ const Container = styled.div`
   justify-content: space-between;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
   height: 5rem;
+  background-color: rgba(218, 211, 209, 0.6);
   backdrop-filter: blur(15px);
   width: 100%;
   border-bottom: var(--border) solid ${({ theme }) => theme.colors?.border};

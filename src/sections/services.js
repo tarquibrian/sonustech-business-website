@@ -9,8 +9,9 @@ const Services__Section = styled.section`
   min-height: 900px;
   width: 100%;
   /* border-radius: 30px; */
-  background-color: ${({ theme }) => theme.colors.body};
-  margin: 100px 0;
+  background-color: ${({ theme }) => theme.colors.bodyInverse};
+  color: ${({ theme }) => theme.colors.textInverse};
+  /* margin: 100px 0; */
 `
 
 const Services__Content = styled.div`

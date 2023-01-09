@@ -3,11 +3,15 @@ import mixins from "./mixins"
 export const lightTheme = {
   // body: `linear-gradient(135deg, rgba(218,211,209,1) 0%, rgba(236,233,234,1) 100%)`,
   body: `rgba(218,211,209,1)`,
+  bodyInverse: "rgba(39,39,39,1.0)",
   text: "rgba(39,39,39,1.0)",
   textLight: "rgba(218,211,209,1)",
-  textInverse: "#41ead4",
+  textInverse: "rgba(236,233,234,1)",
+  textNeon: "#41ead4",
+
   // border: "rgba(65,57,46,1.0)",
   border: "rgba(39,39,39,1.0)",
+  borderInverse: "rgba(218,211,209,1)",
   borderLigth: "rgba(65,57,46,0.5)",
   background: "rgba(255,255,255,1.0)",
   foreground: "rgba(39,39,39,1.0)",

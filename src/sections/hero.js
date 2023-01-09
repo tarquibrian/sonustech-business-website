@@ -49,20 +49,19 @@ const Content__Main = styled.div`
     width: 80%;
     margin: auto;
     /* gap: 3rem; */
+    /* background-color: lightblue; */
 
-    /* align-items: ; */
-    /* justify-content: space-between; */
     .content__main-title {
       span {
-        font-family: "Cormorant", sans-serif;
+        font-family: "Raleway", sans-serif;
         /* font-style: italic; */
-        font-size: var(--title);
-        background-color: red;
-        line-height: 0;
+        font-size: var(--subtitle);
+        /* background-color: red; */
+        /* line-height: 0; */
       }
       h1 {
         font-family: "Chivo Mono", sans-serif;
-        font-size: clamp(4rem, 8vw, 9rem);
+        font-size: clamp(3rem, 7vw, 9rem);
         font-weight: 800;
         line-height: 100%;
         margin-bottom: 30px;
@@ -180,7 +179,7 @@ const Hero = () => {
         <Content__Main>
           <div className="content__main">
             <div className="content__main-title">
-              <span>_We are</span>
+              <span>We are</span>
               <h1>
                 {/* <span>_We are</span> */}
                 Collective

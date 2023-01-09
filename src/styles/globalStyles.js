@@ -29,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100%;
     /* -moz-osx-font-smoothing: grayscale; */
     /* -webkit-font-smoothing: antialiased; */
-    line-height: 1.3;
+    line-height: 1.2;
   }
 
   section {

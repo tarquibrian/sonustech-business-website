@@ -48,24 +48,32 @@ const Content__Main = styled.div`
     flex-direction: column;
     width: 80%;
     margin: auto;
-    gap: 3rem;
+    /* gap: 3rem; */
 
     /* align-items: ; */
     /* justify-content: space-between; */
-    h1 {
-      font-family: "Oswald", sans-serif;
-      font-size: clamp(4rem, 8vw, 9rem);
-      font-weight: 600;
-      line-height: 100%;
+    .content__main-title {
       span {
         font-family: "Cormorant", sans-serif;
+        /* font-style: italic; */
         font-size: var(--title);
+        background-color: red;
+        line-height: 0;
+      }
+      h1 {
+        font-family: "Chivo Mono", sans-serif;
+        font-size: clamp(4rem, 8vw, 9rem);
+        font-weight: 800;
+        line-height: 100%;
+        margin-bottom: 30px;
+        /* background-color: blue; */
+      }
+      p {
+        font-size: 1.2rem;
+        line-height: 1.5;
       }
     }
-    p {
-      font-size: 1.2rem;
-      line-height: 1.5;
-    }
+
     .btn {
       /* background-color: #000; */
       color: ${({ theme }) => theme.colors?.textNeon};
@@ -171,19 +179,22 @@ const Hero = () => {
       <Hero__Content>
         <Content__Main>
           <div className="content__main">
-            <h1>
+            <div className="content__main-title">
               <span>_We are</span>
-              <br />
-              Collective
-              <br />
-              Engineers
-            </h1>
+              <h1>
+                {/* <span>_We are</span> */}
+                Collective
+                <br />
+                Engineers
+              </h1>
+            </div>
+
             {/* <p>
               Partner with trained professionals to provide you with high-level
               solutions. Always offering you guarantees, quality and safety, all
               accompanied by innovation.
             </p> */}
-            <div className="btn">
+            {/* <div className="btn">
               <Link href={`/contact`}>
                 <span>
                   Contact
@@ -203,7 +214,7 @@ const Hero = () => {
                   </svg>
                 </span>
               </Link>
-            </div>
+            </div> */}
           </div>
           <div className="content__center">
             <ul>

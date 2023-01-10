@@ -12,6 +12,7 @@ import { AnimatePresence, motion } from "framer-motion"
 
 import logo from "../assets/images/logo.png"
 import Image from "next/image"
+import Author from "src/sections/author"
 
 const themesMap = {
   lighter: lightTheme,
@@ -197,6 +198,7 @@ const Layout = ({ children }) => {
           </motion.main>
 
           <Footer />
+          <Author />
         </Body>
       </LayoutPartition>
     </ThemeProvider>

@@ -10,6 +10,7 @@ import { useAppContext } from "../contexts/app.context"
 import desktop from "../assets/images/desktop.png"
 import hero_banner from "../assets/images/hero-banner.jpg"
 import hero_banner2 from "../assets/images/hero-banner2.jpg"
+import ArrowRight from "src/components/icons/hero/arrow"
 
 const Hero__Section = styled.section`
   height: calc(100vh - 4.9rem);
@@ -18,6 +19,7 @@ const Hero__Section = styled.section`
   overflow: hidden;
   background: ${({ theme }) => theme.colors?.foreground};
   margin-top: initial;
+  /* border-bottom: var(--border) solid ${({ theme }) => theme.colors.body}; */
 `
 
 const Hero__Content = styled.div`
@@ -53,11 +55,11 @@ const Content__Main = styled.div`
 
     .content__main-title {
       span {
+        svg {
+          margin-right: 5px;
+        }
         font-family: "Raleway", sans-serif;
-        /* font-style: italic; */
         font-size: var(--subtitle);
-        /* background-color: red; */
-        /* line-height: 0; */
       }
       h1 {
         font-family: "Chivo Mono", sans-serif;
@@ -153,6 +155,7 @@ const Content__Main = styled.div`
 const Content__Image = styled.div`
   height: 100%;
   width: 100%;
+  /* padding: 2rem; */
   overflow: hidden;
   grid-column: 4/6;
   /* border-left: var(--border) solid ${({ theme }) => theme.colors?.border}; */
@@ -179,7 +182,10 @@ const Hero = () => {
         <Content__Main>
           <div className="content__main">
             <div className="content__main-title">
-              <span>We are</span>
+              <span>
+                <ArrowRight />
+                We are
+              </span>
               <h1>
                 {/* <span>_We are</span> */}
                 Collective
@@ -235,6 +241,10 @@ const Hero = () => {
             columns={[
               {
                 animationTime: "40s",
+                images: [hero_banner, hero_banner2],
+              },
+              {
+                animationTime: "20s",
                 images: [hero_banner, hero_banner2],
               },
             ]}

@@ -12,10 +12,16 @@ import img5 from "../assets/images/web5.png"
 import img6 from "../assets/images/web6.png"
 
 const Carousel__Container = styled.div`
+  padding: 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-columns: ${({ nColumns }) =>
     nColumns ? `repeat(${nColumns}, 1fr)` : "none"};
+  gap: 1rem;
+  /* background-color: ${({ theme }) => theme.colors.foreground}; */
+  background-color: #000;
+  /* box-shadow: inset 0 0 10px 4px ${({ theme }) =>
+    theme.colors.foreground}; */
 `
 
 const Container__Column = styled.div`
@@ -39,33 +45,29 @@ const Container__Column = styled.div`
 const Card = styled.div`
   width: 100%;
   border: 1px solid ${({ theme }) => theme.colors?.border};
-  /* border-bottom: none; */
+  margin-bottom: 1rem;
   border-right: none;
   border-left: none;
-  /* height: 350px; */
-
   aspect-ratio: ${({ aspectRatio }) =>
     aspectRatio ? `auto ${aspectRatio}` : "initial"};
-  /* aspect-ratio: auto 1 / 1; */
-
   max-height: calc(100vh - 4.9rem);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
   overflow: hidden;
+  transition: 0.2s ease;
   img {
     width: 100%;
     height: auto;
     object-fit: contain;
-    /* background-color: white; */
-  }
-  h1 {
-    /* background-color: lightgreen; */
+    transition: 0.1s ease;
   }
   &:hover {
     background-color: ${({ theme }) => theme.colors?.hoverBackground};
+    img {
+      transform: scale(1.2);
+    }
   }
 `
 
@@ -75,7 +77,6 @@ const Carousel = ({ columns, aspectRatio }) => {
     <Carousel__Container nColumns={columns.length}>
       {columns.map((item) => {
         const { animationTime, images } = item
-        console.log(animationTime)
         return (
           <Container__Column animationTime={animationTime}>
             {images.map((path) => (
@@ -86,7 +87,11 @@ const Carousel = ({ columns, aspectRatio }) => {
             ))}
             {images.map((path) => (
               <Card>
-                <Image src={path} alt="logo image carousel" />
+                <Image
+                  src={path}
+                  alt="logo image carousel"
+                  placeholder="blur"
+                />
                 {/* <h1>SEO POSITION</h1> */}
               </Card>
             ))}

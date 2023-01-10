@@ -18,10 +18,8 @@ const Carousel__Container = styled.div`
   grid-template-columns: ${({ nColumns }) =>
     nColumns ? `repeat(${nColumns}, 1fr)` : "none"};
   gap: 1rem;
-  /* background-color: ${({ theme }) => theme.colors.foreground}; */
-  background-color: #000;
-  /* box-shadow: inset 0 0 10px 4px ${({ theme }) =>
-    theme.colors.foreground}; */
+  background-color: ${({ theme }) => theme.colors?.foreground};
+  /* box-shadow: inset 0 0 10px ${({ theme }) => theme.colors.foreground}; */
 `
 
 const Container__Column = styled.div`
@@ -44,7 +42,6 @@ const Container__Column = styled.div`
 
 const Card = styled.div`
   width: 100%;
-  border: 1px solid ${({ theme }) => theme.colors?.border};
   margin-bottom: 1rem;
   border-right: none;
   border-left: none;
@@ -57,16 +54,17 @@ const Card = styled.div`
   justify-content: center;
   overflow: hidden;
   transition: 0.2s ease;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 3px 6px, rgba(0, 0, 0, 0.4) 0px 3px 6px;
   img {
     width: 100%;
     height: auto;
     object-fit: contain;
-    transition: 0.1s ease;
+    transition: 0.2s ease;
   }
   &:hover {
     background-color: ${({ theme }) => theme.colors?.hoverBackground};
     img {
-      transform: scale(1.2);
+      transform: scale(1.15);
     }
   }
 `
@@ -81,7 +79,11 @@ const Carousel = ({ columns, aspectRatio }) => {
           <Container__Column animationTime={animationTime}>
             {images.map((path) => (
               <Card aspectRatio={aspectRatio}>
-                <Image src={path} alt="logo image carousel" />
+                <Image
+                  src={path}
+                  alt="logo image carousel"
+                  placeholder="blur"
+                />
                 {/* <h1>SEO POSITION</h1> */}
               </Card>
             ))}

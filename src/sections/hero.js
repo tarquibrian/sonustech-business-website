@@ -44,6 +44,7 @@ const Content__Main = styled.div`
   grid-template-rows: 5fr 0.6fr 1fr;
 
   border-right: var(--border) solid ${({ theme }) => theme.colors?.border};
+  /* border-right: 2px solid #000; */
 
   .content__main {
     display: flex;

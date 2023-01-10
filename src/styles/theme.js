@@ -2,7 +2,10 @@ import mixins from "./mixins"
 
 export const lightTheme = {
   // body: `linear-gradient(135deg, rgba(218,211,209,1) 0%, rgba(236,233,234,1) 100%)`,
+  dark: "#000",
+  light: "#fff",
   body: `rgba(218,211,209,1)`,
+  bodyVariant: "rgba(218,211,209,1)",
   bodyInverse: "rgba(39,39,39,1.0)",
   text: "rgba(39,39,39,1.0)",
   textLight: "rgba(218,211,209,1)",

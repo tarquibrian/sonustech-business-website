@@ -127,7 +127,6 @@ const Content__Main = styled.div`
     font-size: var(--title-content);
     /* font-family: "Oswald", sans-serif; */
     font-weight: lighter;
-
     ul {
       display: flex;
       height: 100%;
@@ -148,7 +147,21 @@ const Content__Main = styled.div`
     grid-column: 1/-1;
     font-family: "Raleway", sans-serif;
     font-size: var(--subtitle);
+    width: 80%;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
     p {
+      span {
+        padding: 0.4rem;
+      }
+      .reshaping {
+        background-color: #eb5e28;
+        color: ${({ theme }) => theme.colors?.body};
+      }
+      .world {
+        background-color: #a1b5d8;
+      }
     }
 
     /* background-color: ${({ theme }) => theme.colors?.textInverse}; */
@@ -235,7 +248,10 @@ const Hero = () => {
             </ul>
           </div>
           <div className="content__footer">
-            <p>We dream of reshaping the world</p>
+            <p>
+              We dream of <span className="reshaping">reshaping</span> the{" "}
+              <span className="world">world</span>.
+            </p>
           </div>
         </Content__Main>
         <Content__Image>

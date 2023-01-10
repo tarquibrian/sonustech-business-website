@@ -146,6 +146,11 @@ const Content__Main = styled.div`
   }
   .content__footer {
     grid-column: 1/-1;
+    font-family: "Raleway", sans-serif;
+    font-size: var(--subtitle);
+    p {
+    }
+
     /* background-color: ${({ theme }) => theme.colors?.textInverse}; */
     /* grid-row: 4/ 6; */
   }
@@ -229,7 +234,9 @@ const Hero = () => {
               <li>SIMULATION</li>
             </ul>
           </div>
-          <div className="content__footer"></div>
+          <div className="content__footer">
+            <p>We dream of reshaping the world</p>
+          </div>
         </Content__Main>
         <Content__Image>
           {/* <Image

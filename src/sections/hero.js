@@ -147,7 +147,7 @@ const Content__Main = styled.div`
     grid-column: 1/-1;
     font-family: "Raleway", sans-serif;
     font-size: var(--subtitle);
-    width: 80%;
+    width: 90%;
     margin-inline: auto;
     display: flex;
     align-items: center;

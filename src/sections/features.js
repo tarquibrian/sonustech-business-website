@@ -1,4 +1,3 @@
-"use client"
 import Image from "next/image"
 import React, { useEffect, useRef, useState } from "react"
 import styled from "styled-components"
@@ -10,24 +9,19 @@ import PlanningIcon from "../components/icons/planing"
 import { useAppContext } from "../contexts/app.context"
 
 const Feaures__Section = styled.section`
-  margin: 50px 0;
-  min-height: 600px;
+  /* min-height: 600px; */
   width: 100%;
-  background-color: ${({ theme }) => theme.colors?.body};
-  /* border-radius: 30px; */
-  /* gap: 4rem; */
-  /* padding: 4rem 0; */
+  height: 100%;
+  background-color: ${({ theme }) => theme.colors?.bodyInverse};
+  color: ${({ theme }) => theme.colors?.textInverse};
 `
 const Features__Content = styled.div`
-  width: 90%;
-  padding: 5rem 0;
-  margin: auto;
   height: 100%;
   display: grid;
-  grid-template-rows: repeat(2, auto);
-  gap: 3rem;
+  grid-template-columns: 2fr 1fr 2fr;
 `
 const Content__Header = styled.header`
+  /* grid-column: 1/2; */
   /* display: grid; */
   /* justify-content: flex-end; */
   /* text-align: end; */
@@ -47,45 +41,29 @@ const Content__Header = styled.header`
   }
 `
 
+const Content__Image = styled.div`
+  /* grid-column: 2/3; */
+  img {
+    width: 100%;
+    height: auto;
+  }
+`
+
 const Content__Features = styled.div`
-  display: grid;
+  width: 100%;
+  height: 100%;
+  /* grid-column: 4/-1; */
+  /* display: grid; */
   /* grid-template-columns: minmax(200px, 600px) 1fr; */
   /* grid-template-columns: repeat(11, 1fr); */
-  grid-template-columns: 1fr 1fr 1fr;
-
-  .content__body-left {
-    /* grid-column: 1/7; */
-    /* grid-row: 1/-1; */
-    h1 {
-      font-size: var(--title-content);
-    }
-
-    .side__gif-body {
-      display: flex;
-      align-items: center;
-      background-color: white;
-      height: 100%;
-      border: var(--border) solid ${({ theme }) => theme.colors?.border};
-
-      img {
-        width: 100%;
-        object-fit: contain;
-      }
-    }
-  }
-
-  .content__body-right {
-    /* grid-column: 7/-1; */
-    /* grid-row: 1/-1; */
-    /* background-color: red; */
-    height: 100%;
-  }
+  /* grid-template-columns: 1fr 1fr 1fr; */
 `
 
 const Feature = styled.div`
   overflow: hidden;
   transition: 0.3s ease;
-  border-bottom: var(--border) solid ${({ theme }) => theme.colors.border};
+  border-bottom: var(--border) solid
+    ${({ theme }) => theme.colors.borderInverse};
 
   /* width: 100%; */
 `
@@ -141,12 +119,11 @@ const Feaures = () => {
           </p>
         </Content__Header>
 
+        <Content__Image>
+          <Image src={gif} width={500} alt="git lifecycle development" />
+        </Content__Image>
+
         <Content__Features>
-          <div className="content__body-left">
-            <div className="side__gif-body">
-              <Image src={gif} width={500} alt="git lifecycle development" />
-            </div>
-          </div>
           <div className="content__body-right">
             {featuresData.map((item) => {
               const { id, title, description, svg } = item

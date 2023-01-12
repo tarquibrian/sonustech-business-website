@@ -68,7 +68,9 @@ const Content__Main = styled.div`
         font-weight: 800;
         line-height: 100%;
         margin-bottom: 30px;
-        /* background-color: blue; */
+        u {
+          color: #c03546;
+        }
       }
       p {
         font-size: 1.2rem;
@@ -156,11 +158,12 @@ const Content__Main = styled.div`
         padding: 0.4rem;
       }
       .reshaping {
-        background-color: #eb5e28;
+        background-color: #c03546;
         color: ${({ theme }) => theme.colors?.body};
       }
       .world {
-        background-color: #a1b5d8;
+        background-color: #c03546;
+        color: ${({ theme }) => theme.colors?.body};
       }
     }
 
@@ -209,7 +212,7 @@ const Hero = () => {
                 {/* <span>_We are</span> */}
                 Collective
                 <br />
-                Engineers
+                <u>Engineers</u>
               </h1>
             </div>
 

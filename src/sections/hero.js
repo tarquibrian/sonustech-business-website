@@ -56,8 +56,8 @@ const Content__Main = styled.div`
 
     .content__main-title {
       svg {
-        margin-right: 0.8rem;
-        width: 50px;
+        margin-right: 1rem;
+        width: 40px;
         height: auto;
       }
       span {

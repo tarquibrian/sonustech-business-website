@@ -55,11 +55,12 @@ const Content__Main = styled.div`
     /* background-color: lightblue; */
 
     .content__main-title {
+      svg {
+        margin-right: 0.8rem;
+        width: 50px;
+        height: auto;
+      }
       span {
-        svg {
-          margin-right: 5px;
-        }
-        font-family: "Raleway", sans-serif;
         font-size: var(--subtitle);
       }
       h1 {
@@ -67,14 +68,14 @@ const Content__Main = styled.div`
         font-size: clamp(3rem, 7vw, 9rem);
         font-weight: 800;
         line-height: 100%;
-        margin-bottom: 30px;
         u {
-          color: #c03546;
+          color: #14b19d;
+          -webkit-text-stroke: 2px #121212;
         }
+        margin-bottom: 1rem;
       }
       p {
-        font-size: 1.2rem;
-        line-height: 1.5;
+        font-size: var(--subtitle);
       }
     }
 
@@ -212,8 +213,12 @@ const Hero = () => {
                 {/* <span>_We are</span> */}
                 COLLECTIVE
                 <br />
-                <u>Engineers</u>
+                <u>ENGINEERS</u>
               </h1>
+              <p>
+                <ArrowRight />
+                We dream of reshaping the world.
+              </p>
             </div>
 
             {/* <p>
@@ -251,10 +256,10 @@ const Hero = () => {
             </ul>
           </div>
           <div className="content__footer">
-            <p>
+            {/* <p>
               We dream of <span className="reshaping">reshaping</span> the{" "}
               <span className="world">world</span>.
-            </p>
+            </p> */}
           </div>
         </Content__Main>
         <Content__Image>

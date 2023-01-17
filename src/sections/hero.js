@@ -47,14 +47,13 @@ const Content__Main = styled.div`
   /* border-right: 2px solid #000; */
 
   .content__main {
-    display: flex;
-    flex-direction: column;
     width: 80%;
     margin: auto;
-    /* gap: 3rem; */
-    /* background-color: lightblue; */
 
     .content__main-title {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
       svg {
         margin-right: 1rem;
         width: 40px;

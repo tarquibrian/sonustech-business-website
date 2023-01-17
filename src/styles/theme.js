@@ -5,6 +5,7 @@ export const lightTheme = {
   dark: "#000",
   light: "#fff",
   body: `rgba(218,211,209,1)`,
+  bodyOpacity: "rgba(218,211,209,.8)",
   bodyVariant: "rgba(218,211,209,1)",
   bodyInverse: "rgba(39,39,39,1.0)",
   text: "rgba(39,39,39,1.0)",

@@ -210,7 +210,7 @@ const Hero = () => {
               </span>
               <h1>
                 {/* <span>_We are</span> */}
-                Collective
+                COLLECTIVE
                 <br />
                 <u>Engineers</u>
               </h1>

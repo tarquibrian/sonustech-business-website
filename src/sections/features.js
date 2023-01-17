@@ -10,6 +10,8 @@ import { useAppContext } from "../contexts/app.context"
 
 const Feaures__Section = styled.section`
   /* min-height: 600px; */
+  padding: 7rem 0;
+  /* padding-left: 2%; */
   width: 100%;
   height: 100%;
   background-color: ${({ theme }) => theme.colors?.bodyInverse};
@@ -18,45 +20,52 @@ const Feaures__Section = styled.section`
 const Features__Content = styled.div`
   height: 100%;
   display: grid;
-  grid-template-columns: 2fr 1fr 2fr;
-`
-const Content__Header = styled.header`
-  /* grid-column: 1/2; */
-  /* display: grid; */
-  /* justify-content: flex-end; */
-  /* text-align: end; */
-  /* width: 90%; */
-  /* margin: auto; */
-  h1 {
-    font-size: var(--title);
-    margin-bottom: 2rem;
-  }
-  h2 {
-    font-size: var(--subtitle);
-  }
-  p {
-    max-width: 750px;
-    font-size: var(--description);
-    /* background-color: red; */
-  }
+  grid-template-columns: 3fr 2fr;
 `
 
-const Content__Image = styled.div`
-  /* grid-column: 2/3; */
-  img {
-    width: 100%;
-    height: auto;
+const Content__Main = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  .content__main-header {
+    grid-column: 1/3;
+    width: 90%;
+    margin: 0 auto;
+    height: fit-content;
+    position: sticky;
+    top: 0;
+    left: 0;
+    h1 {
+      font-size: var(--title);
+      margin-bottom: 2rem;
+      line-height: 70%;
+    }
+    h2 {
+      font-size: var(--subtitle);
+    }
+    p {
+      max-width: 750px;
+      font-size: var(--description);
+    }
+  }
+  .content__main-image {
+    grid-column: 3/-1;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 1rem;
+
+    img {
+      margin-inline: auto;
+      width: 100%;
+      max-width: 500px;
+      height: auto;
+    }
   }
 `
 
 const Content__Features = styled.div`
   width: 100%;
   height: 100%;
-  /* grid-column: 4/-1; */
-  /* display: grid; */
-  /* grid-template-columns: minmax(200px, 600px) 1fr; */
-  /* grid-template-columns: repeat(11, 1fr); */
-  /* grid-template-columns: 1fr 1fr 1fr; */
 `
 
 const Feature = styled.div`
@@ -64,8 +73,9 @@ const Feature = styled.div`
   transition: 0.3s ease;
   border-bottom: var(--border) solid
     ${({ theme }) => theme.colors.borderInverse};
-
-  /* width: 100%; */
+  &:first-child {
+    border-top: var(--border) solid ${({ theme }) => theme.colors.borderInverse};
+  }
 `
 
 const Title = styled.div`
@@ -81,7 +91,7 @@ const Title = styled.div`
     font-size: var(--title-content);
   }
   g {
-    stroke: ${({ theme }) => theme.colors?.border};
+    stroke: ${({ theme }) => theme.colors?.borderInverse};
   }
   .title__icon-left,
   .title__icon-right {
@@ -109,19 +119,21 @@ const Feaures = () => {
   return (
     <Feaures__Section ref={ref} id="features">
       <Features__Content>
-        <Content__Header>
-          <h1>OUR EXPERTICES</h1>
-          <h2>CUSTOM SOFTWARE DEVELOPMENT LIFECYCLE</h2>
-          <p>
-            We employ best practice processes and development methodologies as a
-            foundation for rapid building of cutting-edge technology solutions
-            in a structured and methodical way.
-          </p>
-        </Content__Header>
+        <Content__Main>
+          <div className="content__main-header">
+            <h1>OUR EXPERTICES</h1>
+            <h2>Custom Software Development Lifecycle</h2>
+            <p>
+              We employ best practice processes and development methodologies as
+              a foundation for rapid building of cutting-edge technology
+              solutions in a structured and methodical way.
+            </p>
+          </div>
 
-        <Content__Image>
-          <Image src={gif} width={500} alt="git lifecycle development" />
-        </Content__Image>
+          <div className="content__main-image">
+            <Image src={gif} width={500} alt="git lifecycle development" />
+          </div>
+        </Content__Main>
 
         <Content__Features>
           <div className="content__body-right">

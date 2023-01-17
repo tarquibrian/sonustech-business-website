@@ -4,12 +4,15 @@ import { competenciesData } from "../data/competenciesData"
 import { motion, useInView } from "framer-motion"
 import { useAppContext } from "../contexts/app.context"
 import StarIcon from "../components/icons/competencies/star"
+import Slider from "react-slick"
+import SimpleSlider from "src/components/slider"
 
 const Competencies__Section = styled.section`
   min-height: 500px;
   width: 100%;
-  margin: 100px 0;
-  background-color: ${({ theme }) => theme.colors?.body};
+  /* margin: 100px 0; */
+  background-color: ${({ theme }) => theme.colors?.bodyInverse};
+  color: ${({ theme }) => theme.colors?.textInverse};
   /* border-radius: 30px; */
 `
 const Competencies__Content = styled.div`
@@ -113,6 +116,17 @@ const Competencie__Card = styled(motion.div)`
   }
 `
 
+const Competencies__Slider = styled.div`
+  width: 1200px;
+  overflow-x: hidden;
+`
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+}
 const Competencies = () => {
   const ref = useRef()
   const isVisible = useInView(ref, { margin: "-200px" })
@@ -170,6 +184,10 @@ const Competencies = () => {
           })}
         </Content__Competencies>
       </Competencies__Content>
+      {/* <SimpleSlider /> */}
+      <Competencies__Slider>
+        <h1>carousel</h1>
+      </Competencies__Slider>
     </Competencies__Section>
   )
 }

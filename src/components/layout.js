@@ -146,24 +146,24 @@ const Layout = ({ children }) => {
             <Image src={logo} alt="sonustech logo" width={50} />
             <div className="side-navigator">
               <a
+                aria-label="hero section"
                 className={`${nav === "hero" ? "isActive" : ""}`}
                 onClick={scrollTop}
-                aria-label="hero section"
               ></a>
               <a
+                aria-label="services section"
                 href="#services"
                 className={`${nav === "services" ? "isActive" : ""}`}
-                aria-label="services section"
               ></a>
               <a
+                aria-label="features section"
                 href="#features"
                 className={`${nav === "features" ? "isActive" : ""}`}
-                aria-label="features section"
               ></a>
               <a
+                aria-label="competencies section"
                 href="#competencies"
                 className={`${nav === "competencies" ? "isActive" : ""}`}
-                aria-label="competencies section"
               ></a>
               <a href="#services"></a>
             </div>
@@ -171,19 +171,19 @@ const Layout = ({ children }) => {
               <span>Colors</span>
               <div className="colors-palette">
                 <button
+                  aria-label="first theme"
                   className="lighter"
                   onClick={() => setTheme("lighter")}
-                  aria-label="first theme"
                 ></button>
                 <button
+                  aria-label="second theme"
                   className="reddish"
                   onClick={() => setTheme("reddish")}
-                  aria-label="second theme"
                 ></button>
                 <button
+                  aria-label="terceary theme"
                   className="darker"
                   onClick={() => setTheme("darker")}
-                  aria-label="terceary theme"
                 ></button>
               </div>
             </div>

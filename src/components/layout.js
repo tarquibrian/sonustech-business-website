@@ -148,18 +148,22 @@ const Layout = ({ children }) => {
               <a
                 className={`${nav === "hero" ? "isActive" : ""}`}
                 onClick={scrollTop}
+                aria-label="hero section"
               ></a>
               <a
                 href="#services"
                 className={`${nav === "services" ? "isActive" : ""}`}
+                aria-label="services section"
               ></a>
               <a
                 href="#features"
                 className={`${nav === "features" ? "isActive" : ""}`}
+                aria-label="features section"
               ></a>
               <a
                 href="#competencies"
                 className={`${nav === "competencies" ? "isActive" : ""}`}
+                aria-label="competencies section"
               ></a>
               <a href="#services"></a>
             </div>
@@ -169,14 +173,17 @@ const Layout = ({ children }) => {
                 <button
                   className="lighter"
                   onClick={() => setTheme("lighter")}
+                  aria-label="first theme"
                 ></button>
                 <button
                   className="reddish"
                   onClick={() => setTheme("reddish")}
+                  aria-label="second theme"
                 ></button>
                 <button
                   className="darker"
                   onClick={() => setTheme("darker")}
+                  aria-label="terceary theme"
                 ></button>
               </div>
             </div>

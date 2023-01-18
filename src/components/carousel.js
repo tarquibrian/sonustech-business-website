@@ -9,6 +9,13 @@ const Carousel__Container = styled.div`
     nColumns ? `repeat(${nColumns}, 1fr)` : "none"};
   gap: 1rem;
   background-color: ${({ theme }) => theme.colors?.foreground};
+
+  @media screen and (max-width: 1400px) {
+    grid-template-columns: 1fr;
+  }
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr 1fr;
+  }
 `
 
 const Container__Column = styled.div`

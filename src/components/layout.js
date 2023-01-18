@@ -37,13 +37,14 @@ const Side = styled.div`
   z-index: 9999;
   position: relative;
   @media screen and (max-width: 600px) {
-    position: fixed;
-    top: initial;
-    bottom: 0;
+    display: none;
+    /* position: fixed;
     left: 0;
-    height: 60px;
+    bottom: 0;
     width: 100%;
-    border: initial;
+    height: 80px;
+    background-color: ${({ theme }) => theme.colors?.body};
+    border-top: var(--border) solid ${({ theme }) => theme.colors?.border}; */
   }
 `
 

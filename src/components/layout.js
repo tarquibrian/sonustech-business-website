@@ -13,6 +13,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import logo from "../assets/images/logo.png"
 import Image from "next/image"
 import Author from "src/sections/author"
+import Link from "next/link"
 
 const themesMap = {
   lighter: lightTheme,
@@ -148,6 +149,7 @@ const Layout = ({ children }) => {
               <a
                 aria-label="hero section"
                 role="link"
+                // href="#"
                 className={`${nav === "hero" ? "isActive" : ""}`}
                 onClick={scrollTop}
               ></a>
@@ -169,7 +171,6 @@ const Layout = ({ children }) => {
                 href="#competencies"
                 className={`${nav === "competencies" ? "isActive" : ""}`}
               ></a>
-              <a href="#services"></a>
             </div>
             <div className="side-colors">
               <span>Colors</span>

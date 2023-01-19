@@ -21,7 +21,8 @@ const variables = css`
     --description: clamp(12px, 2vw, 16px);
 
     --border-radius: 4px;
-    --border: 2px;
+    --border: 1px;
+    --border-medium: 2px;
     --nav-height: 100px;
     --nav-scroll-height: 70px;
 

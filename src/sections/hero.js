@@ -19,7 +19,7 @@ const Hero__Section = styled.section`
   overflow: hidden;
   background: ${({ theme }) => theme.colors?.foreground};
   margin-top: initial;
-  /* border-bottom: var(--border) solid ${({ theme }) => theme.colors.body}; */
+  border-bottom: var(--border) solid ${({ theme }) => theme.colors.bodyInverse};
 
   @media screen and (max-width: 800px) {
     height: 100vh;

@@ -9,8 +9,8 @@ const Services__Section = styled.section`
   padding: 7rem 0;
   min-height: 900px;
   width: 100%;
-  background-color: ${({ theme }) => theme.colors.bodyInverse};
-  color: ${({ theme }) => theme.colors.textInverse};
+  background-color: ${({ theme }) => theme.colors.body};
+  color: ${({ theme }) => theme.colors.text};
   /* border-bottom: var(--border) solid
     ${({ theme }) => theme.colors?.borderInverse}; */
 `
@@ -26,8 +26,7 @@ const Services__Content = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
-    border-right: var(--border) solid
-      ${({ theme }) => theme.colors.borderInverse};
+    border-right: var(--border) solid ${({ theme }) => theme.colors.border};
     padding: 0 5%;
 
     .content__information-card {
@@ -53,13 +52,10 @@ const Services__Content = styled.div`
   .content__body {
     height: 100%;
     display: grid;
-    border-bottom: var(--border) solid
-      ${({ theme }) => theme.colors?.borderInverse};
-    border-top: var(--border) solid
-      ${({ theme }) => theme.colors?.borderInverse};
+    border-bottom: var(--border) solid ${({ theme }) => theme.colors?.border};
+    border-top: var(--border) solid ${({ theme }) => theme.colors?.border};
     .content__body-header {
-      border-bottom: var(--border) solid
-        ${({ theme }) => theme.colors.borderInverse};
+      border-bottom: var(--border) solid ${({ theme }) => theme.colors.border};
       /* height: 3.5rem; */
     }
     .content__body-list {
@@ -95,12 +91,9 @@ const Services__Content = styled.div`
 const Card = styled.div`
   width: 100%;
   height: 100%;
-  border-right: var(--border) solid
-    ${({ theme }) => theme.colors?.borderInverse};
+  border-right: var(--border) solid ${({ theme }) => theme.colors?.border};
   border-bottom: ${({ element, theme }) =>
-    element <= 3
-      ? `var(--border) solid ${theme.colors?.borderInverse}`
-      : "none"};
+    element <= 3 ? `var(--border) solid ${theme.colors?.border}` : "none"};
   display: flex;
   flex-direction: column;
   position: relative;
@@ -108,16 +101,12 @@ const Card = styled.div`
   transition: 0.3s ease;
   @media screen and (max-width: 1080px) {
     border-bottom: ${({ element, theme }) =>
-      element <= 4
-        ? `var(--border) solid ${theme.colors?.borderInverse}`
-        : "none"};
+      element <= 4 ? `var(--border) solid ${theme.colors?.border}` : "none"};
   }
   @media screen and (max-width: 480px) {
     border-right: none;
     border-bottom: ${({ element, theme }) =>
-      element <= 5
-        ? `var(--border) solid ${theme.colors?.borderInverse}`
-        : "none"};
+      element <= 5 ? `var(--border) solid ${theme.colors?.border}` : "none"};
   }
 `
 const HeadCard = styled.header`

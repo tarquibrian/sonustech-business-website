@@ -20,7 +20,8 @@ const Feaures__Section = styled.section`
 const Features__Content = styled.div`
   height: 100%;
   display: grid;
-  grid-template-columns: 3fr 2fr;
+  gap: 4rem;
+  /* grid-template-columns: 2fr 3fr; */
 
   @media screen and (max-width: 1080px) {
     background-color: red;
@@ -30,9 +31,8 @@ const Features__Content = styled.div`
 
 const Content__Main = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* grid-template-columns: repeat(3, 1fr); */
   .content__main-header {
-    grid-column: 1/3;
     width: 90%;
     margin: 0 auto;
     height: fit-content;
@@ -71,6 +71,28 @@ const Content__Main = styled.div`
 const Content__Features = styled.div`
   width: 100%;
   height: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  .content__features-image {
+    grid-column: 2/4;
+    background-color: white;
+    height: 100%;
+    display: grid;
+    place-content: center;
+
+    img {
+      margin-inline: auto;
+      /* width: 100%; */
+      /* max-width: 500px; */
+      /* height: auto; */
+    }
+  }
+  .content__features-list {
+    grid-column: 4 / -1;
+  }
+  @media screen and (max-width: 1080px) {
+    grid-template-columns: 1fr 1fr;
+  }
 `
 
 const Feature = styled.div`
@@ -126,7 +148,7 @@ const Feaures = () => {
       <Features__Content>
         <Content__Main>
           <div className="content__main-header">
-            <h1>OUR EXPERTICES</h1>
+            <h1>→ OUR EXPERTICES</h1>
             <h2>Custom Software Development Lifecycle</h2>
             <p>
               We employ best practice processes and development methodologies as
@@ -135,13 +157,16 @@ const Feaures = () => {
             </p>
           </div>
 
-          <div className="content__main-image">
+          {/* <div className="content__main-image">
             <Image src={gif} width={500} alt="git lifecycle development" />
-          </div>
+          </div> */}
         </Content__Main>
 
         <Content__Features>
-          <div className="content__body-right">
+          <div className="content__features-image">
+            <Image src={gif} width={500} alt="git lifecycle development" />
+          </div>
+          <div className="content__features-list">
             {featuresData.map((item) => {
               const { id, title, description, svg } = item
               return (

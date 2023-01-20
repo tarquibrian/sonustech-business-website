@@ -73,7 +73,7 @@ const Content__Main = styled.div`
         font-weight: 800;
         line-height: 100%;
         u {
-          color: #41ead4;
+          color: #fff;
           -webkit-text-stroke: 2px ${({ theme }) => theme.colors?.border};
         }
         margin-bottom: 1rem;
@@ -152,31 +152,10 @@ const Content__Main = styled.div`
   }
   .content__footer {
     grid-column: 1/-1;
-    font-family: "Raleway", sans-serif;
-    font-size: var(--subtitle);
     width: 90%;
     margin-inline: auto;
-    display: flex;
-    align-items: center;
-    p {
-      span {
-        padding: 0.4rem;
-      }
-      .reshaping {
-        background-color: #c03546;
-        color: ${({ theme }) => theme.colors?.body};
-      }
-      .world {
-        background-color: #c03546;
-        color: ${({ theme }) => theme.colors?.body};
-      }
-    }
-
-    /* background-color: ${({ theme }) => theme.colors?.textInverse}; */
-    /* grid-row: 4/ 6; */
+    background-color: skyblue;
   }
-  /* min-width: 100px; */
-  /* max-width: 650px; */
   @media screen and (max-width: 800px) {
     grid-column: 1/-1;
     grid-row: 1/-1;
@@ -229,7 +208,7 @@ const Hero = () => {
                 {/* <span>_We are</span> */}
                 COLLECTIVE
                 <br />
-                <u>ENGINEERS</u>
+                <u>ENGINEERS</u>.
               </h1>
               <p>
                 <ArrowRight />

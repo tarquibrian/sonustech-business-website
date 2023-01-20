@@ -14,8 +14,9 @@ const Feaures__Section = styled.section`
   /* padding-left: 2%; */
   width: 100%;
   height: 100%;
-  background-color: ${({ theme }) => theme.colors?.bodyInverse};
-  color: ${({ theme }) => theme.colors?.textInverse};
+  background-color: ${({ theme }) => theme.colors?.body};
+  color: ${({ theme }) => theme.colors?.text};
+  border-bottom: var(--border) solid ${({ theme }) => theme.colors.bodyInverse};
 `
 const Features__Content = styled.div`
   height: 100%;
@@ -98,10 +99,9 @@ const Content__Features = styled.div`
 const Feature = styled.div`
   overflow: hidden;
   transition: 0.3s ease;
-  border-bottom: var(--border) solid
-    ${({ theme }) => theme.colors.borderInverse};
+  border-bottom: var(--border) solid ${({ theme }) => theme.colors.border};
   &:first-child {
-    border-top: var(--border) solid ${({ theme }) => theme.colors.borderInverse};
+    border-top: var(--border) solid ${({ theme }) => theme.colors.border};
   }
 `
 
@@ -118,7 +118,7 @@ const Title = styled.div`
     font-size: var(--title-content);
   }
   g {
-    stroke: ${({ theme }) => theme.colors?.borderInverse};
+    stroke: ${({ theme }) => theme.colors?.border};
   }
   .title__icon-left,
   .title__icon-right {

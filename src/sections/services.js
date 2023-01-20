@@ -11,8 +11,7 @@ const Services__Section = styled.section`
   width: 100%;
   background-color: ${({ theme }) => theme.colors.body};
   color: ${({ theme }) => theme.colors.text};
-  /* border-bottom: var(--border) solid
-    ${({ theme }) => theme.colors?.borderInverse}; */
+  border-bottom: var(--border) solid ${({ theme }) => theme.colors.bodyInverse};
 `
 
 const Services__Content = styled.div`

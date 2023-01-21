@@ -9,9 +9,7 @@ import PlanningIcon from "../components/icons/planing"
 import { useAppContext } from "../contexts/app.context"
 
 const Feaures__Section = styled.section`
-  /* min-height: 600px; */
   padding: 7rem 0;
-  /* padding-left: 2%; */
   width: 100%;
   height: 100%;
   background-color: ${({ theme }) => theme.colors?.body};
@@ -22,7 +20,6 @@ const Features__Content = styled.div`
   height: 100%;
   display: grid;
   gap: 4rem;
-  /* grid-template-columns: 2fr 3fr; */
 
   @media screen and (max-width: 1080px) {
     background-color: red;
@@ -32,7 +29,6 @@ const Features__Content = styled.div`
 
 const Content__Main = styled.div`
   display: grid;
-  /* grid-template-columns: repeat(3, 1fr); */
   .content__main-header {
     width: 90%;
     margin: 0 auto;

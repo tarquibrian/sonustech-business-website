@@ -6,8 +6,8 @@ import { useAppContext } from "../contexts/app.context"
 import { servicesData } from "../data/servicesData"
 
 const Services__Section = styled.section`
-  padding: 7rem 0;
-  min-height: 900px;
+  /* padding: 7rem 0; */
+  /* min-height: 900px; */
   width: 100%;
   background-color: ${({ theme }) => theme.colors.body};
   color: ${({ theme }) => theme.colors.text};
@@ -16,7 +16,7 @@ const Services__Section = styled.section`
 
 const Services__Content = styled.div`
   height: 100%;
-  min-height: 100vh;
+  /* min-height: 100vh; */
   width: 100%;
   display: grid;
   grid-template-columns: 2fr 3fr;
@@ -27,7 +27,7 @@ const Services__Content = styled.div`
     height: 100%;
     border-right: var(--border) solid ${({ theme }) => theme.colors.border};
     padding: 0 5%;
-
+    /* background-color: red; */
     .content__information-card {
       position: sticky;
       top: 5rem;
@@ -45,14 +45,19 @@ const Services__Content = styled.div`
       p {
         font-size: var(--description);
       }
+      @media screen and (max-width: 800px) {
+        position: initial;
+      }
     }
   }
 
   .content__body {
     height: 100%;
     display: grid;
-    border-bottom: var(--border) solid ${({ theme }) => theme.colors?.border};
-    border-top: var(--border) solid ${({ theme }) => theme.colors?.border};
+    /* border-bottom: var(--border) solid ${({ theme }) =>
+      theme.colors?.border}; */
+    /* border-top: var(--border) solid ${({ theme }) =>
+      theme.colors?.border}; */
     .content__body-header {
       border-bottom: var(--border) solid ${({ theme }) => theme.colors.border};
       /* height: 3.5rem; */
@@ -78,6 +83,9 @@ const Services__Content = styled.div`
         ${({ theme }) => theme.colors.borderInverse}; */
       border-right: none;
     }
+    .content__body-list {
+      border-top: var(--border) solid ${({ theme }) => theme.colors.border};
+    }
   }
 
   @media screen and (max-width: 480px) {
@@ -100,7 +108,7 @@ const Card = styled.div`
   transition: 0.3s ease;
   @media screen and (max-width: 1080px) {
     border-bottom: ${({ element, theme }) =>
-      element <= 4 ? `var(--border) solid ${theme.colors?.border}` : "none"};
+      element <= 3 ? `var(--border) solid ${theme.colors?.border}` : "none"};
   }
   @media screen and (max-width: 480px) {
     border-right: none;

@@ -146,7 +146,6 @@ const Overlay = styled.div`
 const BodyCard = styled.div`
   display: flex;
   width: 100%;
-  /* min-height: 200px; */
   height: 100%;
   border-radius: 10px;
   position: relative;

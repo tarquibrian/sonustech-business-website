@@ -9,7 +9,7 @@ import PlanningIcon from "../components/icons/planing"
 import { useAppContext } from "../contexts/app.context"
 
 const Feaures__Section = styled.section`
-  padding: 7rem 0;
+  /* padding: 7rem 0; */
   width: 100%;
   height: 100%;
   background-color: ${({ theme }) => theme.colors?.body};
@@ -19,7 +19,7 @@ const Feaures__Section = styled.section`
 const Features__Content = styled.div`
   height: 100%;
   display: grid;
-  gap: 4rem;
+  grid-template-columns: 1fr 1fr;
 
   @media screen and (max-width: 1080px) {
     background-color: red;
@@ -28,7 +28,8 @@ const Features__Content = styled.div`
 `
 
 const Content__Main = styled.div`
-  display: grid;
+  /* display: grid; */
+  border-right: 1px solid black;
   .content__main-header {
     width: 90%;
     margin: 0 auto;
@@ -69,23 +70,22 @@ const Content__Features = styled.div`
   width: 100%;
   height: 100%;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 1fr 1fr;
   .content__features-image {
-    grid-column: 2/4;
     background-color: white;
-    height: 100%;
+    /* height: 100%; */
     display: grid;
     place-content: center;
+    padding: 1rem;
 
     img {
       margin-inline: auto;
-      /* width: 100%; */
+      width: 100%;
       /* max-width: 500px; */
-      /* height: auto; */
+      height: auto;
     }
   }
   .content__features-list {
-    grid-column: 4 / -1;
   }
   @media screen and (max-width: 1080px) {
     grid-template-columns: 1fr 1fr;
@@ -96,8 +96,9 @@ const Feature = styled.div`
   overflow: hidden;
   transition: 0.3s ease;
   border-bottom: var(--border) solid ${({ theme }) => theme.colors.border};
-  &:first-child {
-    border-top: var(--border) solid ${({ theme }) => theme.colors.border};
+  &:last-child {
+    /* border-top: var(--border) solid ${({ theme }) => theme.colors.border}; */
+    border-bottom: initial;
   }
 `
 

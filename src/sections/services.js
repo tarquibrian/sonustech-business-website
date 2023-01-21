@@ -6,8 +6,6 @@ import { useAppContext } from "../contexts/app.context"
 import { servicesData } from "../data/servicesData"
 
 const Services__Section = styled.section`
-  /* padding: 7rem 0; */
-  /* min-height: 900px; */
   width: 100%;
   background-color: ${({ theme }) => theme.colors.body};
   color: ${({ theme }) => theme.colors.text};
@@ -16,7 +14,6 @@ const Services__Section = styled.section`
 
 const Services__Content = styled.div`
   height: 100%;
-  /* min-height: 100vh; */
   width: 100%;
   display: grid;
   grid-template-columns: 2fr 3fr;
@@ -27,7 +24,6 @@ const Services__Content = styled.div`
     height: 100%;
     border-right: var(--border) solid ${({ theme }) => theme.colors.border};
     padding: 0 5%;
-    /* background-color: red; */
     .content__information-card {
       position: sticky;
       top: 5rem;
@@ -54,13 +50,8 @@ const Services__Content = styled.div`
   .content__body {
     height: 100%;
     display: grid;
-    /* border-bottom: var(--border) solid ${({ theme }) =>
-      theme.colors?.border}; */
-    /* border-top: var(--border) solid ${({ theme }) =>
-      theme.colors?.border}; */
     .content__body-header {
       border-bottom: var(--border) solid ${({ theme }) => theme.colors.border};
-      /* height: 3.5rem; */
     }
     .content__body-list {
       display: grid;
@@ -79,8 +70,6 @@ const Services__Content = styled.div`
   @media screen and (max-width: 1080px) {
     grid-template-columns: 1fr;
     .content__information {
-      /* border-bottom: var(--border) solid
-        ${({ theme }) => theme.colors.borderInverse}; */
       border-right: none;
     }
     .content__body-list {

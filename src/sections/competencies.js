@@ -4,17 +4,18 @@ import { competenciesData } from "../data/competenciesData"
 import { motion, useInView } from "framer-motion"
 import { useAppContext } from "../contexts/app.context"
 import StarIcon from "../components/icons/competencies/star"
-import Slider from "react-slick"
-import SimpleSlider from "src/components/slider"
+import Slider from "src/components/slider"
 
 const Competencies__Section = styled.section`
   min-height: 500px;
   width: 100%;
   /* margin: 100px 0; */
-  background-color: ${({ theme }) => theme.colors?.bodyInverse};
-  color: ${({ theme }) => theme.colors?.textInverse};
+  /* background-color: ${({ theme }) => theme.colors?.bodyInverse}; */
+  /* color: ${({ theme }) => theme.colors?.textInverse}; */
   /* border-radius: 30px; */
+  border-bottom: var(--border) solid ${({ theme }) => theme.colors.bodyInverse};
 `
+
 const Competencies__Content = styled.div`
   margin: auto;
   padding: 5rem 0;
@@ -24,6 +25,7 @@ const Competencies__Content = styled.div`
   grid-template-rows: repeat(2, auto);
   gap: 4.5rem;
 `
+
 const Content__Header = styled.header`
   width: 100%;
   margin: auto;
@@ -167,7 +169,7 @@ const Competencies = () => {
             },
           }}
         >
-          {competenciesData.competencies.map((item, i) => {
+          {/* {competenciesData.competencies.map((item, i) => {
             const { title, description, svg } = item
             return (
               <Competencie__Card key={i}>
@@ -178,15 +180,15 @@ const Competencies = () => {
                   <h1>{title}</h1>
                   <p>{description}</p>
                 </div>
-                {/* <div className="body">{svg}</div> */}
               </Competencie__Card>
             )
-          })}
+          })} */}
         </Content__Competencies>
       </Competencies__Content>
       {/* <SimpleSlider /> */}
       <Competencies__Slider>
         <h1>carousel</h1>
+        <Slider />
       </Competencies__Slider>
     </Competencies__Section>
   )

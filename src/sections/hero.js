@@ -73,7 +73,7 @@ const Content__Main = styled.div`
         font-weight: 800;
         line-height: 100%;
         u {
-          color: #fff;
+          color: #6d6875;
           -webkit-text-stroke: 2px ${({ theme }) => theme.colors?.border};
         }
         margin-bottom: 1rem;

@@ -48,6 +48,9 @@ export const GlobalStyle = createGlobalStyle`
 
   button { 
     border-style: none;
+    cursor: pointer;
+    border: 0;
+    border-radius: 0;
   }
 
   img[alt=""],

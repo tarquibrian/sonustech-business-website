@@ -7,13 +7,12 @@ import StarIcon from "../components/icons/competencies/star"
 import Slider from "src/components/slider"
 
 const Competencies__Section = styled.section`
-  min-height: 500px;
+  /* min-height: 500px; */
+  position: relative;
   width: 100%;
-  /* margin: 100px 0; */
-  /* background-color: ${({ theme }) => theme.colors?.bodyInverse}; */
-  /* color: ${({ theme }) => theme.colors?.textInverse}; */
-  /* border-radius: 30px; */
+  height: 100%;
   border-bottom: var(--border) solid ${({ theme }) => theme.colors.bodyInverse};
+  display: grid;
 `
 
 const Competencies__Content = styled.div`
@@ -119,8 +118,8 @@ const Competencie__Card = styled(motion.div)`
 `
 
 const Competencies__Slider = styled.div`
-  width: 1200px;
-  overflow-x: hidden;
+  /* width: 1200px; */
+  overflow: hidden;
 `
 const settings = {
   dots: true,
@@ -169,7 +168,7 @@ const Competencies = () => {
             },
           }}
         >
-          {/* {competenciesData.competencies.map((item, i) => {
+          {competenciesData.competencies.map((item, i) => {
             const { title, description, svg } = item
             return (
               <Competencie__Card key={i}>
@@ -182,10 +181,9 @@ const Competencies = () => {
                 </div>
               </Competencie__Card>
             )
-          })} */}
+          })}
         </Content__Competencies>
       </Competencies__Content>
-      {/* <SimpleSlider /> */}
       <Competencies__Slider>
         <h1>carousel</h1>
         <Slider />

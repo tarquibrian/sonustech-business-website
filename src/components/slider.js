@@ -23,7 +23,7 @@ const Slider__Container = styled.div`
   .swiper {
     width: 100%;
     height: 100%;
-    padding: 0 7rem;
+    padding: 0 7%;
   }
   .swiper-slide {
     text-align: center;
@@ -85,6 +85,24 @@ const Slider = () => {
         //   clickable: true,
         // }}
         // navigation={true}
+        breakpoints={{
+          300: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 40,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 50,
+          },
+        }}
         navigation={{
           nextEl: ".next",
           prevEl: ".prev",

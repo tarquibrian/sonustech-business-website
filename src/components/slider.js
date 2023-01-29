@@ -81,7 +81,7 @@ const Slider__Container = styled.div`
   }
 `
 
-const Slider = () => {
+const Slider = ({ items }) => {
   return (
     <Slider__Container>
       <Swiper
@@ -94,28 +94,32 @@ const Slider = () => {
         //   clickable: true,
         // }}
         // navigation={true}
-        // autoplay={{
-        //   delay: 5000,
-        //   disableOnInteraction: false,
-        // }}
-        // breakpoints={{
-        //   300: {
-        //     slidesPerView: 1,
-        //     spaceBetween: 20,
-        //   },
-        //   640: {
-        //     slidesPerView: 1,
-        //     spaceBetween: 20,
-        //   },
-        //   768: {
-        //     slidesPerView: 2,
-        //     spaceBetween: 40,
-        //   },
-        //   1024: {
-        //     slidesPerView: 3,
-        //     spaceBetween: 50,
-        //   },
-        // }}
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
+        breakpoints={{
+          300: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          640: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 3,
+            spaceBetween: 20,
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 20,
+          },
+          1200: {
+            slidesPerView: 5,
+            spaceBetween: 20,
+          },
+        }}
         navigation={{
           nextEl: ".next",
           prevEl: ".prev",
@@ -123,30 +127,20 @@ const Slider = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <div className="card"></div>
-          {/* <Image src={img1} alt="slider images" title="First image slider" /> */}
-        </SwiperSlide>
-        <SwiperSlide>
-          2
-          {/* <Image src={img1} alt="slider images" title="First image slider" /> */}
-        </SwiperSlide>
-        <SwiperSlide>
-          3
-          {/* <Image src={img1} alt="slider images" title="First image slider" /> */}
-        </SwiperSlide>
-        <SwiperSlide>
-          4
-          {/* <Image src={img1} alt="slider images" title="First image slider" /> */}
-        </SwiperSlide>
-        <SwiperSlide>
-          5
-          {/* <Image src={img1} alt="slider images" title="First image slider" /> */}
-        </SwiperSlide>
-        <SwiperSlide>
-          6
-          {/* <Image src={img1} alt="slider images" title="First image slider" /> */}
-        </SwiperSlide>
+        {items.map((item, i) => {
+          const { title, description, svg } = item
+          return (
+            <SwiperSlide>
+              <div className="card">
+                <div className="card__image">{svg}</div>
+                <div className="card__title">{title}</div>
+                <div className="card__description">{description}</div>
+              </div>
+              {/* <Image src={img1} alt="slider images" title="First image slider" /> */}
+            </SwiperSlide>
+          )
+        })}
+
         <div className="arrows-button">
           <button className="prev">
             <ArrowLeft />

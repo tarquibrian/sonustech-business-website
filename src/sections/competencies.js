@@ -12,17 +12,13 @@ const Competencies__Section = styled.section`
   width: 100%;
   height: 100%;
   border-bottom: var(--border) solid ${({ theme }) => theme.colors.bodyInverse};
-  display: grid;
+  /* display: grid; */
 `
 
 const Competencies__Content = styled.div`
-  margin: auto;
-  padding: 5rem 0;
-  width: 90%;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(2, auto);
-  gap: 4.5rem;
+  position: relative;
+  overflow: hidden;
 `
 
 const Content__Header = styled.header`
@@ -118,8 +114,10 @@ const Competencie__Card = styled(motion.div)`
 `
 
 const Competencies__Slider = styled.div`
-  /* width: 1200px; */
+  width: 100%;
   overflow: hidden;
+  /* margin: auto; */
+  /* display: grid; */
 `
 const settings = {
   dots: true,
@@ -157,7 +155,11 @@ const Competencies = () => {
             <p>{competenciesData.header.description}</p>
           </Description>
         </Content__Header>
-        <Content__Competencies
+        <Competencies__Slider>
+          <h1>carousel</h1>
+          <Slider />
+        </Competencies__Slider>
+        {/* <Content__Competencies
           variants={{
             hidden: { opacity: 0 },
             show: {
@@ -182,12 +184,8 @@ const Competencies = () => {
               </Competencie__Card>
             )
           })}
-        </Content__Competencies>
+        </Content__Competencies> */}
       </Competencies__Content>
-      <Competencies__Slider>
-        <h1>carousel</h1>
-        <Slider />
-      </Competencies__Slider>
     </Competencies__Section>
   )
 }

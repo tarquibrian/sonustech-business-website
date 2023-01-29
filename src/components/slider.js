@@ -11,14 +11,14 @@ import "swiper/css/pagination"
 import "swiper/css/navigation"
 
 // import required modules
-import { Pagination, Navigation } from "swiper"
+import { Pagination, Navigation, Autoplay } from "swiper"
 import Arrow from "./icons/arrow"
 import ArrowRight from "./icons/hero/arrow"
 import ArrowLeft from "./icons/arrow-left"
 
 const Slider__Container = styled.div`
-  /* background-color: rgba(0, 0, 0, 0.2); */
-  /* min-height: 300px; */
+  width: 170%;
+  transform: translateX(-20.7%);
 
   .swiper {
     width: 100%;
@@ -26,13 +26,18 @@ const Slider__Container = styled.div`
     padding: 0 7%;
   }
   .swiper-slide {
+    width: 100%;
+    height: 400px;
+    margin-top: 2px;
+    /* background-color: blue; */
+    outline: var(--border) solid ${({ theme }) => theme.colors?.border};
+    /* overflow: hidden; */
     text-align: center;
     /* font-size: 18px; */
-    background: red;
     cursor: grab;
 
     /* Center slide text vertically */
-    /* display: -webkit-box;
+    display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
@@ -43,14 +48,17 @@ const Slider__Container = styled.div`
     -webkit-box-align: center;
     -ms-flex-align: center;
     -webkit-align-items: center;
-    align-items: center; */
+    align-items: center;
+    /* padding: 1rem; */
+    /* background-color: red; */
+    .card {
+    }
   }
   .swiper-slide img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    background-color: lightcoral;
   }
   .arrows-button {
     display: flex;
@@ -64,6 +72,7 @@ const Slider__Container = styled.div`
     svg {
       width: auto;
       height: 20px;
+      fill: ${({ theme }) => theme.colors?.border};
     }
     .prev {
     }
@@ -76,63 +85,67 @@ const Slider = () => {
   return (
     <Slider__Container>
       <Swiper
-        slidesPerView={3}
-        spaceBetween={30}
-        // slidesPerGroup={1}
+        slidesPerView={5}
+        spaceBetween={20}
+        slidesPerGroup={1}
         loop={true}
         loopFillGroupWithBlank={true}
         // pagination={{
         //   clickable: true,
         // }}
         // navigation={true}
-        breakpoints={{
-          300: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-          },
-          640: {
-            slidesPerView: 1,
-            spaceBetween: 20,
-          },
-          768: {
-            slidesPerView: 2,
-            spaceBetween: 40,
-          },
-          1024: {
-            slidesPerView: 3,
-            spaceBetween: 50,
-          },
-        }}
+        // autoplay={{
+        //   delay: 5000,
+        //   disableOnInteraction: false,
+        // }}
+        // breakpoints={{
+        //   300: {
+        //     slidesPerView: 1,
+        //     spaceBetween: 20,
+        //   },
+        //   640: {
+        //     slidesPerView: 1,
+        //     spaceBetween: 20,
+        //   },
+        //   768: {
+        //     slidesPerView: 2,
+        //     spaceBetween: 40,
+        //   },
+        //   1024: {
+        //     slidesPerView: 3,
+        //     spaceBetween: 50,
+        //   },
+        // }}
         navigation={{
           nextEl: ".next",
           prevEl: ".prev",
         }}
-        modules={[Pagination, Navigation]}
+        modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
         <SwiperSlide>
-          1
-          <Image src={img1} alt="slider images" title="First image slider" />
+          <div className="card"></div>
+          {/* <Image src={img1} alt="slider images" title="First image slider" /> */}
         </SwiperSlide>
         <SwiperSlide>
           2
-          <Image src={img1} alt="slider images" title="First image slider" />
+          {/* <Image src={img1} alt="slider images" title="First image slider" /> */}
         </SwiperSlide>
         <SwiperSlide>
           3
-          <Image src={img1} alt="slider images" title="First image slider" />
+          {/* <Image src={img1} alt="slider images" title="First image slider" /> */}
         </SwiperSlide>
         <SwiperSlide>
           4
-          <Image src={img1} alt="slider images" title="First image slider" />
+          {/* <Image src={img1} alt="slider images" title="First image slider" /> */}
         </SwiperSlide>
         <SwiperSlide>
           5
-          <Image src={img1} alt="slider images" title="First image slider" />
+          {/* <Image src={img1} alt="slider images" title="First image slider" /> */}
         </SwiperSlide>
         <SwiperSlide>
           6
-          <Image src={img1} alt="slider images" title="First image slider" />
+          {/* <Image src={img1} alt="slider images" title="First image slider" /> */}
         </SwiperSlide>
         <div className="arrows-button">
           <button className="prev">
@@ -143,15 +156,6 @@ const Slider = () => {
           </button>
         </div>
       </Swiper>
-      {/* <div className="content">
-        <div className="card">
-          <div className="card-content">
-            <div className="image">
-              <Image src={img1} alt="img slider" title="slider first image" />
-            </div>
-          </div>
-        </div>
-      </div> */}
     </Slider__Container>
   )
 }

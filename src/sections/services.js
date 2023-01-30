@@ -205,7 +205,7 @@ const Services = () => {
             <h1>Services</h1>
           </div> */}
           <div className="content__body-list">
-            {/* {servicesData.map((item) => {
+            {servicesData.map((item) => {
               const { title, description, image, id } = item
               return (
                 <Card key={id} element={id}>
@@ -223,7 +223,7 @@ const Services = () => {
                   </BodyCard>
                 </Card>
               )
-            })} */}
+            })}
           </div>
         </div>
       </Services__Content>

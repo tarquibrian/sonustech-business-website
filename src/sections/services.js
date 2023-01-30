@@ -49,23 +49,23 @@ const Services__Content = styled.div`
   }
 
   .content__body {
-    height: 100%;
+    /* height: 100%; */
     display: grid;
     .content__body-header {
       border-bottom: var(--border) solid ${({ theme }) => theme.colors.border};
     }
     .content__body-list {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-rows: 1fr 1fr;
+      /* grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); */
+      /* grid-template-rows: 1fr 1fr; */
       width: 100%;
       height: 100%;
     }
   }
   @media screen and (max-width: 1400px) {
     .content__body-list {
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: repeat(3, 1fr);
+      /* grid-template-columns: repeat(2, 1fr); */
+      /* grid-template-rows: repeat(3, 1fr); */
     }
   }
   @media screen and (max-width: 1080px) {
@@ -77,10 +77,15 @@ const Services__Content = styled.div`
       border-top: var(--border) solid ${({ theme }) => theme.colors.border};
     }
   }
+  @media screen and (max-width: 768px) {
+    .content__body-list {
+    }
+  }
 
   @media screen and (max-width: 480px) {
     .content__body-list {
-      grid-template-columns: 1fr;
+      /* grid-template-columns: 1fr; */
+      /* background-color: red; */
     }
   }
 `
@@ -88,6 +93,8 @@ const Services__Content = styled.div`
 const Card = styled.div`
   width: 100%;
   height: 100%;
+  max-height: 420px;
+  aspect-ratio: 2/3;
   border-right: var(--border) solid ${({ theme }) => theme.colors?.border};
   border-bottom: ${({ element, theme }) =>
     element <= 3 ? `var(--border) solid ${theme.colors?.border}` : "none"};
@@ -198,7 +205,7 @@ const Services = () => {
             <h1>Services</h1>
           </div> */}
           <div className="content__body-list">
-            {servicesData.map((item) => {
+            {/* {servicesData.map((item) => {
               const { title, description, image, id } = item
               return (
                 <Card key={id} element={id}>
@@ -216,7 +223,7 @@ const Services = () => {
                   </BodyCard>
                 </Card>
               )
-            })}
+            })} */}
           </div>
         </div>
       </Services__Content>

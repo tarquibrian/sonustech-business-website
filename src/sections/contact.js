@@ -28,7 +28,7 @@ const Contact__Content = styled.div`
     /* width: 100%; */
     /* width: fit-content; */
     max-width: 500px;
-    min-width: 300px;
+    min-width: 200px;
     h1 {
       font-size: var(--title);
       font-weight: normal;

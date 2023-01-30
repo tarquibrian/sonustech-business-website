@@ -4,11 +4,11 @@ import styled from "styled-components"
 const Contact__Section = styled.section`
   /* background-color: white; */
   min-height: 20em;
+  border-bottom: var(--border) solid ${({ theme }) => theme.colors?.border};
 `
 
 const Contact__Content = styled.div`
   /* padding: 2rem; */
-  /* ${({ theme }) => theme.mixins.boxSection}; */
 `
 
 const Contact = () => {

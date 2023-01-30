@@ -17,41 +17,40 @@ import ArrowRight from "./icons/hero/arrow"
 import ArrowLeft from "./icons/arrow-left"
 
 const Slider__Container = styled.div`
-  width: 170%;
-  transform: translateX(-20.7%);
+  width: 150%;
+  transform: translateX(-16.6%);
 
   .swiper {
     width: 100%;
     height: 100%;
-    padding: 0 7%;
+    /* padding: 0 7%; */
   }
   .swiper-slide {
     width: 100%;
-    height: 400px;
     margin-top: 2px;
     /* background-color: blue; */
     outline: var(--border) solid ${({ theme }) => theme.colors?.border};
     /* overflow: hidden; */
-    text-align: center;
     /* font-size: 18px; */
     cursor: grab;
-
-    /* Center slide text vertically */
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
-    -webkit-align-items: center;
-    align-items: center;
-    /* padding: 1rem; */
-    /* background-color: red; */
     .card {
+      min-height: 300px;
+      /* max-height: 400px; */
+      padding: 5%;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      overflow: hidden;
+      h1 {
+        font-size: var(--title-content);
+      }
+      p {
+        font-size: var(--description);
+      }
+      svg {
+        width: auto;
+        height: 100px;
+      }
     }
   }
   .swiper-slide img {
@@ -77,6 +76,12 @@ const Slider__Container = styled.div`
     .prev {
     }
     .next {
+    }
+  }
+
+  @media ${({ theme }) => theme.bp.mobileL} {
+    .card {
+      height: 350px;
     }
   }
 `
@@ -130,11 +135,11 @@ const Slider = ({ items }) => {
         {items.map((item, i) => {
           const { title, description, svg } = item
           return (
-            <SwiperSlide>
+            <SwiperSlide key={i}>
               <div className="card">
                 <div className="card__image">{svg}</div>
-                <div className="card__title">{title}</div>
-                <div className="card__description">{description}</div>
+                <h1 className="card__title">{title}</h1>
+                <p className="card__description">{description}</p>
               </div>
               {/* <Image src={img1} alt="slider images" title="First image slider" /> */}
             </SwiperSlide>

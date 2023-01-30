@@ -28,7 +28,7 @@ export const competenciesData = {
     {
       title: "Attention to Detail",
       description:
-        "This pertains to the level of effort put in every task. An attentive person thoroughly organises and checks tasks up to the smallest detail for accuracy. If programmers do not check their work, mistakes could happen. Being attentive to details avoids facing issues in the future, which will save you time and effort during a project.",
+        "This pertains to the level of effort put in every task. An attentive person thoroughly organises and checks tasks up to the smallest detail for accuracy. If programmers do not check their work, mistakes could happen. Being attentive to details avoids facing issues in the future.",
       svg: <CareerIcon />,
     },
     {

@@ -8,6 +8,7 @@ import Slider from "src/components/slider"
 
 const Competencies__Section = styled.section`
   /* min-height: 500px; */
+  padding: 6rem 0;
   position: relative;
   width: 100%;
   height: 100%;

@@ -18,7 +18,16 @@ const Author = () => {
   return (
     <Author__Section>
       <Author__Content>
-        <h1>Powered by Darvy.</h1>
+        <h1>
+          Powered by{" "}
+          <a
+            aria-label="Author website"
+            href="https://tarquibiran.com/"
+            target={`_blank`}
+          >
+            @Darvy
+          </a>
+        </h1>
       </Author__Content>
     </Author__Section>
   )

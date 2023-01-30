@@ -7,6 +7,7 @@ import { servicesData } from "../data/servicesData"
 
 const Services__Section = styled.section`
   width: 100%;
+  /* padding: 6rem 0; */
   background-color: ${({ theme }) => theme.colors.body};
   color: ${({ theme }) => theme.colors.text};
   border-bottom: var(--border) solid ${({ theme }) => theme.colors.bodyInverse};
@@ -218,26 +219,6 @@ const Services = () => {
             })}
           </div>
         </div>
-
-        {/* <div className="content-bottom">
-          {servicesData.map((item) => {
-            const { title, description, image, id } = item
-            if (id <= 3)
-              return (
-                <Card key={id}>
-                  <HeadCard>
-                    <h1>{title}</h1>
-                  </HeadCard>
-                  <BodyCard>
-                    <Image src={image} alt={title} />
-                    <Overlay>
-                      <p>{description}</p>
-                    </Overlay>
-                  </BodyCard>
-                </Card>
-              )
-          })}
-        </div> */}
       </Services__Content>
     </Services__Section>
   )

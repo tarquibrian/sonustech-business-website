@@ -8,6 +8,7 @@ export const lightTheme = {
   bodyOpacity: "rgba(218,211,209,.8)",
   bodyVariant: "rgba(218,211,209,1)",
   bodyInverse: "rgba(39,39,39,1.0)",
+  bodyInverseOpacity: "rgba(39,39,39,.9)",
   text: "rgba(39,39,39,1.0)",
   textLight: "rgba(218,211,209,1)",
   textInverse: "rgba(236,233,234,1)",

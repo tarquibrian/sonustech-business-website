@@ -14,6 +14,7 @@ const variables = css`
     --fz-heading-md: 64px;
     --fz-heading-xl: 78px;
 
+    --title-header: clamp(40px, 6vw, 80px);
     --title: clamp(32px, 4vw, 72px);
     --subtitle: clamp(18px, 3vw, 32px);
     --title-content: clamp(16px, 3vw, 20px);

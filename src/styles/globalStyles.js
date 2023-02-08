@@ -20,6 +20,12 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     margin: 0;
   }
+  *::selection {
+  /* color: rgb(32, 180, 227); */
+  /* background: rgb(29, 49, 71); */
+  background-color: #343a40;
+  color: #e9ecef;
+  }
   body {
     background: ${({ theme }) => theme.colors.body};
     color: ${({ theme }) => theme.colors.text};
@@ -29,7 +35,7 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100%;
     /* -moz-osx-font-smoothing: grayscale; */
     /* -webkit-font-smoothing: antialiased; */
-    line-height: 1.2;
+    line-height: 1.3;
   }
 
   section {

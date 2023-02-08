@@ -4,7 +4,6 @@ import React, { useEffect, useRef } from "react"
 import styled from "styled-components"
 import { useAppContext } from "../contexts/app.context"
 import { servicesData } from "../data/servicesData"
-import img1 from "../assets/images/s-uxui.jpg"
 
 const Services__Section = styled.section`
   width: 100%;
@@ -37,6 +36,9 @@ const Services__Content = styled.div`
       gap: 1rem;
       z-index: 9;
       /* position: relative; */
+      /* background-color: red; */
+      padding: 2rem 5% 3rem;
+
       .tk-blob {
         position: absolute;
         top: 10%;
@@ -50,16 +52,18 @@ const Services__Content = styled.div`
         z-index: 999;
         backdrop-filter: blur(15px);
         background-color: rgba(218, 211, 209, 0.5);
-        padding: 2rem 5% 5rem;
 
         h1 {
-          font-size: var(--title);
-          font-family: "Cormorant";
-          font-style: italic;
-          font-weight: 400;
+          font-size: var(--title-header);
+          /* font-style: italic; */
+          font-weight: lighter;
+          font-family: "Oswald";
+          margin-bottom: 2rem;
         }
         h2 {
           font-size: var(--subtitle);
+          /* font-family: "DMSans"; */
+          margin-bottom: 0.5rem;
         }
         p {
           font-size: var(--description);
@@ -118,8 +122,8 @@ const Card = styled.div`
   position: relative;
   width: 100%;
   height: 100%;
-  min-height: 370px;
-  max-height: 420px;
+  min-height: 400px;
+  max-height: 480px;
   /* aspect-ratio: 2/3; */
   border-right: var(--border) solid ${({ theme }) => theme.colors?.border};
   border-bottom: ${({ element, theme }) =>
@@ -178,8 +182,8 @@ const Overlay = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
   .overlay__image {
-    display: grid;
-    place-content: center;
+    /* display: grid; */
+    /* place-content: center; */
     img {
       width: 100%;
       height: auto;
@@ -188,7 +192,9 @@ const Overlay = styled.div`
   .overlay__content {
     display: grid;
     place-content: center;
+    gap: 1rem;
   }
+
   button {
     border-radius: 2px;
     padding: 0.5rem 1rem;
@@ -206,6 +212,18 @@ const Overlay = styled.div`
 
   transform: translateX(110%);
   transition: 0.3s ease;
+  @media screen and (max-width: 600px) {
+    grid-template-columns: 1fr;
+    .overlay__image {
+      background-color: red;
+      height: fit-content;
+      max-width: 200px;
+      margin: auto;
+      img {
+        background-color: blue;
+      }
+    }
+  }
 `
 const BodyCard = styled.div`
   display: flex;
@@ -251,7 +269,7 @@ const Services = () => {
               </svg>
             </div> */}
             <div className="content__info">
-              <h1>Our Services</h1>
+              <h1>Our Services ✦</h1>
               <h2>Who we are?</h2>
               <p>
                 We are a digital transformation consultancy and software

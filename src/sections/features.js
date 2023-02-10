@@ -37,7 +37,7 @@ const Content__Main = styled.div`
     left: 0;
 
     h1 {
-      font-family: "Oswald", sans-serif;
+      font-family: var(--font-oswald);
       font-weight: lighter;
       font-size: var(--title-header);
       margin-bottom: 2rem;
@@ -45,6 +45,7 @@ const Content__Main = styled.div`
     }
     h2 {
       font-size: var(--subtitle);
+      margin-bottom: 0.5rem;
     }
     p {
       max-width: 750px;
@@ -160,7 +161,7 @@ const Feaures = () => {
       <Features__Content>
         <Content__Main>
           <div className="content__main-header">
-            <h1>Our Expertices</h1>
+            <h1>Our Expertices ✦</h1>
             {/* <h1>→ OUR EXPERTICES</h1> */}
             <h2>Custom Software Development Lifecycle</h2>
             <p>

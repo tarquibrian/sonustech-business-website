@@ -56,7 +56,7 @@ const Services__Content = styled.div`
         h1 {
           font-size: var(--title-header);
           /* font-style: italic; */
-          font-family: "Oswald", sans-serif;
+          font-family: var(--font-oswald);
           font-weight: lighter;
           margin-bottom: 2rem;
         }

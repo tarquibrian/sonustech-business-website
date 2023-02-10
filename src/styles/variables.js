@@ -31,8 +31,8 @@ const variables = css`
     --transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
 
     --font-mono: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", monospace;
-    --font-sans: "Calibre", "Inter", "San Francisco", "SF Pro Text",
-      -apple-system, system-ui;
+    --font-sans: "Calibre", "Inter", "San Francisco", "SF Pro Text";
+    --font-oswald: "Oswald", sans-serif;
   }
 `
 

@@ -72,6 +72,7 @@ const Carousel = ({ columns, aspectRatio }) => {
             {images.map((path, id) => (
               <Card aspectRatio={aspectRatio} key={id}>
                 <Image
+                  priority
                   src={path}
                   alt="logo image carousel"
                   placeholder="blur"

@@ -174,7 +174,12 @@ const Feaures = () => {
 
         <Content__Features>
           <div className="content__features-image">
-            <Image src={gif} width={500} alt="git lifecycle development" />
+            <Image
+              priority
+              src={gif}
+              width={500}
+              alt="git lifecycle development"
+            />
           </div>
           <div className="content__features-list">
             {featuresData.map((item) => {

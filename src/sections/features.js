@@ -37,7 +37,9 @@ const Content__Main = styled.div`
     left: 0;
 
     h1 {
-      font-size: var(--title);
+      font-family: "Oswald", sans-serif;
+      font-weight: lighter;
+      font-size: var(--title-header);
       margin-bottom: 2rem;
       line-height: 70%;
     }
@@ -158,7 +160,8 @@ const Feaures = () => {
       <Features__Content>
         <Content__Main>
           <div className="content__main-header">
-            <h1>→ OUR EXPERTICES</h1>
+            <h1>Our Expertices</h1>
+            {/* <h1>→ OUR EXPERTICES</h1> */}
             <h2>Custom Software Development Lifecycle</h2>
             <p>
               We employ best practice processes and development methodologies as

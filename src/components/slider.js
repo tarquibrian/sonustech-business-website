@@ -28,14 +28,10 @@ const Slider__Container = styled.div`
   .swiper-slide {
     width: 100%;
     margin-top: 2px;
-    /* background-color: blue; */
     outline: var(--border) solid ${({ theme }) => theme.colors?.border};
-    /* overflow: hidden; */
-    /* font-size: 18px; */
     cursor: grab;
     .card {
-      min-height: 300px;
-      /* max-height: 400px; */
+      min-height: 330px;
       padding: 5%;
       display: flex;
       flex-direction: column;

@@ -161,7 +161,7 @@ const Competencies = () => {
           </Description>
         </Content__Header>
         <Competencies__Slider>
-          <h1>carousel</h1>
+          {/* <h1>carousel</h1> */}
           <Slider items={competenciesData.competencies} />
         </Competencies__Slider>
         {/* <Content__Competencies

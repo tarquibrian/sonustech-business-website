@@ -213,7 +213,6 @@ const Overlay = styled.div`
   @media screen and (max-width: 600px) {
     grid-template-columns: 1fr;
     .overlay__image {
-      background-color: red;
       height: fit-content;
       max-width: 200px;
       margin: auto;

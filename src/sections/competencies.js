@@ -7,34 +7,28 @@ import StarIcon from "../components/icons/competencies/star"
 import Slider from "src/components/slider"
 
 const Competencies__Section = styled.section`
-  /* min-height: 500px; */
   padding: 6rem 0;
   position: relative;
   width: 100%;
   height: 100%;
   border-bottom: var(--border) solid ${({ theme }) => theme.colors.bodyInverse};
-  /* display: grid; */
 `
 
 const Competencies__Content = styled.div`
   display: grid;
+  gap: 4rem;
   position: relative;
-  /* overflow: hidden; */
 `
 
 const Content__Header = styled.header`
-  width: 100%;
+  width: 95%;
   margin: auto;
-  /* background-color: red; */
 `
 
 const Title = styled.div`
   h1 {
     font-size: var(--title);
     margin-bottom: 2rem;
-    /* display: flex; */
-    /* align-items: center; */
-    /* gap: 3rem; */
     font-family: var(--font-oswald);
     font-weight: lighter;
     /* span {
@@ -121,6 +115,7 @@ const Competencie__Card = styled(motion.div)`
 const Competencies__Slider = styled.div`
   width: 100%;
   overflow: hidden;
+  /* padding: 4rem 0; */
   /* margin: auto; */
   /* display: grid; */
 `

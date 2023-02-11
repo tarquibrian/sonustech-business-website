@@ -55,14 +55,12 @@ const Services__Content = styled.div`
 
         h1 {
           font-size: var(--title-header);
-          /* font-style: italic; */
           font-family: var(--font-oswald);
           font-weight: lighter;
           margin-bottom: 2rem;
         }
         h2 {
           font-size: var(--subtitle);
-          /* font-family: "DMSans"; */
           margin-bottom: 0.5rem;
         }
         p {

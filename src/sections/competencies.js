@@ -19,7 +19,7 @@ const Competencies__Section = styled.section`
 const Competencies__Content = styled.div`
   display: grid;
   position: relative;
-  overflow: hidden;
+  /* overflow: hidden; */
 `
 
 const Content__Header = styled.header`
@@ -31,16 +31,17 @@ const Content__Header = styled.header`
 const Title = styled.div`
   h1 {
     font-size: var(--title);
-    margin-bottom: 3rem;
-    display: flex;
-    align-items: center;
-    gap: 3rem;
-    span {
+    margin-bottom: 2rem;
+    /* display: flex; */
+    /* align-items: center; */
+    /* gap: 3rem; */
+    font-family: var(--font-oswald);
+    font-weight: lighter;
+    /* span {
       font-family: "Cormorant", sans-serif;
       font-weight: bold;
       font-style: italic;
       border: 2px solid ${({ theme }) => theme.colors?.border};
-      /* border-radius: 20px; */
       padding: 0.5rem 1.5rem 0.5rem 1rem;
       background: linear-gradient(
         135deg,
@@ -61,17 +62,18 @@ const Title = styled.div`
         box-shadow: 8px 8px ${({ theme }) => theme.colors?.border};
         transform: translate(-8px, -8px);
       }
-    }
+    } */
   }
 `
+
 const Subtitle = styled.div`
   h2 {
     font-size: var(--subtitle);
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.5rem;
   }
 `
 const Description = styled.div`
-  max-width: 700px;
+  max-width: 750px;
   font-size: var(--description);
 `
 
@@ -87,6 +89,7 @@ const Competencie__Card = styled(motion.div)`
   display: grid;
   grid-template-columns: 100px auto;
   gap: 3rem;
+
   .card-side {
     .icon {
       width: 100%;
@@ -101,6 +104,7 @@ const Competencie__Card = styled(motion.div)`
       }
     }
   }
+
   .card-body {
     display: flex;
     flex-direction: column;
@@ -142,11 +146,11 @@ const Competencies = () => {
         <Content__Header>
           <Title>
             <h1>
-              {competenciesData.header.title.preTitle}
-              <span>
-                <StarIcon />
-                {competenciesData.header.title.postTitle}
-              </span>
+              Our Competencies ✦{/* {competenciesData.header.title.preTitle} */}
+              {/* <span> */}
+              {/* <StarIcon /> */}
+              {/* {competenciesData.header.title.postTitle} */}
+              {/* </span> */}
             </h1>
           </Title>
           <Subtitle>

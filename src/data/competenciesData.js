@@ -4,7 +4,7 @@ import StarIcon from "../components/icons/competencies/star"
 export const competenciesData = {
   header: {
     title: {
-      preTitle: "OUR",
+      preTitle: "Our",
       postTitle: "Competencies",
       svg: <StarIcon />,
     },

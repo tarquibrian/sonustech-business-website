@@ -37,11 +37,10 @@ const Content__Main = styled.div`
     left: 0;
 
     h1 {
+      font-size: var(--title-header);
       font-family: var(--font-oswald);
       font-weight: lighter;
-      font-size: var(--title-header);
       margin-bottom: 2rem;
-      line-height: 70%;
     }
     h2 {
       font-size: var(--subtitle);

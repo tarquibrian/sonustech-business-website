@@ -23,16 +23,17 @@ const Slider__Container = styled.div`
   .swiper {
     width: 100%;
     height: 100%;
-    /* padding: 0 7%; */
   }
   .swiper-slide {
     width: 100%;
     margin-top: 2px;
     outline: var(--border) solid ${({ theme }) => theme.colors?.border};
     cursor: grab;
+    height: 400px;
     .card {
-      min-height: 330px;
-      padding: 5%;
+      min-height: fit-content;
+      /* aspect-ratio: 4/4; */
+      padding: 5% 5% 0 5%;
       display: flex;
       flex-direction: column;
       gap: 1rem;
@@ -76,6 +77,8 @@ const Slider__Container = styled.div`
   }
 
   @media ${({ theme }) => theme.bp.mobileL} {
+    width: 230%;
+    transform: translateX(-28%);
     .card {
       height: 350px;
     }

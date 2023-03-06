@@ -37,7 +37,6 @@ const Services__Content = styled.div`
       gap: 1rem;
       z-index: 9;
       /* position: relative; */
-      /* background-color: red; */
       padding: 2rem 5% 3rem;
 
       .tk-blob {
@@ -112,7 +111,6 @@ const Services__Content = styled.div`
   @media screen and (max-width: 480px) {
     .content__body-list {
       /* grid-template-columns: 1fr; */
-      /* background-color: red; */
     }
   }
 `
@@ -233,7 +231,6 @@ const BodyCard = styled.div`
   .front-image {
     height: 100%;
     width: 100%;
-    background-color: red;
     object-fit: cover;
     transform: translateX(0%);
     transition: 0.3s ease;

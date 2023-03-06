@@ -21,13 +21,11 @@ const Features__Content = styled.div`
   grid-template-columns: 1fr 1fr;
 
   @media screen and (max-width: 1080px) {
-    /* background-color: red; */
     grid-template-columns: initial;
   }
 `
 
 const Content__Main = styled.div`
-  /* display: grid; */
   .content__main-header {
     width: 90%;
     margin: 0 auto;

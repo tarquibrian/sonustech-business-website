@@ -154,7 +154,6 @@ const Content__Main = styled.div`
     grid-column: 1/-1;
     width: 90%;
     margin-inline: auto;
-    background-color: skyblue;
   }
   @media screen and (max-width: 800px) {
     grid-column: 1/-1;

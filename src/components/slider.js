@@ -47,6 +47,7 @@ const Slider__Container = styled.div`
       svg {
         width: auto;
         height: 100px;
+        fill: ${({ theme }) => theme.colors?.border};
       }
     }
   }

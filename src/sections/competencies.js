@@ -109,6 +109,11 @@ const Competencie__Card = styled(motion.div)`
     p {
       font-size: var(--description);
     }
+    /* background-image: linear-gradient(
+      109.6deg,
+      rgba(72, 200, 160, 1) 11.2%,
+      rgba(32, 40, 48, 1) 91.3%
+    ); */
   }
 `
 

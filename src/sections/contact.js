@@ -77,8 +77,9 @@ const Contact__Content = styled.div`
       input,
       textarea {
         background-color: transparent;
-        border: 1px solid black;
+        border: 1px solid ${({ theme }) => theme.colors?.border};
         border-radius: 10px;
+        color: ${({ theme }) => theme.colors?.text};
       }
 
       textarea {

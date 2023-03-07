@@ -19,7 +19,7 @@ const Hero__Section = styled.section`
   overflow: hidden;
   background: ${({ theme }) => theme.colors?.foreground};
   margin-top: initial;
-  border-bottom: var(--border) solid ${({ theme }) => theme.colors.bodyInverse};
+  border-bottom: var(--border) solid ${({ theme }) => theme.colors.border};
 
   @media screen and (max-width: 800px) {
     height: 100vh;
@@ -63,6 +63,7 @@ const Content__Main = styled.div`
         margin-right: 1rem;
         width: 40px;
         height: auto;
+        fill: ${({ theme }) => theme.colors?.border};
       }
       span {
         font-size: var(--subtitle);
@@ -130,6 +131,7 @@ const Content__Main = styled.div`
   }
   .content__center {
     background-color: ${({ theme }) => theme.colors?.foreground};
+    /* background-color: red; */
     color: ${({ theme }) => theme.colors?.textNeon};
     font-size: var(--title-content);
     /* font-family: "Oswald", sans-serif; */
@@ -143,7 +145,7 @@ const Content__Main = styled.div`
         margin: auto;
         text-align: center;
         border-right: var(--border) solid ${({ theme }) => theme.colors?.border};
-        text-shadow: 0px 0px 4px #41ead4;
+        text-shadow: 0px 0px 4px ${({ theme }) => theme.colors?.textNeon};
         &:last-child {
           border: initial;
         }

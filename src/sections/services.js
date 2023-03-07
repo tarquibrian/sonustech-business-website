@@ -11,7 +11,7 @@ const Services__Section = styled.section`
   /* padding: 6rem 0; */
   background-color: ${({ theme }) => theme.colors.body};
   color: ${({ theme }) => theme.colors.text};
-  border-bottom: var(--border) solid ${({ theme }) => theme.colors.bodyInverse};
+  border-bottom: var(--border) solid ${({ theme }) => theme.colors.border};
 `
 
 const Services__Content = styled.div`
@@ -24,10 +24,10 @@ const Services__Content = styled.div`
     align-items: center;
     width: 100%;
     height: 100%;
-    border-right: var(--border) solid ${({ theme }) => theme.colors.border};
+    border-right: var(--border) solid ${({ theme }) => theme.colors?.border};
     /* padding: 0 5%; */
     position: relative;
-    background-color: ${({ theme }) => theme.colors?.bodyOpacity};
+    /* background-color: ${({ theme }) => theme.colors?.bodyOpacity}; */
     backdrop-filter: blur(10px);
 
     .content__information-card {
@@ -51,7 +51,8 @@ const Services__Content = styled.div`
       .content__info {
         z-index: 999;
         backdrop-filter: blur(15px);
-        background-color: rgba(218, 211, 209, 0.5);
+        /* background-color: ${({ theme }) =>
+          theme.colors?.backgroundHeader}; */
 
         h1 {
           font-size: var(--title-header);
@@ -155,7 +156,7 @@ const HeadCard = styled.header`
   justify-content: start;
   border-bottom: var(--border) solid ${({ theme }) => theme.colors.border};
   backdrop-filter: blur(7px);
-  background-color: rgba(218, 211, 209, 0.6);
+  background-color: ${({ theme }) => theme.colors.backgroundHeader};
   /* color: ${({ theme }) => theme.colors?.textNeon}; */
   h1 {
     font-weight: bold;

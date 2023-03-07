@@ -11,7 +11,7 @@ const Competencies__Section = styled.section`
   position: relative;
   width: 100%;
   height: 100%;
-  border-bottom: var(--border) solid ${({ theme }) => theme.colors.bodyInverse};
+  border-bottom: var(--border) solid ${({ theme }) => theme.colors.border};
 `
 
 const Competencies__Content = styled.div`

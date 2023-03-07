@@ -13,7 +13,7 @@ const Feaures__Section = styled.section`
   height: 100%;
   background-color: ${({ theme }) => theme.colors?.body};
   color: ${({ theme }) => theme.colors?.text};
-  border-bottom: var(--border) solid ${({ theme }) => theme.colors.bodyInverse};
+  border-bottom: var(--border) solid ${({ theme }) => theme.colors.border};
 `
 const Features__Content = styled.div`
   height: 100%;

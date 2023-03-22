@@ -22,7 +22,7 @@ const Author = () => {
           Powered by{" "}
           <a
             aria-label="Author website"
-            href="https://tarquibiran.com/"
+            href="https://tarquibrian.com/"
             target={`_blank`}
           >
             @Darvy

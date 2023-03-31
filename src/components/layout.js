@@ -213,7 +213,7 @@ const Layout = ({ children }) => {
             {children}
           </motion.main>
 
-          <Footer />
+          {/* <Footer /> */}
           <Author />
         </Body>
       </LayoutPartition>

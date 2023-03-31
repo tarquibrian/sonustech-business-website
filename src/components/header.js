@@ -61,7 +61,7 @@ const Container = styled.div`
   }
 `
 
-const Content__Title = styled.span`
+const Content__Title = styled(Link)`
   border-right: var(--border) solid ${({ theme }) => theme.colors?.border};
   height: 100%;
   width: 100%;
@@ -89,6 +89,9 @@ const Content__Title = styled.span`
       height: 100%;
       margin-left: 1px;
     }
+  }
+  &:first-of-type {
+    font-weight: 800;
   }
   &:hover {
     background: ${({ theme }) => theme.colors?.hoverBackground};
@@ -131,19 +134,19 @@ const menu = [
   },
   {
     name: "Services",
-    href: "/services",
+    href: "/",
   },
   {
     name: "Projects",
-    href: "/projects",
+    href: "/",
   },
   {
     name: "About Us",
-    href: "/about",
+    href: "/",
   },
   {
     name: "Contact",
-    href: "/contact",
+    href: "/",
   },
 ]
 
@@ -166,16 +169,18 @@ const Header = () => {
           {menu.map((item, i) => {
             const { name, href } = item
             return (
-              <Link href={href} key={i}>
-                <Content__Title isActive={pathname === href ? true : null}>
-                  {name === "Contact" ? (
-                    <span>
-                      <Arrow />
-                    </span>
-                  ) : null}
-                  {name}
-                </Content__Title>
-              </Link>
+              <Content__Title
+                href={href}
+                isActive={pathname === "/" ? null : null}
+                key={i}
+              >
+                {name === "Contact" ? (
+                  <span>
+                    <Arrow />
+                  </span>
+                ) : null}
+                {name}
+              </Content__Title>
             )
           })}
         </Container>

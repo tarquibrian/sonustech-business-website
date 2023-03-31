@@ -173,7 +173,7 @@ const Layout = ({ children }) => {
               ></a>
             </div>
             <div className="side-colors">
-              <span>Colors</span>
+              <span>Theme</span>
               <div className="colors-palette">
                 <button
                   aria-label="first theme"
@@ -181,12 +181,12 @@ const Layout = ({ children }) => {
                   className="lighter"
                   onClick={() => setTheme("lighter")}
                 ></button>
-                <button
+                {/* <button
                   aria-label="second theme"
                   role="link"
                   className="reddish"
                   onClick={() => setTheme("reddish")}
-                ></button>
+                ></button> */}
                 <button
                   aria-label="terceary theme"
                   role="link"

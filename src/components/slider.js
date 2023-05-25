@@ -95,10 +95,6 @@ const Slider = ({ items }) => {
         slidesPerGroup={1}
         loop={true}
         loopFillGroupWithBlank={true}
-        // pagination={{
-        //   clickable: true,
-        // }}
-        // navigation={true}
         autoplay={{
           delay: 5000,
           disableOnInteraction: false,

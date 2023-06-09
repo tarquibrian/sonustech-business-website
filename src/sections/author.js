@@ -20,13 +20,13 @@ const Author = () => {
       <Author__Content>
         <h1>
           Powered by{" "}
-          <a
+          {/* <a
             aria-label="Author website"
             href="https://tarquibrian.com/"
             target={`_blank`}
-          >
+          > */}
             @Darvy
-          </a>
+          {/* </a> */}
         </h1>
       </Author__Content>
     </Author__Section>
